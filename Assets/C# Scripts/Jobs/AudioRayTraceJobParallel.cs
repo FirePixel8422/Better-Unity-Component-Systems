@@ -12,54 +12,142 @@ public struct AudioRayTraceJobParallel : IJobParallelFor
     [ReadOnly][NoAlias] public NativeArray<ColliderBoxStruct> boxColliders;
     [ReadOnly][NoAlias] public NativeArray<ColliderSphereStruct> sphereColliders;
 
-    [WriteOnly][NoAlias] public NativeArray<AudioRayResult> results;
+    [ReadOnly][NoAlias] public int maxBounces;
+    [ReadOnly][NoAlias] public float maxDistance;
+
+    [WriteOnly][NoAlias] public NativeList<AudioRayResult>.ParallelWriter results;
 
 
     [BurstCompile(DisableSafetyChecks = true)]
     public void Execute(int index)
     {
         float3 rayDir = rayDirections[index];
-
+        
         float closestDist = float.MaxValue;
-
         AudioRayResult rayResult = AudioRayResult.Null;
 
-        // Cache collider data
-        ColliderBoxStruct box;
-        ColliderSphereStruct sphere;
+        ColliderType hitColliderType = ColliderType.None;
+        ColliderBoxStruct hitColliderBox = ColliderBoxStruct.Null;
+        ColliderSphereStruct hitColliderSphere = ColliderSphereStruct.Null;
+
+        //create and reuse local variables for in the loop
+        ColliderBoxStruct temp_Box;
+        ColliderSphereStruct temp_Sphere;
         float dist;
 
-        // Box intersection (AABB)
-        for (int i = 0; i < boxColliders.Length; i++)
+        //save local copy of rayOrigin
+        float3 cRayOrigin = rayOrigin;
+
+        int bounceCount = 0;
+        float totalDist = 0;
+
+        float3 normal = float3.zero;
+
+        //loop of ray has bounces and travel distance left
+        while (bounceCount < maxBounces && totalDist < maxDistance)
         {
-            box = boxColliders[i];
-            if (RayIntersectsAABB(rayOrigin, rayDir, box.center, box.size, out dist))
+            closestDist = float.MaxValue;
+
+            // Box intersection (AABB)
+            for (int i = 0; i < boxColliders.Length; i++)
             {
-                if (dist < closestDist)
+                temp_Box = boxColliders[i];
+                if (RayIntersectsAABB(cRayOrigin, rayDir, temp_Box.center, temp_Box.size, out dist))
                 {
-                    closestDist = dist;
-                    rayResult.distance = dist;
-                    rayResult.point = rayOrigin + rayDir * dist;
+                    //if this is the closest hit so far
+                    if (dist < closestDist)
+                    {
+                        hitColliderType = ColliderType.BoxAABB;
+                        hitColliderBox = temp_Box;
+                        closestDist = dist;
+
+                        rayResult.distance = dist;
+                        rayResult.point = cRayOrigin + rayDir * dist;
+                    }
                 }
             }
-        }
 
-        // Sphere intersection
-        for (int i = 0; i < sphereColliders.Length; i++)
-        {
-            sphere = sphereColliders[i];
-            if (RayIntersectsSphere(rayOrigin, rayDir, sphere.center, sphere.radius, out dist))
+            // Sphere intersection
+            for (int i = 0; i < sphereColliders.Length; i++)
             {
-                if (dist < closestDist)
+                temp_Sphere = sphereColliders[i];
+                if (RayIntersectsSphere(cRayOrigin, rayDir, temp_Sphere.center, temp_Sphere.radius, out dist))
                 {
-                    closestDist = dist;
-                    rayResult.distance = dist;
-                    rayResult.point = rayOrigin + rayDir * dist;
+                    //if this is the closest hit so far
+                    if (dist < closestDist)
+                    {
+                        hitColliderType = ColliderType.Sphere;
+                        hitColliderSphere = temp_Sphere;
+                        closestDist = dist;
+
+                        rayResult.distance = dist;
+                        rayResult.point = cRayOrigin + rayDir * dist;
+                    }
                 }
             }
-        }
 
-        results[index] = rayResult;
+            // If a hit is detected, update ray's position, direction, and total distance
+            if (hitColliderType != ColliderType.None)
+            {
+                switch (hitColliderType)
+                {
+                    case ColliderType.BoxAABB:
+
+                        float3 localPoint = rayResult.point - hitColliderBox.center;
+                        float3 absPoint = math.abs(localPoint);
+                        float3 halfExtents = hitColliderBox.size;
+
+                        normal = float3.zero;
+
+                        // Determine which face was hit by seeing which axis distance is closest to its respective half-extent
+                        float3 deltaToFace = halfExtents - absPoint;
+
+                        if (deltaToFace.x < deltaToFace.y && deltaToFace.x < deltaToFace.z)
+                        {
+                            normal.x = math.sign(localPoint.x);
+                        }
+                        else if (deltaToFace.y < deltaToFace.x && deltaToFace.y < deltaToFace.z)
+                        {
+                            normal.y = math.sign(localPoint.y);
+                        }
+                        else
+                        {
+                            normal.z = math.sign(localPoint.z);
+                        }
+
+
+                        break;
+
+                    case ColliderType.Sphere:
+
+                        normal = math.normalize(rayResult.point - hitColliderSphere.center);
+
+                        break;
+
+                    default:
+
+                        break;
+                }
+
+                //update ray distance traveled
+                totalDist += closestDist;
+
+                //update next ray direction (bouncing it of the hit wall)
+                rayDir = math.reflect(rayDir, normal);
+
+                //update rays new origin (hit point)
+                cRayOrigin = rayResult.point + rayDir * 0.0001f;
+
+                bounceCount += 1;
+            }
+            else
+            {
+                break; // No more hits, break out of the loop
+            }
+
+            //add result to list
+            results.AddNoResize(rayResult);
+        }
     }
 
     [BurstCompile(DisableSafetyChecks = true)]

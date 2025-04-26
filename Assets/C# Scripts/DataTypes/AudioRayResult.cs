@@ -9,7 +9,6 @@ public struct AudioRayResult
 {
     public float distance;
     public float3 point;
-
     public float absorption;
 
     public bool IsNull => distance == -1;

@@ -58,7 +58,7 @@ public class AudioColliderGroup : MonoBehaviour
         }
     }
 
-
+    
 
     [BurstCompile(DisableSafetyChecks = true)]
     private void OnValidate()
@@ -112,7 +112,7 @@ public class AudioColliderGroup : MonoBehaviour
         // Draw all colliders in the group
         foreach (var box in boxes)
         {
-            Gizmos.DrawWireCube(pos + box.center, box.size * 2 * transform.localScale);
+            Gizmos.DrawWireMesh(GlobalMeshes.cube, pos + box.center, transform.rotation, box.size * 2 * transform.localScale);
         }
         foreach (var sphere in spheres)
         {

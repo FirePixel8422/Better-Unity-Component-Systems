@@ -17,7 +17,7 @@ public class AudioColliderManager : MonoBehaviour
     private float3 rayOrigin;
     private NativeArray<float3> rayDirections;
 
-    private NativeArray<AudioRayResult> rayResults;
+    private NativeList<AudioRayResult> rayResults;
 
     [SerializeField] int rayCount = 1000;
     [SerializeField] int maxBounces = 3;
@@ -36,7 +36,7 @@ public class AudioColliderManager : MonoBehaviour
     {
         // Initialize Raycast native arrays
         rayDirections = new NativeArray<float3>(rayCount, Allocator.Persistent);
-        rayResults = new NativeArray<AudioRayResult>(rayCount, Allocator.Persistent);
+        rayResults = new NativeList<AudioRayResult>(rayCount * maxBounces, Allocator.Persistent);
 
         var generateDirectionsJob = new GenerateFibonacciSphereDirectionsJob
         {
@@ -56,10 +56,10 @@ public class AudioColliderManager : MonoBehaviour
             boxColliders = boxColliders,
             sphereColliders = sphereColliders,
 
-            //maxBounces = maxBounces,
-            //maxDistance = maxDistance,
+            maxBounces = maxBounces,
+            maxDistance = maxDistance,
 
-            results = rayResults
+            results = rayResults.AsParallelWriter()
         };
 
         mainJobHandle.Complete();
@@ -70,7 +70,7 @@ public class AudioColliderManager : MonoBehaviour
     private void SetupColliderData()
     {
         //get all collider groups
-        colliderGroups = new List<AudioColliderGroup>(FindObjectsOfType<AudioColliderGroup>(true));
+        colliderGroups = new List<AudioColliderGroup>(FindObjectsOfType<AudioColliderGroup>());
 
         int boxCount = 0;
         int sphereCount = 0;
@@ -127,7 +127,7 @@ public class AudioColliderManager : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (drawGizmos == false) return;
+        if (Application.isPlaying == false || drawGizmos == false || boxColliders.IsCreated == false || sphereColliders.IsCreated == false) return;
 
         //green blue-ish color
         Gizmos.color = new Color(1f, 0.75f, 0.25f);
