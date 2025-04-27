@@ -4,14 +4,14 @@ using Unity.Jobs;
 using Unity.Mathematics;
 
 
-[BurstCompile(DisableSafetyChecks = true)]
+[BurstCompile]
 public struct GenerateFibonacciSphereDirectionsJob : IJobParallelFor
 {
     [NativeDisableParallelForRestriction]
     [WriteOnly][NoAlias] public NativeArray<float3> directions;
 
 
-    [BurstCompile(DisableSafetyChecks = true)]
+    [BurstCompile]
     public void Execute(int i)
     {
         int count = directions.Length;
@@ -24,5 +24,6 @@ public struct GenerateFibonacciSphereDirectionsJob : IJobParallelFor
         float z = math.sin(theta) * radius;
 
         directions[i] = math.normalize(new float3(x, y, z));
+        //directions[i] = new float3(1, 0, 0);
     }
 }

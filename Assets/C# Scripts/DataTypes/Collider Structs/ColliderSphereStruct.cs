@@ -1,13 +1,15 @@
 using Unity.Mathematics;
 using Unity.Burst;
+using UnityEngine;
 
 
 [System.Serializable]
-[BurstCompile(DisableSafetyChecks = true)]
+[BurstCompile]
 public struct ColliderSphereStruct
 {
     public float3 center;
     public float radius;
+    [Range(0, 1)]
     public float absorption;
 
     public bool IsNull => radius == -1;

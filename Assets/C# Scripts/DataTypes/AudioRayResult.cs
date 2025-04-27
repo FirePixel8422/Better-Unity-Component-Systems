@@ -4,7 +4,7 @@ using Unity.Mathematics;
 
 
 [System.Serializable]
-[BurstCompile(DisableSafetyChecks = true)]
+[BurstCompile]
 public struct AudioRayResult
 {
     public float distance;
@@ -16,7 +16,5 @@ public struct AudioRayResult
     public static AudioRayResult Null => new AudioRayResult
     {
         distance = -1,
-        point = float3.zero,
-        absorption = 0f
     };
 }
