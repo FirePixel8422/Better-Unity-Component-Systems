@@ -10,12 +10,12 @@ using Unity.Jobs;
 public class AudioRayTracer : MonoBehaviour
 {
     private List<AudioColliderGroup> colliderGroups;
+
     private List<AudioTargetRT> audioTargets;
+    private NativeArray<float3> audioTargetPositions;
 
     private NativeArray<ColliderAABBStruct> AABBColliders;
     private int AABBCount;
-    private NativeArray<int> AABBGroupIdToColliderId;
-    private NativeArray<int> AABBColliderIdToGroupId;
 
     private NativeArray<ColliderOBBStruct> OBBColliders;
     private int OBBCount;
@@ -32,14 +32,16 @@ public class AudioRayTracer : MonoBehaviour
 
     private NativeArray<float3> returnRayDirections;
 
+    private NativeArray<int> muffleRayHits;
+
 
     [Range(1, 10000)]
     [SerializeField] int rayCount = 1000;
 
-    [Range(1, 25)]
+    [Range(0, 25)]
     [SerializeField] int maxBounces = 3;
 
-    [Range(1, 100000)]
+    [Range(0, 10000)]
     [SerializeField] float maxRayDist = 10;
 
 
@@ -56,15 +58,16 @@ public class AudioRayTracer : MonoBehaviour
         UpdateScheduler.Register(OnUpdate);
     }
 
+
+    #region Setup Raytrace System and data Methods
+
     [BurstCompile]
     private void InitializeAudioRaytraceSystem()
     {
-        // Initialize Raycast native arrays
+        //initialize Raycast native arrays
         rayDirections = new NativeArray<float3>(rayCount, Allocator.Persistent);
 
-
-        #region Fibonacci Sphere Method
-
+        //generate sphere directions with fibonacci sphere algorithm
         var generateDirectionsJob = new FibonacciDirectionsJobParallel
         {
             directions = rayDirections
@@ -72,15 +75,17 @@ public class AudioRayTracer : MonoBehaviour
 
         JobHandle mainJobHandle = generateDirectionsJob.Schedule(rayCount, 64);
 
-        #endregion
 
+        //do as much tasks here to give the sphere direcion job some time to complete before forcing it to complete.
 
-        //do as much tasks here to give the job some time to complete before forcing it to complete.
-        rayResults = new NativeArray<AudioRayResult>(rayCount * (maxBounces + 1), Allocator.Persistent);
-        returnRayDirections = new NativeArray<float3>(rayCount * (maxBounces + 1), Allocator.Persistent);
+        int maxRayResultsArrayLength = rayCount * (maxBounces + 1);
+
+        rayResults = new NativeArray<AudioRayResult>(maxRayResultsArrayLength, Allocator.Persistent);
+        returnRayDirections = new NativeArray<float3>(maxRayResultsArrayLength, Allocator.Persistent);
         rayResultCounts = new NativeArray<int>(rayCount, Allocator.Persistent);
 
         SetupColliderData();
+        SetupAudioTargetData();
 
         mainJobHandle.Complete();
     }
@@ -90,12 +95,6 @@ public class AudioRayTracer : MonoBehaviour
     {
         //get all collider groups
         colliderGroups = new List<AudioColliderGroup>(FindObjectsOfType<AudioColliderGroup>());
-        audioTargets = new List<AudioTargetRT>(FindObjectsOfType<AudioTargetRT>());
-
-        for (int i = 0; i < audioTargets.Count; i++)
-        {
-            audioTargets[i].id = i;
-        }
 
         AABBCount = 0;
         OBBCount = 0;
@@ -129,43 +128,66 @@ public class AudioRayTracer : MonoBehaviour
         }
     }
 
+    [BurstCompile]
+    private void SetupAudioTargetData()
+    {
+        //get all audio targets
+        audioTargets = new List<AudioTargetRT>(FindObjectsOfType<AudioTargetRT>());
+
+        int audioTargetCount = audioTargets.Count;
+
+        audioTargetPositions = new NativeArray<float3>(audioTargetCount, Allocator.Persistent);
+
+        for (int i = 0; i < audioTargetCount; i++)
+        {
+            audioTargets[i].id = i;
+            audioTargetPositions[i] = audioTargets[i].transform.position;
+        }
+
+        targetHitCounts = new NativeArray<int>(audioTargetCount, Allocator.Persistent);
+        targetReturnPositionsTotal = new NativeArray<float3>(audioTargetCount, Allocator.Persistent);
+        tempTargetReturnPositions = new NativeArray<float3>(audioTargetCount, Allocator.Persistent);
+        targetReturnCounts = new NativeArray<int>(audioTargetCount, Allocator.Persistent);
+
+        audioTargetSettings = new NativeArray<AudioSettings>(audioTargetCount, Allocator.Persistent);
+
+        muffleRayHits = new NativeArray<int>(audioTargetCount, Allocator.Persistent);
+    }
+
+    #endregion
+
+
 
 
     [Header("WARNING: If false will block the main thread every frame until all rays are calculated")]
     [SerializeField] private bool waitForJobCompletion = true;
 
-    [SerializeField] private int batchSize;
+    [SerializeField] private int batchSize = 4048;
+    [SerializeField] private int maxBatchCount = 3;
 
-    private AudioRayTraceJobParallel audioRayTraceJob;
-    private JobHandle audioRayTraceJobHandle;
+    private AudioRayTracerJobParallelBatched audioRayTraceJob;
+    private ProcessAudioDataJob calculateAudioTargetDataJob;
+    private JobHandle mainJobHandle;
+
+    private NativeArray<int> targetHitCounts;
+    private NativeArray<float3> targetReturnPositionsTotal;
+    private NativeArray<float3> tempTargetReturnPositions;
+    private NativeArray<int> targetReturnCounts;
+
+    private NativeArray<AudioSettings> audioTargetSettings;
 
     [BurstCompile]
     private void OnUpdate()
     {
         //if waitForJobCompletion is true skip a frame if job is not done yet
-        if (waitForJobCompletion && audioRayTraceJobHandle.IsCompleted == false) return;
+        if (waitForJobCompletion && mainJobHandle.IsCompleted == false) return;
 
-        audioRayTraceJobHandle.Complete();
+        mainJobHandle.Complete();
 
 #if UNITY_EDITOR
 
         ms = sw.ElapsedMilliseconds;
         sw.Restart();
-
-        if (AABBColliders.IsCreated && drawColliderGizmos)
-        {
-            DEBUG_AABBColliders = AABBColliders.ToArray();
-            DEBUG_OBBColliders = OBBColliders.ToArray();
-            DEBUG_sphereColliders = sphereColliders.ToArray();
-        }
-
-        if (rayResults.IsCreated && (drawRayHitsGizmos || drawRayTrailsGizmos))
-        {
-            DEBUG_rayResults = rayResults.ToArray();
-            DEBUG_rayResultCounts = rayResultCounts.ToArray();
-
-            DEBUG_returnRayDirections = returnRayDirections.ToArray();
-        }
 
         //failsafe to prevent crash when updating maxBounces in editor
         if (audioRayTraceJob.rayDirections.Length != 0 && (audioRayTraceJob.maxBounces != maxBounces || rayDirections.Length != rayCount))
@@ -192,13 +214,31 @@ public class AudioRayTracer : MonoBehaviour
 
             Debug.LogWarning("You changed the max bounces/rayCount in the inspector. This will cause a crash in Builds, failsafe triggered: Recreated rayResults array with new capacity.");
         }
+
+        if (AABBColliders.IsCreated && drawColliderGizmos)
+        {
+            DEBUG_AABBColliders = AABBColliders.ToArray();
+            DEBUG_OBBColliders = OBBColliders.ToArray();
+            DEBUG_sphereColliders = sphereColliders.ToArray();
+        }
+
+        if (rayResults.IsCreated && (drawRayHitsGizmos || drawRayTrailsGizmos))
+        {
+            DEBUG_rayResults = rayResults.ToArray();
+            DEBUG_rayResultCounts = rayResultCounts.ToArray();
+
+            DEBUG_returnRayDirections = returnRayDirections.ToArray();
+            DEBUG_muffleRayHits = muffleRayHits.ToArray();
+        }
 #endif
 
         //trigger an update for all audio targets with ray traced data
         UpdateAudioTargets();
 
+        #region Raycasting JobParallel
+
         //create raytrace job and fire it
-        audioRayTraceJob = new AudioRayTraceJobParallel
+        audioRayTraceJob = new AudioRayTracerJobParallelBatched
         {
             rayOrigin = (float3)transform.position + rayOrigin,
             rayDirections = rayDirections,
@@ -207,108 +247,93 @@ public class AudioRayTracer : MonoBehaviour
             OBBColliders = OBBColliders,
             sphereColliders = sphereColliders,
 
+            audioTargetPositions = audioTargetPositions,
+
             maxBounces = maxBounces,
             maxRayDist = maxRayDist,
+            totalAudioTargets = audioTargets.Count,
 
             results = rayResults,
             resultCounts = rayResultCounts,
 
             returnRayDirections = returnRayDirections,
+            
+            muffleRayHits = muffleRayHits,
         };
 
-        //force job completion
-        audioRayTraceJobHandle = audioRayTraceJob.Schedule(rayCount, batchSize);
+        // Calculate how many batches this job would run normally
+        int totalBatches = (int)math.ceil((float)rayCount / batchSize);
+
+        // Clamp to the maxBatchCount to prevent overflow
+        totalBatches = math.min(totalBatches, maxBatchCount);
+
+        mainJobHandle = audioRayTraceJob.Schedule(rayCount, batchSize * totalBatches);
+
+        #endregion
+
+
+        #region Calculate Audio Target Data Job
+
+        float3 listenerForward = math.normalize(transform.forward); // The direction the listener is facing (usually the player's forward direction)
+        float3 listenerRight = math.normalize(transform.right); // Right direction (for stereo pan)
+
+        calculateAudioTargetDataJob = new ProcessAudioDataJob
+        {
+            rayResults = rayResults,
+            rayResultCounts = rayResultCounts,
+
+            returnRayDirections = returnRayDirections,
+
+            targetReturnPositionsTotal = targetReturnPositionsTotal,
+            tempTargetReturnPositions = tempTargetReturnPositions,
+
+            targetHitCounts = targetHitCounts,
+            targetReturnCounts = targetReturnCounts,
+
+            maxBounces = maxBounces,
+            totalResultSets = rayCount,
+            rayOriginWorld = (float3)transform.position + rayOrigin,
+
+            totalAudioTargets = audioTargets.Count,
+
+            listenerForwardDir = listenerForward,
+            listenerRightDir = listenerRight,
+
+            audioTargetSettings = audioTargetSettings,
+            muffleRayHits = muffleRayHits,
+        };
+
+        //start job and give mainJobHandle dependency, so it only start after the raytrace job is done.
+        //update mainJobHandle to include this new job for its completion signal
+        mainJobHandle = JobHandle.CombineDependencies(mainJobHandle, calculateAudioTargetDataJob.Schedule(mainJobHandle));
+
+        #endregion
     }
 
-    
+
     [BurstCompile]
     private void UpdateAudioTargets()
     {
-        int audioTargetCount = audioTargets.Count;
+        int totalAudioTargets = audioTargets.Count;
 
-        int[] targetHitCounts = new int[audioTargetCount];
-        int existingHitCount = 0;
-
-        float3[] targetReturnPositionsTotal = new float3[audioTargetCount];
-        float3[] tempTargetReturnPositions = new float3[audioTargetCount];
-        int[] targetReturnCounts = new int[audioTargetCount];
-
-        int totalResultSets = rayCount;
-        float3 rayOriginWorld = (float3)transform.position + rayOrigin;
-
-        // Collect hit counts, direction sums, and return positions
-        for (int i = 0; i < totalResultSets; i++)
+        //update audio targets
+        for (int audioTargetId = 0; audioTargetId < totalAudioTargets; audioTargetId++)
         {
-            int resultSetSize = rayResultCounts[i];
+            AudioSettings settings = audioTargetSettings[audioTargetId];
 
-            for (int i2 = 0; i2 < resultSetSize; i2++)
+            if (settings.panStereo == -2)
             {
-                AudioRayResult result = rayResults[i * maxBounces + i2];
-
-                existingHitCount += 1;
-
-                //if hitting any target increase hit count for that target id by 1
-                if (result.audioTargetId != -1)
-                {
-                    targetHitCounts[result.audioTargetId] += 1;
-                }
-
-                //final bounce of this ray their hit targetId (could be nothing aka -1)
-                int lastRayAudioTargetId = rayResults[i * maxBounces + resultSetSize - 1].audioTargetId;
-
-                // Check if this ray got to a audiotarget and if this bounce returned to origin (non-zero return direction)
-                if (lastRayAudioTargetId != -1 && math.distance(returnRayDirections[i], float3.zero) != 0)
-                {
-                    tempTargetReturnPositions[lastRayAudioTargetId] = result.point;
-                    targetReturnCounts[lastRayAudioTargetId]++;
-                }
-            }
-
-            //add last
-            for (int audioTargetId = 0; audioTargetId < audioTargetCount; audioTargetId++)
-            {
-                targetReturnPositionsTotal[audioTargetId] += tempTargetReturnPositions[audioTargetId];
-
-                // Reset for next iteration
-                tempTargetReturnPositions[audioTargetId] = float3.zero;
-            }
-        }
-
-        for (int i = 0; i < audioTargetCount; i++)
-        {
-            float strength = 0f;
-            float pan = 0f;
-
-            if (targetHitCounts[i] > 0)
-            {
-                float hitFraction = (float)targetHitCounts[i] / (existingHitCount / maxBounces);
-
-                strength = math.saturate(hitFraction / 0.16f); // If 16% of rays hit = full volume
-            }
-
-            // If we have return positions, use those to compute average direction
-            if (targetReturnCounts[i] > 0)
-            {
-                float3 avgPos = targetReturnPositionsTotal[i] / targetReturnCounts[i];
-
-                // Listener's forward and right direction
-                float3 listenerForward = math.normalize(transform.forward); // The direction the listener is facing (usually the player's forward direction)
-                float3 listenerRight = math.normalize(transform.right); // Right direction (for stereo pan)
-
                 // Calculate direction from listener to sound source (target direction)
-                float3 targetDir = math.normalize(avgPos - (float3)transform.position); // Direction from listener to sound source
+                float3 targetDir = math.normalize(audioTargets[audioTargetId].transform.position - transform.position - (Vector3)rayOrigin); // Direction from listener to sound source
 
                 // Project the target direction onto the horizontal plane (ignore y-axis)
                 targetDir.y = 0f;
 
                 // Calculate pan as a value between -1 (left) and 1 (right)
-                pan = math.dot(targetDir, listenerRight);
-
-                // Clamp the pan value between -1 and 1 to avoid extreme values
-                pan = math.clamp(pan, -1f, 1f);
+                settings.panStereo = math.clamp(math.dot(targetDir, transform.right), -1, 1);
             }
 
-            audioTargets[i].UpdateAudioSource(strength, pan);
+            audioTargets[audioTargetId].UpdateAudioSource(settings);
         }
     }
 
@@ -318,29 +343,39 @@ public class AudioRayTracer : MonoBehaviour
     [BurstCompile]
     private void OnDestroy()
     {
-        audioRayTraceJobHandle.Complete();
+        // Force complete all jobs
+        mainJobHandle.Complete();
 
-        // Dispose of native arrays
-        if (rayDirections.IsCreated)
-            rayDirections.Dispose();
+        // Ray arrays
+        DisposeArray(ref rayDirections);
+        DisposeArray(ref rayResults);
+        DisposeArray(ref rayResultCounts);
+        DisposeArray(ref muffleRayHits);
 
-        if (rayResults.IsCreated)
-            rayResults.Dispose();
+        // Collider arrays
+        DisposeArray(ref AABBColliders);
+        DisposeArray(ref OBBColliders);
+        DisposeArray(ref sphereColliders);
 
-        if (rayResultCounts.IsCreated)
-            rayResultCounts.Dispose();
+        // Audio arrays
+        DisposeArray(ref targetHitCounts);
+        DisposeArray(ref targetReturnPositionsTotal);
+        DisposeArray(ref tempTargetReturnPositions);
+        DisposeArray(ref targetReturnCounts);
+        DisposeArray(ref audioTargetPositions);
+        DisposeArray(ref audioTargetSettings);
 
-        if (AABBColliders.IsCreated)
-            AABBColliders.Dispose();
-
-        if (OBBColliders.IsCreated)
-            OBBColliders.Dispose();
-
-        if (sphereColliders.IsCreated)
-            sphereColliders.Dispose();
-
+        // Unregister update scheduler
         UpdateScheduler.Unregister(OnUpdate);
     }
+
+    // Helper function to safely dispose arrays
+    private void DisposeArray<T>(ref NativeArray<T> array) where T : struct
+    {
+        if (array.IsCreated)
+            array.Dispose();
+    }
+
 
 
 
@@ -376,6 +411,8 @@ public class AudioRayTracer : MonoBehaviour
 
     private float3[] DEBUG_returnRayDirections;
 
+    [SerializeField] private int[] DEBUG_muffleRayHits;
+
     [SerializeField] private float ms;
     private System.Diagnostics.Stopwatch sw;
 
@@ -405,7 +442,8 @@ public class AudioRayTracer : MonoBehaviour
             if (setResultAmountsCount * maxBounces > 5000)
             {
                 Debug.LogWarning("Max Gizmos Reached (5k) please turn of gizmos to not fry CPU");
-                setResultAmountsCount = 5000 / maxBounces;
+
+                return;
             }
 
             for (int i = 0; i < setResultAmountsCount; i++)
@@ -416,6 +454,7 @@ public class AudioRayTracer : MonoBehaviour
                 //ray hit markers and trails
                 for (int i2 = 0; i2 < cSetResultCount; i2++)
                 {
+
                     AudioRayResult result = DEBUG_rayResults[i * (maxBounces - 1) + i2];
 
                     Gizmos.color = rayHitColor;

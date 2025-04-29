@@ -7,6 +7,7 @@ using Unity.Mathematics;
 public struct AudioRayResult
 {
     public float distance;
+    public float fullRayDistance;
     public int audioTargetId;
 
     public bool IsNull => distance == -1;

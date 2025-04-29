@@ -14,6 +14,8 @@ public struct AudioRayTraceJobParallel : IJobParallelFor
     [ReadOnly][NoAlias] public NativeArray<ColliderOBBStruct> OBBColliders;
     [ReadOnly][NoAlias] public NativeArray<ColliderSphereStruct> sphereColliders;
 
+    [ReadOnly][NoAlias] public NativeArray<float3> audioTargetPositions;
+
     [ReadOnly][NoAlias] public float maxRayDist;
     [ReadOnly][NoAlias] public int maxBounces;
 
@@ -57,7 +59,7 @@ public struct AudioRayTraceJobParallel : IJobParallelFor
         float totalDist = 0;
 
         //reset return ray directions array completely before starting
-        for (int i = 0; i < maxBounces; i++)
+        for (int i = 0; i < maxBounces + 1; i++)
         {
             returnRayDirections[rayIndex * maxBounces + i] = float3.zero;
             results[rayIndex * maxBounces + i] = AudioRayResult.Null;
@@ -156,7 +158,7 @@ public struct AudioRayTraceJobParallel : IJobParallelFor
                     float distToOriginalOrigin = math.distance(rayOrigin, cRayOrigin); // Get the distance to the origin
 
                     // if nothing was hit, store the return ray direction
-                    if (CanRayReTraceToOrigin(cRayOrigin, returnRayDir, distToOriginalOrigin))
+                    if (CanRaySeePoint(cRayOrigin, returnRayDir, distToOriginalOrigin))
                     {
                         returnRayDirections[rayIndex * maxBounces + bounceCount] = returnRayDir;
                     }
@@ -170,7 +172,7 @@ public struct AudioRayTraceJobParallel : IJobParallelFor
                 if (soundAbsorption != 0)
                 {
                     totalDist += maxRayDist * soundAbsorption;
-                    //bounceCount += (int)(maxBounces * soundAbsorption);
+                    bounceCount += (int)(maxBounces * soundAbsorption);
                 }
 
 #if UNITY_EDITOR
@@ -271,10 +273,7 @@ public struct AudioRayTraceJobParallel : IJobParallelFor
 
 
     [BurstCompile]
-    /// <summary>
-    /// Check if ray can return to origin point without hitting any colliders before reaching the point
-    /// </summary>
-    private bool CanRayReTraceToOrigin(float3 rayOrigin, float3 rayDir, float distToOriginalOrigin)
+    private bool CanRaySeePoint(float3 rayOrigin, float3 rayDir, float distToOriginalOrigin)
     {
         //check against AABBs
         foreach (var collider in AABBColliders)
