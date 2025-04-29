@@ -3,21 +3,26 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using Unity.Collections;
 using Unity.Burst;
+using UnityEngine.UIElements;
 
 
 [BurstCompile]
 public class AudioColliderGroup : MonoBehaviour
 {
     [Header("Box Colliders WITHOUT rotation: fast > 7/10")]
-    [SerializeField] private List<ColliderAABBStruct> axisAlignedBoxes = new List<ColliderAABBStruct>();
+    [SerializeField] protected List<ColliderAABBStruct> axisAlignedBoxes = new List<ColliderAABBStruct>();
+
     [Header("Box Colliders with rotation: \nfast, but a little slower than an 'axisAlignedBox' > 6/10")]
-    [SerializeField] private List<ColliderOBBStruct> orientedBoxes = new List<ColliderOBBStruct>();
+    [SerializeField] protected List<ColliderOBBStruct> orientedBoxes = new List<ColliderOBBStruct>();
+
     [Header("Sphere Collider: very fast > 10/10")]
-    [SerializeField] private List<ColliderSphereStruct> spheres = new List<ColliderSphereStruct>();
+    [SerializeField] protected List<ColliderSphereStruct> spheres = new List<ColliderSphereStruct>();
 
     public int AABBCount => axisAlignedBoxes.Count;
     public int OBBCount => orientedBoxes.Count;
     public int SphereCount => spheres.Count;
+
+    public int groupId;
 
 
 
@@ -25,7 +30,7 @@ public class AudioColliderGroup : MonoBehaviour
     /// <summary>
     /// Add all colliders of this AudioGroup to the native arrays of the custom physics engine.
     /// </summary>
-    public void AddColliders(
+    public virtual void GetColliders(
         NativeArray<ColliderAABBStruct> _AABBs, int AABBsStartIndex,
         NativeArray<ColliderOBBStruct> _OBBs, int OBBsStartIndex,
         NativeArray<ColliderSphereStruct> _spheres, int spheresStartIndex)
@@ -40,6 +45,8 @@ public class AudioColliderGroup : MonoBehaviour
             //account for transform position and set groupId
             box.center += (float3)transform.position;
             box.size *= transform.localScale;
+
+            box.audioTargetId = -1;
 
             _AABBs[AABBsStartIndex + i] = box;
         }
@@ -56,6 +63,8 @@ public class AudioColliderGroup : MonoBehaviour
             box.rotation = transform.rotation;
             box.size *= transform.localScale;
 
+            box.audioTargetId = -1;
+
             _OBBs[OBBsStartIndex + i] = box;
         }
 
@@ -69,6 +78,8 @@ public class AudioColliderGroup : MonoBehaviour
             //account for transform position and set groupId
             sphere.center += (float3)transform.position;
             sphere.radius *= math.max(transform.localScale.x, math.max(transform.localScale.y, transform.localScale.z));
+
+            sphere.audioTargetId = -1;
 
             _spheres[spheresStartIndex + i] = sphere;
         }
@@ -91,6 +102,7 @@ public class AudioColliderGroup : MonoBehaviour
 
             //give box collider default values if it is just created
             box.size = new float3(0.5f, 0.5f, 0.5f);
+            box.absorption = -1;
 
             //save copy back to list
             axisAlignedBoxes[i] = box;
@@ -113,6 +125,7 @@ public class AudioColliderGroup : MonoBehaviour
 
             //give box collider default values if it is just created
             box.size = new float3(0.5f, 0.5f, 0.5f);
+            box.absorption = -1;
 
             //save copy back to list
             orientedBoxes[i] = box;
@@ -130,6 +143,7 @@ public class AudioColliderGroup : MonoBehaviour
 
             //give sphere collider default values if it is just created
             sphere.radius = 0.5f;
+            sphere.absorption = -1;
 
             //save copy back to list
             spheres[i] = sphere;

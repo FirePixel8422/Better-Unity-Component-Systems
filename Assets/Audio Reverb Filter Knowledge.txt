@@ -1,0 +1,11 @@
+room = idk
+room HF en LF = reverb strength/noise strength
+decay time = echo time.
+decay HF ratio = crisp bonk sound strength
+reflections & reflections = delay zwakker crisp bonk sound 
+reverb = zwaar bonk sound
+reverb delay = delay van reverb
+HF ref = idk
+LF ref = idk
+diffusion = idk
+density = idk

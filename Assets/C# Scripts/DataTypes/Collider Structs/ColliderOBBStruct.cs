@@ -10,8 +10,12 @@ public struct ColliderOBBStruct
     public float3 center;
     public float3 size;
     public quaternion rotation;
-    [Range(0, 1)]
+
+    [Range(-1, 1)]
     public float absorption;
+
+    [HideInInspector]
+    public int audioTargetId;
 
     public bool IsNull => size.x == -1;
 
