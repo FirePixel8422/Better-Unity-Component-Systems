@@ -9,6 +9,7 @@ public struct ColliderOBBStruct
 {
     public float3 center;
     public float3 size;
+
     public quaternion rotation;
 
     [Range(-1, 1)]

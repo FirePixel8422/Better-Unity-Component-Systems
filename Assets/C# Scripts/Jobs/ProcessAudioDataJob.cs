@@ -22,8 +22,8 @@ public struct ProcessAudioDataJob : IJob
 
     [ReadOnly][NoAlias] public NativeArray<int> muffleRayHits;
 
-    [ReadOnly][NoAlias] public int maxBounces;
-    [ReadOnly][NoAlias] public int totalResultSets;
+    [ReadOnly][NoAlias] public int maxRayHits;
+    [ReadOnly][NoAlias] public int rayCount;
     [ReadOnly][NoAlias] public float3 rayOriginWorld;
 
     [ReadOnly][NoAlias] public int totalAudioTargets;
@@ -53,7 +53,7 @@ public struct ProcessAudioDataJob : IJob
         int lastRayAudioTargetId;
 
         //collect hit counts, direction sums, and return positions
-        for (int i = 0; i < totalResultSets; i++)
+        for (int i = 0; i < rayCount; i++)
         {
             resultSetSize = rayResultCounts[i];
 
@@ -62,7 +62,7 @@ public struct ProcessAudioDataJob : IJob
 
             for (int bounceIndex = 0; bounceIndex < resultSetSize; bounceIndex++)
             {
-                result = rayResults[i * maxBounces + bounceIndex];
+                result = rayResults[i * maxRayHits + bounceIndex];
 
                 //if hitting any target increase hit count for that target id by 1
                 if (result.audioTargetId != -1)
@@ -71,7 +71,7 @@ public struct ProcessAudioDataJob : IJob
                 }
 
                 //final bounce of this ray their hit targetId (could be nothing aka -1)
-                lastRayAudioTargetId = rayResults[i * maxBounces + resultSetSize - 1].audioTargetId;
+                lastRayAudioTargetId = rayResults[i * maxRayHits + resultSetSize - 1].audioTargetId;
 
                 // Check if this ray got to a audiotarget and if this bounce returned to origin (non-zero return direction)
                 if (lastRayAudioTargetId != -1 && math.distance(returnRayDirections[i], float3.zero) != 0)
@@ -109,13 +109,13 @@ public struct ProcessAudioDataJob : IJob
                 totalMuffleRayhits += muffleRayHits[totalAudioTargets * i + audioTargetId];
             }
             //set muffleRayHits of current audiotargetId to the totalMuffleRayhits
-            muffle = (float)totalMuffleRayhits / totalResultSets;  // If 12% of rays hit = 0% muffle
+            muffle = (float)totalMuffleRayhits / (rayCount * maxRayHits);
 
 
             //if audiotarget was hit by at least 1 ray
             if (targetHitCounts[audioTargetId] > 0)
             {
-                hitFraction = (float)targetHitCounts[audioTargetId] / totalResultSets;
+                hitFraction = (float)targetHitCounts[audioTargetId] / rayCount;
 
                 strength = math.saturate(hitFraction * 6); // If 16% of rays hit = full volume
             }

@@ -37,6 +37,8 @@ public class AudioTargetRT : AudioColliderGroup
         baseVolume = source.volume;
         settings.volume = baseVolume;
 
+        lowPass.cutoffFrequency = 0;
+
         UpdateScheduler.Register(OnUpdate);
     }
 
@@ -127,7 +129,7 @@ public class AudioTargetRT : AudioColliderGroup
         settings = newSettings;
 
         //0 = 100% muffled audio
-        settings.muffle = 250 + curve.Evaluate(newSettings.muffle) * 21750f;
+        settings.muffle = 10 + curve.Evaluate(newSettings.muffle) * 21750f;
 
         source.panStereo = newSettings.panStereo;
     }
