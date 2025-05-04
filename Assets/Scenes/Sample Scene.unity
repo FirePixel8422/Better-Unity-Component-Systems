@@ -2361,6 +2361,7 @@ GameObject:
   - component: {fileID: 241768774}
   - component: {fileID: 241768776}
   - component: {fileID: 241768780}
+  - component: {fileID: 241768781}
   m_Layer: 0
   m_Name: MusicBox
   m_TagString: Untagged
@@ -2673,6 +2674,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &241768781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241768771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b1321bb1fc2d6b4e8568059b5f2a943, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listenerTransform: {fileID: 2039623052}
+  worldDirection: {x: 0, y: 0, z: 0}
 --- !u!1 &250552647
 GameObject:
   m_ObjectHideFlags: 0
