@@ -76,8 +76,10 @@ public struct ProcessAudioDataJob : IJob
                 // Check if this ray got to a audiotarget and if this bounce returned to origin (non-zero return direction)
                 if (lastRayAudioTargetId != -1 && math.distance(returnRayDirections[i], float3.zero) != 0)
                 {
-                    tempTargetReturnPositions[lastRayAudioTargetId] = result.point;
+                    tempTargetReturnPositions[lastRayAudioTargetId] = result.point / (result.fullRayDistance != 0 ? result.fullRayDistance : 1) * 125 / 2;
                     targetReturnCounts[lastRayAudioTargetId] += 1;
+
+                    break;
                 }
             }
 
@@ -131,7 +133,7 @@ public struct ProcessAudioDataJob : IJob
                 float3 avgPos = targetReturnPositionsTotal[audioTargetId] / targetReturnCounts[audioTargetId];
 
                 // Calculate direction from listener to sound source (target direction)
-                float3 targetDir = math.normalize(avgPos - rayOriginWorld); // Direction from listener to sound source
+                float3 targetDir = math.normalize(rayOriginWorld - avgPos); // Direction from listener to sound source
 
                 // Project the target direction onto the horizontal plane (ignore y-axis)
                 targetDir.y = 0f;

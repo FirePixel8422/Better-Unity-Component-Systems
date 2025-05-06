@@ -152,7 +152,7 @@ public class AudioColliderGroup : MonoBehaviour
 
 
     [BurstCompile]
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         if (Application.isPlaying) return;
 

@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-5412093718700571789
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: c791e581b7ffea14ca02e394ab7583b9
+  m_EffectName: Resonance Audio Renderer
+  m_MixLevel: b27cc857c0b9c2841b43f1de5ce07a67
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -18,7 +32,7 @@ AudioMixerController:
   m_ExposedParameters: []
   m_AudioMixerGroupViews:
   - guids:
-    - 13cb280968ba35844bd7d95e72c39fbc
+    - 128c0fc1cb864cf46afea8737c05eede
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -30,13 +44,14 @@ AudioMixerGroupController:
   m_PrefabAsset: {fileID: 0}
   m_Name: Master
   m_AudioMixer: {fileID: 24100000}
-  m_GroupID: 13cb280968ba35844bd7d95e72c39fbc
+  m_GroupID: 128c0fc1cb864cf46afea8737c05eede
   m_Children: []
-  m_Volume: d85e1759d33d1b849a2772ee331ae419
-  m_Pitch: 2a407535debb5d94b9db540de2bd600c
+  m_Volume: 0fde76655279e974c919c44fe7b43bfe
+  m_Pitch: aa8bdea1732229c44b33a7b9f2be1f80
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 24400004}
+  - {fileID: -5412093718700571789}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -48,9 +63,9 @@ AudioMixerEffectController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_EffectID: b6e592eae1c89594289931e9d10a01e5
+  m_EffectID: c218df99efd01134989c9d7926170cfa
   m_EffectName: Attenuation
-  m_MixLevel: 3f8aaeaff049ab547bbef285dec916fe
+  m_MixLevel: 217cb80597d60454f838d41c42fee430
   m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
@@ -63,6 +78,6 @@ AudioMixerSnapshotController:
   m_PrefabAsset: {fileID: 0}
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
-  m_SnapshotID: baf40d9b9a96a1a4fbb29f7c7ab86ce2
+  m_SnapshotID: 4da565451465b694cb5d503c7a5bc97d
   m_FloatValues: {}
   m_TransitionOverrides: {}

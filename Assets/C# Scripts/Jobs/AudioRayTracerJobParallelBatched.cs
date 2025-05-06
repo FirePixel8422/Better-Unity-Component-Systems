@@ -115,24 +115,20 @@ public struct AudioRayTracerJobParallelBatched : IJobParallelForBatch
 
                     #region Check if hit ray point can return to original origin point (Echo ray to player)
 
-                    //only shoot a return ray if it's not the first bounce
-                    if (cRayHits > 0)
+                    float3 offsettedRayHitWorldPoint = cRayOrigin - cRayDir * epsilon; //offset the hit point a bit so it doesnt intersect with same collider again
+
+                    //shoot a return ray to the original origin
+                    float3 returnRayDir = math.normalize(rayOrigin - offsettedRayHitWorldPoint);
+
+                    //calculate the distance to the origin and offset rayOrigin by a bit back so it doesnt intersect with same collider again
+                    float distToOriginalOrigin = math.distance(rayOrigin, offsettedRayHitWorldPoint);
+
+                    // if nothing was hit, store the return ray direction
+                    if (CanRaySeePoint(offsettedRayHitWorldPoint, returnRayDir, distToOriginalOrigin))
                     {
-                        float3 offsettedRayHitWorldPoint = cRayOrigin - cRayDir * epsilon; //offset the hit point a bit so it doesnt intersect with same collider again
-
-                        //shoot a return ray to the original origin
-                        float3 returnRayDir = math.normalize(rayOrigin - offsettedRayHitWorldPoint);
-
-                        //calculate the distance to the origin and offset rayOrigin by a bit back so it doesnt intersect with same collider again
-                        float distToOriginalOrigin = math.distance(rayOrigin, offsettedRayHitWorldPoint);
-
-                        // if nothing was hit, store the return ray direction
-                        if (CanRaySeePoint(offsettedRayHitWorldPoint, returnRayDir, distToOriginalOrigin))
-                        {
-                            returnRayDirections[rayIndex * maxRayHits + cRayHits - 1] = returnRayDir;
-                        }
+                        returnRayDirections[rayIndex * maxRayHits + cRayHits - 1] = returnRayDir;
                     }
-
+                
                     #endregion
 
 
@@ -462,6 +458,34 @@ public struct AudioRayTracerJobParallelBatched : IJobParallelForBatch
     }
 
 
+
+
+    ///ADD REF TO REFLECT RAY TO MAKE TUPLE SMALLER (REF RAYORIGIN AND REF RAY DIRETION)
+    ///ADD REF TO REFLECT RAY TO MAKE TUPLE SMALLER (REF RAYORIGIN AND REF RAY DIRETION)
+    ///ADD REF TO REFLECT RAY TO MAKE TUPLE SMALLER (REF RAYORIGIN AND REF RAY DIRETION)
+    ///ADD REF TO REFLECT RAY TO MAKE TUPLE SMALLER (REF RAYORIGIN AND REF RAY DIRETION)
+    ///ADD REF TO REFLECT RAY TO MAKE TUPLE SMALLER (REF RAYORIGIN AND REF RAY DIRETION)
+    ///ADD REF TO REFLECT RAY TO MAKE TUPLE SMALLER (REF RAYORIGIN AND REF RAY DIRETION)
+    ///ADD REF TO REFLECT RAY TO MAKE TUPLE SMALLER (REF RAYORIGIN AND REF RAY DIRETION)
+    ///ADD REF TO REFLECT RAY TO MAKE TUPLE SMALLER (REF RAYORIGIN AND REF RAY DIRETION)
+    ///ADD REF TO REFLECT RAY TO MAKE TUPLE SMALLER (REF RAYORIGIN AND REF RAY DIRETION)
+    ///ADD REF TO REFLECT RAY TO MAKE TUPLE SMALLER (REF RAYORIGIN AND REF RAY DIRETION)
+    ///ADD REF TO REFLECT RAY TO MAKE TUPLE SMALLER (REF RAYORIGIN AND REF RAY DIRETION)
+    ///ADD REF TO REFLECT RAY TO MAKE TUPLE SMALLER (REF RAYORIGIN AND REF RAY DIRETION)
+    ///ADD REF TO REFLECT RAY TO MAKE TUPLE SMALLER (REF RAYORIGIN AND REF RAY DIRETION)
+    ///ADD REF TO REFLECT RAY TO MAKE TUPLE SMALLER (REF RAYORIGIN AND REF RAY DIRETION)
+    ///ADD REF TO REFLECT RAY TO MAKE TUPLE SMALLER (REF RAYORIGIN AND REF RAY DIRETION)
+    ///ADD REF TO REFLECT RAY TO MAKE TUPLE SMALLER (REF RAYORIGIN AND REF RAY DIRETION)
+    ///ADD REF TO REFLECT RAY TO MAKE TUPLE SMALLER (REF RAYORIGIN AND REF RAY DIRETION)
+    ///ADD REF TO REFLECT RAY TO MAKE TUPLE SMALLER (REF RAYORIGIN AND REF RAY DIRETION)
+    ///ADD REF TO REFLECT RAY TO MAKE TUPLE SMALLER (REF RAYORIGIN AND REF RAY DIRETION)
+    ///ADD REF TO REFLECT RAY TO MAKE TUPLE SMALLER (REF RAYORIGIN AND REF RAY DIRETION)
+    ///ADD REF TO REFLECT RAY TO MAKE TUPLE SMALLER (REF RAYORIGIN AND REF RAY DIRETION)
+    ///ADD REF TO REFLECT RAY TO MAKE TUPLE SMALLER (REF RAYORIGIN AND REF RAY DIRETION)
+    ///ADD REF TO REFLECT RAY TO MAKE TUPLE SMALLER (REF RAYORIGIN AND REF RAY DIRETION)
+    ///ADD REF TO REFLECT RAY TO MAKE TUPLE SMALLER (REF RAYORIGIN AND REF RAY DIRETION)
+    ///ADD REF TO REFLECT RAY TO MAKE TUPLE SMALLER (REF RAYORIGIN AND REF RAY DIRETION)
+    ///ADD REF TO REFLECT RAY TO MAKE TUPLE SMALLER (REF RAYORIGIN AND REF RAY DIRETION)
     [BurstCompile]
     /// <summary>
     /// Calculate the new ray direction and origin after a hit, based on the hit collider type, so it "bounces" of the hits surface.

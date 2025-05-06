@@ -132,7 +132,13 @@ public class AudioTargetRT : AudioColliderGroup
         settings.muffle = 10 + curve.Evaluate(newSettings.muffle) * 21750f;
 
         source.panStereo = newSettings.panStereo;
+
+        source.SetSpatializerFloat(0, direction.x);
+        source.SetSpatializerFloat(1, direction.y);
+        source.SetSpatializerFloat(2, direction.z);
     }
+
+    public float3 direction;
 
     //BAD
     //BAD
@@ -152,8 +158,8 @@ public class AudioTargetRT : AudioColliderGroup
 
         //maybe make this method smarter, make it so it takes MAX volumeUpdatepeed to change from a to b
 
-        source.volume = MathematicsLogic.MoveTowards(source.volume, settings.volume, volumeUpdateSpeed * deltaTime);
-        lowPass.cutoffFrequency = MathematicsLogic.MoveTowards(lowPass.cutoffFrequency, settings.muffle, math.max(lowPassUpdateSpeed, settings.muffle - lowPass.cutoffFrequency) * deltaTime);
+        source.volume = MathLogic.MoveTowards(source.volume, settings.volume, volumeUpdateSpeed * deltaTime);
+        lowPass.cutoffFrequency = MathLogic.MoveTowards(lowPass.cutoffFrequency, settings.muffle, math.max(lowPassUpdateSpeed, settings.muffle - lowPass.cutoffFrequency) * deltaTime);
     }
 
 

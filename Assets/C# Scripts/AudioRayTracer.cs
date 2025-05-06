@@ -4,6 +4,8 @@ using Unity.Burst;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using Unity.Jobs;
+using Unity.VisualScripting;
+using System.Runtime.CompilerServices;
 
 
 [BurstCompile]
@@ -318,7 +320,7 @@ public class AudioRayTracer : MonoBehaviour
             if (settings.panStereo == -2)
             {
                 // Calculate direction from listener to sound source (target direction)
-                float3 targetDir = math.normalize(audioTargets[audioTargetId].transform.position - transform.position - (Vector3)rayOrigin); // Direction from listener to sound source
+                float3 targetDir = math.normalize((float3)transform.position + rayOrigin - audioTargetPositions[audioTargetId]); // Direction from listener to sound source
 
                 // Project the target direction onto the horizontal plane (ignore y-axis)
                 targetDir.y = 0f;
@@ -333,7 +335,6 @@ public class AudioRayTracer : MonoBehaviour
 
 
 
-
     [BurstCompile]
     private void OnDestroy()
     {
@@ -341,35 +342,28 @@ public class AudioRayTracer : MonoBehaviour
         mainJobHandle.Complete();
 
         // Ray arrays
-        DisposeArray(ref rayDirections);
-        DisposeArray(ref rayResults);
-        DisposeArray(ref rayResultCounts);
-        DisposeArray(ref muffleRayHits);
+        rayDirections.DisposeIfCreated();
+        rayResults.DisposeIfCreated();
+        rayResultCounts.DisposeIfCreated();
+        muffleRayHits.DisposeIfCreated();
 
         // Collider arrays
-        DisposeArray(ref AABBColliders);
-        DisposeArray(ref OBBColliders);
-        DisposeArray(ref sphereColliders);
+        AABBColliders.DisposeIfCreated();
+        OBBColliders.DisposeIfCreated();
+        sphereColliders.DisposeIfCreated();
 
         // Audio arrays
-        DisposeArray(ref targetHitCounts);
-        DisposeArray(ref targetReturnPositionsTotal);
-        DisposeArray(ref tempTargetReturnPositions);
-        DisposeArray(ref targetReturnCounts);
-        DisposeArray(ref audioTargetPositions);
-        DisposeArray(ref audioTargetSettings);
+        targetHitCounts.DisposeIfCreated();
+        targetReturnPositionsTotal.DisposeIfCreated();
+        tempTargetReturnPositions.DisposeIfCreated();
+        returnRayDirections.DisposeIfCreated();
+        targetReturnCounts.DisposeIfCreated();
+        audioTargetPositions.DisposeIfCreated();
+        audioTargetSettings.DisposeIfCreated();
 
         // Unregister update scheduler
         UpdateScheduler.Unregister(OnUpdate);
     }
-
-    // Helper function to safely dispose arrays
-    private void DisposeArray<T>(ref NativeArray<T> array) where T : struct
-    {
-        if (array.IsCreated)
-            array.Dispose();
-    }
-
 
 
 
@@ -483,7 +477,7 @@ public class AudioRayTracer : MonoBehaviour
 
                         if (cSetResultCount != 0 && DEBUG_rayResults[i * maxRayHits + cSetResultCount - 1].audioTargetId == 0 && math.distance(returningRayDir, float3.zero) != 0)
                         {
-                            lastReturningRayOrigin = DEBUG_rayResults[i * maxRayHits + i2].point;
+                            lastReturningRayOrigin = DEBUG_rayResults[i * maxRayHits + i2].point / (DEBUG_rayResults[i * maxRayHits + i2].fullRayDistance != 0 ? DEBUG_rayResults[i * maxRayHits + i2].fullRayDistance : 1) * 125 / 2;
 
                             if (drawReturnRayDirectionGizmos)
                             {
