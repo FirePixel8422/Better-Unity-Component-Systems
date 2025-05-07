@@ -209,11 +209,11 @@ public struct AudioRayTracerJobParallelBatched : IJobParallelForBatch
 
     #region Collider Intersection Checks (The Actual Raycasting Part)
 
-    [BurstCompile]
     /// <summary>
     /// Checks all colliders for intersection with the ray and returns the closest hit collider and its type, data, and distance.
     /// </summary>
     /// <returns>True if the ray hits any collider; otherwise, false.</returns>
+    [BurstCompile]
     private bool ShootRayCast(float3 cRayOrigin, float3 cRayDir,
         out AudioRayResult rayResult, out ColliderType hitColliderType, out float closestDist,
         out ColliderAABBStruct hitAABB, out ColliderOBBStruct hitOBB, out ColliderSphereStruct hitSphere)
@@ -359,10 +359,10 @@ public struct AudioRayTracerJobParallelBatched : IJobParallelForBatch
     #endregion
 
 
-    [BurstCompile]
     /// <summary>
     /// Check if world point is visible from the ray origin, meaning no colliders are in the way.
     /// </summary>
+    [BurstCompile]
     private bool CanRaySeePoint(float3 rayOrigin, float3 rayDir, float distToTarget)
     {
         float dist;
@@ -399,10 +399,10 @@ public struct AudioRayTracerJobParallelBatched : IJobParallelForBatch
     }
 
 
-    [BurstCompile]
     /// <summary>
     /// Identical to CanRaySeePoint, but skips hits against the colliders of the audioTarget
     /// </summary>
+    [BurstCompile]
     private bool CanRaySeeAudioTarget(float3 rayOrigin, float3 rayDir, float distToOriginalOrigin, int audioTargetId)
     {
         //check against AABBs
@@ -486,10 +486,11 @@ public struct AudioRayTracerJobParallelBatched : IJobParallelForBatch
     ///ADD REF TO REFLECT RAY TO MAKE TUPLE SMALLER (REF RAYORIGIN AND REF RAY DIRETION)
     ///ADD REF TO REFLECT RAY TO MAKE TUPLE SMALLER (REF RAYORIGIN AND REF RAY DIRETION)
     ///ADD REF TO REFLECT RAY TO MAKE TUPLE SMALLER (REF RAYORIGIN AND REF RAY DIRETION)
-    [BurstCompile]
+
     /// <summary>
     /// Calculate the new ray direction and origin after a hit, based on the hit collider type, so it "bounces" of the hits surface.
     /// </summary>
+    [BurstCompile]
     private (float3 rayOrigin, float3 rayDir, float lostmaxRayDist) ReflectRay(ColliderType hitColliderType, float3 cRayOrigin, float3 cRayDir, ColliderAABBStruct hitAABB, ColliderOBBStruct hitOBB, ColliderSphereStruct hitSphere)
     {
         float3 normal = float3.zero;

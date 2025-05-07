@@ -52,7 +52,7 @@ public struct ProcessAudioDataJob : IJob
         AudioRayResult result;
         int lastRayAudioTargetId;
 
-        //collect hit counts, direction sums, and return positions
+        //collect hit counts, direction sums, and return hrtf_Positions
         for (int i = 0; i < rayCount; i++)
         {
             resultSetSize = rayResultCounts[i];
@@ -127,7 +127,7 @@ public struct ProcessAudioDataJob : IJob
                 strength = 0;
             }
 
-            // If we have return positions, use those to compute average direction
+            // If we have return hrtf_Positions, use those to compute average direction
             if (targetReturnCounts[audioTargetId] > 0)
             {
                 float3 avgPos = targetReturnPositionsTotal[audioTargetId] / targetReturnCounts[audioTargetId];

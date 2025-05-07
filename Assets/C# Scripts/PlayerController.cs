@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using Unity.Burst;
+using Unity.Mathematics;
 using UnityEngine;
 
 
@@ -23,7 +25,30 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         UpdateScheduler.Register(OnUpdate);
+
+        //FillListWithhrtf_IRData();
     }
+
+
+    //public int sampleCount = 128;
+    //public List<float> irSampleList = new List<float>();
+    //public List<float3> positionlisr = new List<float3>();
+
+    //private void FillListWithhrtf_IRData()
+    //{
+    //    irSampleList.Clear();  // Just to be safe
+    //    positionlisr.Clear();  // Just to be safe
+
+    //    int count = math.min(math.min(sampleCount, HRTFLoader.hrtf_IRData.Length), HRTFLoader.hrtf_Positions.Length);  // Clamp to prevent out of range
+
+    //    for (int i = 0; i < count; i++)
+    //    {
+    //        irSampleList.Add(HRTFLoader.hrtf_IRData[i]);
+    //        positionlisr.Add(HRTFLoader.hrtf_Positions[i]);
+    //    }
+
+    //    Debug.Log($"Filled list with {irSampleList.Count} IR values.");
+    //}
 
     [BurstCompile]
     private void OnUpdate()
