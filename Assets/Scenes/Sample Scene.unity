@@ -2385,11 +2385,11 @@ AudioSource:
   m_Pitch: 1
   Loop: 1
   Mute: 0
-  Spatialize: 1
+  Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.047638785
+  MinDistance: 0
   MaxDistance: 100
   Pan2D: 0.18
   rolloffMode: 2
@@ -2536,7 +2536,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 241768771}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7886d0870222614e93d39b99172ec98, type: 3}
   m_Name: 
@@ -16746,7 +16746,6 @@ GameObject:
   - component: {fileID: 1653812447}
   - component: {fileID: 1653812446}
   - component: {fileID: 1653812449}
-  - component: {fileID: 1653812450}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -16872,26 +16871,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!114 &1653812450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1653812445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 113e4aa2cd3db44d1ac0cb7e9794964b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  globalGainDb: 0
-  occlusionMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  stereoSpeakerModeEnabled: 0
-  recorderSeamless: 0
-  recorderSourceTag: Untagged
-  recorderFoldout: 1
 --- !u!1 &1687767170
 GameObject:
   m_ObjectHideFlags: 0
@@ -20688,6 +20667,8 @@ GameObject:
   - component: {fileID: 2039623048}
   - component: {fileID: 2039623047}
   - component: {fileID: 2039623053}
+  - component: {fileID: 2039623054}
+  - component: {fileID: 2039623055}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -20702,7 +20683,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2039623046}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43125da65af36234e9f87fdce9917aa8, type: 3}
   m_Name: 
@@ -20864,6 +20845,36 @@ MonoBehaviour:
   moveSpeed: 5
   camTransform: {fileID: 878239824}
   mouseSensitivity: 5
+--- !u!114 &2039623054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039623046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3f7e14be78e9ef4e910934482ee8aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotSpeedMin: 0
+  rotspeedMax: 0
+  interval: 0
+--- !u!114 &2039623055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039623046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b72d5903266ceae4c9e3f9824ae1f945, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jsonFileName: Assets/Resources/FINALY HRTF 2.json
+  hrtfDatabase:
+    positions: []
 --- !u!1 &2090723947
 GameObject:
   m_ObjectHideFlags: 0

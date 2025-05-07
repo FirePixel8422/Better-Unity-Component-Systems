@@ -10,9 +10,6 @@ public static class FileManager
     /// <summary>
     /// Method to get all file names of a specific type in a directory
     /// </summary>
-    /// <param name="directoryPath"></param>
-    /// <param name="fileExtension"></param>
-    /// <returns></returns>
     public static (bool, string[]) GetAllFileNamesFromDirectory(string directoryPath, string fileExtension = ".json")
     {
         // Construct the full path
@@ -50,11 +47,7 @@ public static class FileManager
     /// <summary>
     /// Method to get all files and deserialize into a NativeArray of structs
     /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <param name="directoryPath"></param>
-    /// <param name="fileExtension"></param>
-    /// <returns></returns>
-    public static async Task<(bool, T[])> GetAllFilesFromDirectory<T>(string directoryPath, string fileExtension = ".json")
+    public static async Task<(bool, T[])> GetAllFilesFromDirectoryAsync<T>(string directoryPath, string fileExtension = ".json")
     {
         // Get all file names with the specified extension
         (bool anyFileInDirectory, string[] fileNames) = GetAllFileNamesFromDirectory(directoryPath, fileExtension);
@@ -71,7 +64,7 @@ public static class FileManager
             {
                 string fullPath = $"{directoryPath}/{fileNames[i]}";
 
-                (bool success, T loadedStruct) = await LoadInfo<T>(fullPath);
+                (bool success, T loadedStruct) = await LoadInfoAsync<T>(fullPath);
 
                 if (success)
                 {
@@ -104,16 +97,14 @@ public static class FileManager
     /// <summary>
     /// Save method using JSON serialization
     /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <param name="saveData"></param>
-    /// <param name="pathPlusFileName"></param>
-    /// <param name="encryptFile"></param>
-    /// <returns></returns>
-    public async static Task SaveInfo<T>(T saveData, string pathPlusFileName, bool encryptFile = true)
+    public async static Task SaveInfoAsync<T>(T saveData, string pathPlusFileName, bool encryptFile = true)
     {
         try
         {
-            pathPlusFileName = EnsurePersistentDataPath(pathPlusFileName);
+            if (pathPlusFileName.StartsWith("Assets/") == false)
+            {
+                pathPlusFileName = EnsurePersistentDataPath(pathPlusFileName);
+            }
 
             // Separate the directory path and the file name from the provided directoryPlusFileName string
             string directoryPath = Path.GetDirectoryName(pathPlusFileName);
@@ -158,13 +149,12 @@ public static class FileManager
     /// <summary>
     /// Load method using JSON deserialization
     /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <param name="path"></param>
-    /// <param name="decryptFile"></param>
-    /// <returns></returns>
-    public async static Task<(bool, T)> LoadInfo<T>(string path, bool decryptFile = true)
+    public async static Task<(bool, T)> LoadInfoAsync<T>(string path, bool decryptFile = true)
     {
-        path = EnsurePersistentDataPath(path);
+        if (path.StartsWith("Assets/") == false)
+        {
+            path = EnsurePersistentDataPath(path);
+        }
         path = EnsureFileExtension(path);
 
         if (File.Exists(path))
@@ -202,8 +192,6 @@ public static class FileManager
     /// <summary>
     /// Delete a File
     /// </summary>
-    /// <param name="path"></param>
-    /// <returns></returns>
     public static bool DeleteFile(string path)
     {
         path = EnsurePersistentDataPath(path);
@@ -233,8 +221,6 @@ public static class FileManager
     /// <summary>
     /// Delete a Directory (Folder)
     /// </summary>
-    /// <param name="directoryPath"></param>
-    /// <returns></returns>
     public static bool DeleteDirectory(string directoryPath)
     {
         directoryPath = EnsurePersistentDataPath(directoryPath);
