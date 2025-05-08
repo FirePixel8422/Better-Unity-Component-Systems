@@ -14,27 +14,16 @@ public class AudioBinauralizer : MonoBehaviour
     [SerializeField] private float3 listenerRight;
     [SerializeField] private float3 listenerUp;
 
-    // Overlap-add buffers for edges
-    private NativeArray<float> overlapLeft;
-    private NativeArray<float> overlapRight;
-    private int overlapCount;
-
     #region Event register and unregister with OnEnable and OnDisable
 
     private void OnEnable()
     {
         UpdateScheduler.Register(OnUpdate);
-        // Initialize overlap buffers with max possible size (sampleCount)
-        int sampleCount = BinauralAudioManager.hrirDatabase.sampleCount;
-        overlapLeft = new NativeArray<float>(sampleCount, Allocator.Persistent);
-        overlapRight = new NativeArray<float>(sampleCount, Allocator.Persistent);
-        overlapCount = 0;
     }
+
     private void OnDisable()
     {
         UpdateScheduler.Unregister(OnUpdate);
-        overlapLeft.DisposeIfCreated();
-        overlapRight.DisposeIfCreated();
     }
 
     #endregion
@@ -63,12 +52,22 @@ public class AudioBinauralizer : MonoBehaviour
         var leftEarHRIR = new NativeArray<float>(sampleCount, Allocator.Temp);
         var rightEarHRIR = new NativeArray<float>(sampleCount, Allocator.Temp);
 
+
+
         float3 toSource = transformPos - listenerPos;
         toSource = math.normalize(toSource);
 
-        // Azimuth and elevation
-        float azimuth = math.degrees(math.atan2(math.dot(toSource, listenerRight), math.dot(toSource, listenerForward)));
+        // Correct projection: remove vertical component relative to listener's up
+        float3 toSourceFlat = toSource - math.dot(toSource, listenerUp) * listenerUp;
+        toSourceFlat = math.normalize(toSourceFlat);
+
+        // Azimuth in horizontal plane
+        float azimuth = math.degrees(math.atan2(math.dot(toSourceFlat, listenerRight), math.dot(toSourceFlat, listenerForward)));
+
+        // Elevation: angle above/below horizontal plane
         float elevation = math.degrees(math.asin(math.dot(toSource, listenerUp)));
+
+
 
         BinauralAudioManager.GetHRIRDataForDirection(azimuth, elevation, BinauralAudioManager.hrirDatabase, ref leftEarHRIR, ref rightEarHRIR);
 
@@ -80,13 +79,7 @@ public class AudioBinauralizer : MonoBehaviour
         {
             float leftSample = 0f;
             float rightSample = 0f;
-            // add overlap from previous block
-            if (i < overlapCount)
-            {
-                leftSample += overlapLeft[i];
-                rightSample += overlapRight[i];
-            }
-            // convolution
+
             for (int j = 0; j < sampleCount; j++)
             {
                 int frameIndex = i - j;
@@ -96,23 +89,19 @@ public class AudioBinauralizer : MonoBehaviour
                     rightSample += data[frameIndex * 2 + 1] * rightEarHRIR[j];
                 }
             }
+
             processedLeft[i] = leftSample;
             processedRight[i] = rightSample;
         }
 
-        // prepare new overlap
-        overlapCount = math.min(sampleCount, numFrames);
-        for (int i = 0; i < overlapCount; i++)
-        {
-            overlapLeft[i] = processedLeft[numFrames - overlapCount + i];
-            overlapRight[i] = processedRight[numFrames - overlapCount + i];
-        }
-
-        // write back
+        // Write back to audio buffer
         for (int i = 0; i < numFrames; i++)
         {
             data[i * 2] = processedLeft[i];
             data[i * 2 + 1] = processedRight[i];
+
+            data[i * 2] = math.clamp(processedLeft[i], -1f, 1f);
+            data[i * 2 + 1] = math.clamp(processedRight[i], -1f, 1f);
         }
 
         leftEarHRIR.Dispose();

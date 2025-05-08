@@ -111,7 +111,7 @@ public struct ProcessAudioDataJob : IJob
                 totalMuffleRayhits += muffleRayHits[totalAudioTargets * i + audioTargetId];
             }
             //set muffleRayHits of current audiotargetId to the totalMuffleRayhits
-            muffle = (float)totalMuffleRayhits / rayCount;
+            muffle = (float)totalMuffleRayhits / (rayCount * maxRayHits);
 
 
             //if audiotarget was hit by at least 1 ray

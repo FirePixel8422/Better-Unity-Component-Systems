@@ -110,7 +110,7 @@ public class BinauralAudioManager : MonoBehaviour
 
         // Fetch the corresponding HRIR data
         int sampleCount = hrirDatabase.sampleCount;
-        int index = elevationIndex * hrirDatabase.azimuthCount + azimuthIndex;
+        int index = azimuthIndex * hrirDatabase.elevationCount + elevationIndex;
 
         // Manually copy the HRIR data for both ears (left and right) to avoid using CopyFrom
         for (int i = 0; i < sampleCount; i++)
@@ -142,6 +142,11 @@ public class BinauralAudioManager : MonoBehaviour
         // Map elevation to the nearest index
         elevationIndex = (int)((elevation + 90f) / 180f * elevationCount);
     }
+
+
+
+
+
 
 
 

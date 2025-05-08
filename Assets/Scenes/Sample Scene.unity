@@ -168,26 +168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &6607423
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -285,26 +265,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &29217372
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -422,17 +382,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes: []
-  spheres:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    radius: 0.5
-    absorption: 0
-    audioTargetId: 0
-  groupId: 0
 --- !u!23 &30570194
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -569,26 +518,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &64103892
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -685,26 +614,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &94576067
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -801,26 +710,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &95674061
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -917,26 +806,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &102083655
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1033,26 +902,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &103621882
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1149,26 +998,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &104185565
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1250,26 +1079,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &117374556
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1366,20 +1175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    absorption: -1
-    audioTargetId: 0
-  orientedBoxes: []
-  spheres: []
-  groupId: 0
 --- !u!23 &127430538
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1476,26 +1271,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &129603693
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1607,26 +1382,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &141149378
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1763,26 +1518,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &192064608
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1879,17 +1614,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes: []
-  spheres:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    radius: 0.5
-    absorption: 0
-    audioTargetId: 0
-  groupId: 0
 --- !u!23 &192236590
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1986,26 +1710,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &193858076
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2102,26 +1806,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &216976212
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2216,10 +1900,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 222297317}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
+  m_Script: {fileID: 11500000, guid: e521f23679650564f988c604f4bef3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes:
+  axisAlignedBoxes: []
+  orientedBoxes:
   - center:
       x: 0
       y: 0
@@ -2228,9 +1913,14 @@ MonoBehaviour:
       x: 0.5
       y: 0.5
       z: 0.5
+    rotation:
+      value:
+        x: 0
+        y: 0
+        z: 0
+        w: 1
     absorption: -1
     audioTargetId: 0
-  orientedBoxes: []
   spheres: []
   groupId: 0
 --- !u!23 &222297320
@@ -2380,9 +2070,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 6fb8b457ba5910b44ab30e4f2c89c702,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 8bb24c1766f979d4393689938f8283bd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f6a730af53cfb874ca653c2c96bc3dcd, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2643,7 +2333,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 241768771}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f869e5abad9be74eb03b92dfe49c6e7, type: 3}
   m_Name: 
@@ -2759,26 +2449,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &250552650
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2873,10 +2543,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 259388597}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
+  m_Script: {fileID: 11500000, guid: e521f23679650564f988c604f4bef3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes:
+  axisAlignedBoxes: []
+  orientedBoxes:
   - center:
       x: 0
       y: 0
@@ -2885,9 +2556,14 @@ MonoBehaviour:
       x: 0.5
       y: 0.5
       z: 0.5
+    rotation:
+      value:
+        x: 0
+        y: 0
+        z: 0
+        w: 1
     absorption: -1
     audioTargetId: 0
-  orientedBoxes: []
   spheres: []
   groupId: 0
 --- !u!23 &259388600
@@ -3007,26 +2683,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &266169660
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3123,26 +2779,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &269437301
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3239,26 +2875,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &278854983
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3355,26 +2971,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &309206365
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3536,10 +3132,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 327348722}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
+  m_Script: {fileID: 11500000, guid: e521f23679650564f988c604f4bef3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes:
+  axisAlignedBoxes: []
+  orientedBoxes:
   - center:
       x: 0
       y: 0
@@ -3548,9 +3145,14 @@ MonoBehaviour:
       x: 0.5
       y: 0.5
       z: 0.5
+    rotation:
+      value:
+        x: 0
+        y: 0
+        z: 0
+        w: 1
     absorption: -1
     audioTargetId: 0
-  orientedBoxes: []
   spheres: []
   groupId: 0
 --- !u!23 &327348726
@@ -3649,26 +3251,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &350203525
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3765,26 +3347,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &373836954
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3881,26 +3443,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &397701635
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3997,26 +3539,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &407704577
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4113,26 +3635,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &411037559
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4273,26 +3775,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &433316990
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4389,26 +3871,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &438895798
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4506,26 +3968,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &441527456
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4643,17 +4085,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes: []
-  spheres:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    radius: 0.5
-    absorption: 0
-    audioTargetId: 0
-  groupId: 0
 --- !u!23 &446557228
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4750,26 +4181,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &453038874
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4866,26 +4277,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &476167768
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4982,26 +4373,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &486118872
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5096,10 +4467,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 516096226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
+  m_Script: {fileID: 11500000, guid: e521f23679650564f988c604f4bef3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes:
+  axisAlignedBoxes: []
+  orientedBoxes:
   - center:
       x: 0
       y: 0
@@ -5108,9 +4480,14 @@ MonoBehaviour:
       x: 0.5
       y: 0.5
       z: 0.5
+    rotation:
+      value:
+        x: 0
+        y: 0
+        z: 0
+        w: 1
     absorption: -1
     audioTargetId: 0
-  orientedBoxes: []
   spheres: []
   groupId: 0
 --- !u!23 &516096229
@@ -5270,26 +4647,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &558519477
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5387,26 +4744,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &559176961
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5603,26 +4940,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &590901750
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5719,26 +5036,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &599176485
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5835,26 +5132,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &639254635
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5951,26 +5228,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &642746473
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6067,26 +5324,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &644672238
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6223,26 +5460,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &656986925
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6339,26 +5556,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &682239544
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6606,41 +5803,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7886d0870222614e93d39b99172ec98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes:
-  - center:
-      x: 0
-      y: 0.25
-      z: 0
-    size:
-      x: 1.25
-      y: 0.75
-      z: 1.25
-    absorption: 1
-    audioTargetId: 0
-  orientedBoxes: []
-  spheres: []
-  groupId: 0
-  settings:
-    volume: 0
-    muffle: 0
-    panStereo: 0
-  baseVolume: 0
-  volumeUpdateSpeed: 0.25
-  lowPassUpdateSpeed: 2250
-  id: 0
-  source: {fileID: 0}
-  lowPass: {fileID: 0}
-  highPass: {fileID: 0}
-  reverb: {fileID: 0}
-  direction:
-    x: 0
-    y: 0
-    z: 0
-  curve:
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!23 &702053932
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6758,26 +5920,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &716759537
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6874,26 +6016,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &719378116
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6990,26 +6112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &760490454
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7060,6 +6162,54 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 760490451}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &768564310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 768564311}
+  - component: {fileID: 768564312}
+  m_Layer: 0
+  m_Name: Rotator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &768564311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768564310}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.23887235, z: -0, w: 0.971051}
+  m_LocalPosition: {x: 22.21, y: 0.95379996, z: -0.78}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2039623052}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &768564312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768564310}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3f7e14be78e9ef4e910934482ee8aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotSpeedMin: 20
+  rotspeedMax: 50
+  interval: 3
 --- !u!1 &774323084
 GameObject:
   m_ObjectHideFlags: 0
@@ -7106,26 +6256,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &774323087
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7207,26 +6337,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &777541350
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7378,26 +6488,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &779273259
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7494,26 +6584,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &798075173
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7610,26 +6680,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &799127575
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7771,17 +6821,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes: []
-  spheres:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    radius: 0.5
-    absorption: 0
-    audioTargetId: 0
-  groupId: 0
 --- !u!23 &805505997
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7878,26 +6917,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &834538421
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7994,26 +7013,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &841243951
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8110,26 +7109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &850229580
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8226,26 +7205,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &865550802
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8454,26 +7413,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &882132659
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8570,26 +7509,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &886183695
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8686,26 +7605,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &943164212
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8803,26 +7702,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &947433365
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8940,26 +7819,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &952476745
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9056,26 +7915,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &952837476
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9172,26 +8011,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &955850633
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9288,26 +8107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &958316058
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9404,17 +8203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes: []
-  spheres:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    radius: 0.5
-    absorption: 0
-    audioTargetId: 0
-  groupId: 0
 --- !u!23 &962315849
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9511,26 +8299,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &964128242
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9627,26 +8395,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &970308685
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9743,26 +8491,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &974106116
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9859,26 +8587,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &975686748
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9975,26 +8683,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &980483925
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10091,26 +8779,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &995698317
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10207,26 +8875,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1000328309
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10308,26 +8956,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1005671291
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10439,26 +9067,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1007143621
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10555,26 +9163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1027633891
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10671,26 +9259,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1030488009
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10787,17 +9355,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes: []
-  spheres:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    radius: 0.5
-    absorption: 0
-    audioTargetId: 0
-  groupId: 0
 --- !u!23 &1035452493
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10894,26 +9451,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1041929521
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11010,26 +9547,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1050254008
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11124,10 +9641,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1062018010}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
+  m_Script: {fileID: 11500000, guid: e521f23679650564f988c604f4bef3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes:
+  axisAlignedBoxes: []
+  orientedBoxes:
   - center:
       x: 0
       y: 0
@@ -11136,9 +9654,14 @@ MonoBehaviour:
       x: 0.5
       y: 0.5
       z: 0.5
+    rotation:
+      value:
+        x: 0
+        y: 0
+        z: 0
+        w: 1
     absorption: -1
     audioTargetId: 0
-  orientedBoxes: []
   spheres: []
   groupId: 0
 --- !u!23 &1062018013
@@ -11258,26 +9781,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1067560551
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11374,17 +9877,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes: []
-  spheres:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    radius: 0.5
-    absorption: 0
-    audioTargetId: 0
-  groupId: 0
 --- !u!23 &1069526196
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11481,26 +9973,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1074138737
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11597,26 +10069,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1082100538
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11713,26 +10165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1082911726
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11829,26 +10261,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1100736750
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11945,17 +10357,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes: []
-  spheres:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    radius: 0.5
-    absorption: 0
-    audioTargetId: 0
-  groupId: 0
 --- !u!23 &1104576502
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12052,26 +10453,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1107461688
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12168,26 +10549,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1111078139
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12324,20 +10685,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    absorption: -1
-    audioTargetId: 0
-  orientedBoxes: []
-  spheres: []
-  groupId: 0
 --- !u!23 &1156816057
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12435,26 +10782,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1170413191
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12570,10 +10897,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1191049956}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
+  m_Script: {fileID: 11500000, guid: e521f23679650564f988c604f4bef3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes:
+  axisAlignedBoxes: []
+  orientedBoxes:
   - center:
       x: 0
       y: 0
@@ -12582,9 +10910,14 @@ MonoBehaviour:
       x: 0.5
       y: 0.5
       z: 0.5
+    rotation:
+      value:
+        x: 0
+        y: 0
+        z: 0
+        w: 1
     absorption: -1
     audioTargetId: 0
-  orientedBoxes: []
   spheres: []
   groupId: 0
 --- !u!23 &1191049959
@@ -12704,26 +11037,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1194012908
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12820,26 +11133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1205314903
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12936,17 +11229,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes: []
-  spheres:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    radius: 0.5
-    absorption: 0
-    audioTargetId: 0
-  groupId: 0
 --- !u!23 &1223333516
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13043,26 +11325,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1225292982
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13159,26 +11421,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1227332541
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13275,26 +11517,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1247454964
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13391,26 +11613,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1249325921
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13507,26 +11709,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1264626746
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13623,17 +11805,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes: []
-  spheres:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    radius: 0.5
-    absorption: 0
-    audioTargetId: 0
-  groupId: 0
 --- !u!23 &1277148836
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13730,26 +11901,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1327807635
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13846,26 +11997,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1333680343
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13963,26 +12094,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1344035006
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14100,26 +12211,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1361220238
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14216,26 +12307,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1367962780
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14333,17 +12404,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes: []
-  spheres:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    radius: 0.5
-    absorption: 0
-    audioTargetId: 0
-  groupId: 0
 --- !u!23 &1369823344
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14480,10 +12540,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1375711491}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
+  m_Script: {fileID: 11500000, guid: e521f23679650564f988c604f4bef3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes:
+  axisAlignedBoxes: []
+  orientedBoxes:
   - center:
       x: 0
       y: 0
@@ -14492,9 +12553,14 @@ MonoBehaviour:
       x: 0.5
       y: 0.5
       z: 0.5
+    rotation:
+      value:
+        x: 0
+        y: 0
+        z: 0
+        w: 1
     absorption: -1
     audioTargetId: 0
-  orientedBoxes: []
   spheres: []
   groupId: 0
 --- !u!23 &1375711495
@@ -14593,26 +12659,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1382396553
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14709,26 +12755,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1397130500
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14825,26 +12851,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1397645560
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14941,26 +12947,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1444681622
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15057,26 +13043,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1452813432
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15192,10 +13158,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1458046728}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
+  m_Script: {fileID: 11500000, guid: e521f23679650564f988c604f4bef3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes:
+  axisAlignedBoxes: []
+  orientedBoxes:
   - center:
       x: 0
       y: 0
@@ -15204,9 +13171,14 @@ MonoBehaviour:
       x: 0.5
       y: 0.5
       z: 0.5
+    rotation:
+      value:
+        x: 0
+        y: 0
+        z: 0
+        w: 1
     absorption: -1
     audioTargetId: 0
-  orientedBoxes: []
   spheres: []
   groupId: 0
 --- !u!23 &1458046732
@@ -15290,26 +13262,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1459303130
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15421,26 +13373,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1487424031
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15535,10 +13467,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1488041906}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
+  m_Script: {fileID: 11500000, guid: e521f23679650564f988c604f4bef3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes:
+  axisAlignedBoxes: []
+  orientedBoxes:
   - center:
       x: 0
       y: 0
@@ -15547,9 +13480,14 @@ MonoBehaviour:
       x: 0.5
       y: 0.5
       z: 0.5
+    rotation:
+      value:
+        x: 0
+        y: 0
+        z: 0
+        w: 1
     absorption: -1
     audioTargetId: 0
-  orientedBoxes: []
   spheres: []
   groupId: 0
 --- !u!23 &1488041909
@@ -15669,26 +13607,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1535602533
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15785,26 +13703,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1553274396
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15902,26 +13800,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1553660415
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16039,26 +13917,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1580822620
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16155,26 +14013,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1592826648
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16271,26 +14109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1599656063
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16427,26 +14245,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1613689066
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16543,17 +14341,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes: []
-  spheres:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    radius: 0.5
-    absorption: 0
-    audioTargetId: 0
-  groupId: 0
 --- !u!23 &1617688130
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16650,17 +14437,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes: []
-  spheres:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    radius: 0.5
-    absorption: 0
-    audioTargetId: 0
-  groupId: 0
 --- !u!23 &1622322175
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16757,26 +14533,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1630862518
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16913,7 +14669,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653812445}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.66999996, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -17010,26 +14766,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1687767173
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17126,26 +14862,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1739547086
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17242,26 +14958,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1741113215
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17358,26 +15054,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1751086141
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17474,26 +15150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1753190393
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17590,26 +15246,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1757321141
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17706,17 +15342,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes: []
-  spheres:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    radius: 0.5
-    absorption: 0
-    audioTargetId: 0
-  groupId: 0
 --- !u!23 &1777811176
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17853,26 +15478,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1779971425
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17969,26 +15574,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1791778863
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18085,26 +15670,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1794607335
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18201,26 +15766,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1796137858
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18317,26 +15862,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1799781019
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18433,26 +15958,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1818302539
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18549,26 +16054,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1826267504
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18665,26 +16150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1858868416
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18781,26 +16246,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1882957171
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18897,26 +16342,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1892082480
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19013,26 +16438,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1893763853
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19167,10 +16572,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1907513786}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
+  m_Script: {fileID: 11500000, guid: e521f23679650564f988c604f4bef3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes:
+  axisAlignedBoxes: []
+  orientedBoxes:
   - center:
       x: 0
       y: 0
@@ -19179,9 +16585,14 @@ MonoBehaviour:
       x: 0.5
       y: 0.5
       z: 0.5
+    rotation:
+      value:
+        x: 0
+        y: 0
+        z: 0
+        w: 1
     absorption: -1
     audioTargetId: 0
-  orientedBoxes: []
   spheres: []
   groupId: 0
 --- !u!23 &1907513789
@@ -19302,26 +16713,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1913523953
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19458,10 +16849,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1920798008}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
+  m_Script: {fileID: 11500000, guid: e521f23679650564f988c604f4bef3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes:
+  axisAlignedBoxes: []
+  orientedBoxes:
   - center:
       x: 0
       y: 0
@@ -19470,9 +16862,14 @@ MonoBehaviour:
       x: 0.5
       y: 0.5
       z: 0.5
+    rotation:
+      value:
+        x: 0
+        y: 0
+        z: 0
+        w: 1
     absorption: -1
     audioTargetId: 0
-  orientedBoxes: []
   spheres: []
   groupId: 0
 --- !u!23 &1920798012
@@ -19690,26 +17087,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1950334049
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19828,26 +17205,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1962197972
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20005,26 +17362,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1976336800
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20121,26 +17458,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1989560738
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20237,26 +17554,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &1992333998
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20396,26 +17693,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &2020495509
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20495,8 +17772,8 @@ Transform:
   m_GameObject: {fileID: 2037342793}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.004765509, z: -0, w: 0.9999887}
-  m_LocalPosition: {x: 5.08, y: 3, z: 7.95}
-  m_LocalScale: {x: 0.1, y: 6.00015, z: 4.5268254}
+  m_LocalPosition: {x: 5.078809, y: 3, z: 7.8250055}
+  m_LocalScale: {x: 0.1, y: 6.00015, z: 4.2769446}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 429698494}
@@ -20531,10 +17808,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2037342793}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
+  m_Script: {fileID: 11500000, guid: e521f23679650564f988c604f4bef3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes:
+  axisAlignedBoxes: []
+  orientedBoxes:
   - center:
       x: 0
       y: 0
@@ -20543,9 +17821,14 @@ MonoBehaviour:
       x: 0.5
       y: 0.5
       z: 0.5
+    rotation:
+      value:
+        x: 0
+        y: 0
+        z: 0
+        w: 1
     absorption: -1
     audioTargetId: 0
-  orientedBoxes: []
   spheres: []
   groupId: 0
 --- !u!23 &2037342797
@@ -20644,17 +17927,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes: []
-  spheres:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    radius: 0.5
-    absorption: 0
-    audioTargetId: 0
-  groupId: 0
 --- !u!23 &2037746633
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20760,7 +18032,6 @@ GameObject:
   - component: {fileID: 2039623048}
   - component: {fileID: 2039623055}
   - component: {fileID: 2039623053}
-  - component: {fileID: 2039623054}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -20877,12 +18148,12 @@ Transform:
   m_GameObject: {fileID: 2039623046}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.08, y: 0.9937997, z: -9.6}
+  m_LocalPosition: {x: -0.42, y: 0.039999723, z: -9.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 878239824}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 768564311}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2039623053
 MonoBehaviour:
@@ -20899,21 +18170,6 @@ MonoBehaviour:
   moveSpeed: 5
   camTransform: {fileID: 878239824}
   mouseSensitivity: 5
---- !u!114 &2039623054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2039623046}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3f7e14be78e9ef4e910934482ee8aa0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotSpeedMin: 0
-  rotspeedMax: 0
-  interval: 0
 --- !u!114 &2039623055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20921,7 +18177,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2039623046}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d14e0eebbfc9f5b4685365d70167ab2b, type: 3}
   m_Name: 
@@ -20930,7 +18186,7 @@ MonoBehaviour:
     x: 0
     y: 0
     z: 0
-  rayCount: 500
+  rayCount: 1250
   maxBounces: 12
   maxRayDist: 150
   waitForJobCompletion: 1
@@ -20998,17 +18254,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes: []
-  spheres:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    radius: 0.5
-    absorption: 0
-    audioTargetId: 0
-  groupId: 0
 --- !u!23 &2090723950
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21105,26 +18350,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &2091945780
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21221,26 +18446,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &2103643157
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21335,10 +18540,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2111826282}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
+  m_Script: {fileID: 11500000, guid: e521f23679650564f988c604f4bef3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes:
+  axisAlignedBoxes: []
+  orientedBoxes:
   - center:
       x: 0
       y: 0
@@ -21347,9 +18553,14 @@ MonoBehaviour:
       x: 0.5
       y: 0.5
       z: 0.5
+    rotation:
+      value:
+        x: 0
+        y: 0
+        z: 0
+        w: 1
     absorption: -1
     audioTargetId: 0
-  orientedBoxes: []
   spheres: []
   groupId: 0
 --- !u!23 &2111826285
@@ -21469,26 +18680,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: 0
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &2114451461
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21585,26 +18776,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &2129619987
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21701,26 +18872,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8496d9ce21bd0f41b292db98e6ab0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisAlignedBoxes: []
-  orientedBoxes:
-  - center:
-      x: 0
-      y: 0
-      z: 0
-    size:
-      x: 0.5
-      y: 0.5
-      z: 0.5
-    rotation:
-      value:
-        x: 0
-        y: 0
-        z: 0
-        w: 1
-    absorption: -1
-    audioTargetId: 0
-  spheres: []
-  groupId: 0
 --- !u!23 &2135007292
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21781,5 +18932,5 @@ SceneRoots:
   - {fileID: 561182754}
   - {fileID: 429698494}
   - {fileID: 241768773}
-  - {fileID: 2039623052}
   - {fileID: 805118487}
+  - {fileID: 768564311}
