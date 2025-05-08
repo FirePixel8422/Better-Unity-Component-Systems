@@ -1903,6 +1903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e521f23679650564f988c604f4bef3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spheres: []
   axisAlignedBoxes: []
   orientedBoxes:
   - center:
@@ -1919,9 +1920,8 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    absorption: -1
+    thicknessMultiplier: 0
     audioTargetId: 0
-  spheres: []
   groupId: 0
 --- !u!23 &222297320
 MeshRenderer:
@@ -2072,7 +2072,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 8bb24c1766f979d4393689938f8283bd, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2303,6 +2303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a20c09995e9a1784eaad3c4c24800f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stereoSeparation: 1
   transformPos:
     x: 0
     y: 0
@@ -2335,6 +2336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f869e5abad9be74eb03b92dfe49c6e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spheres: []
   axisAlignedBoxes: []
   orientedBoxes:
   - center:
@@ -2351,9 +2353,8 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    absorption: -1
+    thicknessMultiplier: 0
     audioTargetId: 0
-  spheres: []
   groupId: 0
   settings:
     volume: 0
@@ -2543,6 +2544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e521f23679650564f988c604f4bef3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spheres: []
   axisAlignedBoxes: []
   orientedBoxes:
   - center:
@@ -2559,9 +2561,8 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    absorption: -1
+    thicknessMultiplier: 0
     audioTargetId: 0
-  spheres: []
   groupId: 0
 --- !u!23 &259388600
 MeshRenderer:
@@ -3132,6 +3133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e521f23679650564f988c604f4bef3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spheres: []
   axisAlignedBoxes: []
   orientedBoxes:
   - center:
@@ -3148,9 +3150,8 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    absorption: -1
+    thicknessMultiplier: 0
     audioTargetId: 0
-  spheres: []
   groupId: 0
 --- !u!23 &327348726
 MeshRenderer:
@@ -4467,6 +4468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e521f23679650564f988c604f4bef3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spheres: []
   axisAlignedBoxes: []
   orientedBoxes:
   - center:
@@ -4483,9 +4485,8 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    absorption: -1
+    thicknessMultiplier: 0
     audioTargetId: 0
-  spheres: []
   groupId: 0
 --- !u!23 &516096229
 MeshRenderer:
@@ -9641,6 +9642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e521f23679650564f988c604f4bef3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spheres: []
   axisAlignedBoxes: []
   orientedBoxes:
   - center:
@@ -9657,9 +9659,8 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    absorption: -1
+    thicknessMultiplier: 0
     audioTargetId: 0
-  spheres: []
   groupId: 0
 --- !u!23 &1062018013
 MeshRenderer:
@@ -10897,6 +10898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e521f23679650564f988c604f4bef3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spheres: []
   axisAlignedBoxes: []
   orientedBoxes:
   - center:
@@ -10913,9 +10915,8 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    absorption: -1
+    thicknessMultiplier: 0
     audioTargetId: 0
-  spheres: []
   groupId: 0
 --- !u!23 &1191049959
 MeshRenderer:
@@ -12540,6 +12541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e521f23679650564f988c604f4bef3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spheres: []
   axisAlignedBoxes: []
   orientedBoxes:
   - center:
@@ -12556,9 +12558,8 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    absorption: -1
+    thicknessMultiplier: 0
     audioTargetId: 0
-  spheres: []
   groupId: 0
 --- !u!23 &1375711495
 MeshRenderer:
@@ -13158,6 +13159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e521f23679650564f988c604f4bef3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spheres: []
   axisAlignedBoxes: []
   orientedBoxes:
   - center:
@@ -13174,9 +13176,8 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    absorption: -1
+    thicknessMultiplier: 0
     audioTargetId: 0
-  spheres: []
   groupId: 0
 --- !u!23 &1458046732
 MeshRenderer:
@@ -13467,6 +13468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e521f23679650564f988c604f4bef3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spheres: []
   axisAlignedBoxes: []
   orientedBoxes:
   - center:
@@ -13483,9 +13485,8 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    absorption: -1
+    thicknessMultiplier: 0
     audioTargetId: 0
-  spheres: []
   groupId: 0
 --- !u!23 &1488041909
 MeshRenderer:
@@ -16572,6 +16573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e521f23679650564f988c604f4bef3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spheres: []
   axisAlignedBoxes: []
   orientedBoxes:
   - center:
@@ -16588,9 +16590,8 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    absorption: -1
+    thicknessMultiplier: 0
     audioTargetId: 0
-  spheres: []
   groupId: 0
 --- !u!23 &1907513789
 MeshRenderer:
@@ -16849,6 +16850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e521f23679650564f988c604f4bef3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spheres: []
   axisAlignedBoxes: []
   orientedBoxes:
   - center:
@@ -16865,9 +16867,8 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    absorption: -1
+    thicknessMultiplier: 0
     audioTargetId: 0
-  spheres: []
   groupId: 0
 --- !u!23 &1920798012
 MeshRenderer:
@@ -17808,6 +17809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e521f23679650564f988c604f4bef3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spheres: []
   axisAlignedBoxes: []
   orientedBoxes:
   - center:
@@ -17824,9 +17826,8 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    absorption: -1
+    thicknessMultiplier: 0
     audioTargetId: 0
-  spheres: []
   groupId: 0
 --- !u!23 &2037342797
 MeshRenderer:
@@ -18540,6 +18541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e521f23679650564f988c604f4bef3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spheres: []
   axisAlignedBoxes: []
   orientedBoxes:
   - center:
@@ -18556,9 +18558,8 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    absorption: -1
+    thicknessMultiplier: 0
     audioTargetId: 0
-  spheres: []
   groupId: 0
 --- !u!23 &2111826285
 MeshRenderer:

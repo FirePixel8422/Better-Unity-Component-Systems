@@ -1,30 +1,25 @@
 using System.IO;
-using Unity.Burst;
 using Unity.Collections;
 using Unity.Mathematics;
 using UnityEngine;
 
 
-[BurstCompile]
 public class BinauralAudioManager : MonoBehaviour
 {
-    public static BinauralAudioManager Instance { get; private set; }
-
     [SerializeField] private string hrtfName = "Better HRTF.json";
 
     public static HRIRDatabase hrirDatabase;
+    
 
 
-    private void Awake()
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    private static void LoadHRIRDatabase()
     {
-        Instance = this;
+        //bit cheesy but this is the only way to ensure the manager is loaded before any other scripts
+        BinauralAudioManager scriptInstance = FindObjectOfType<BinauralAudioManager>();
 
-        LoadHRIRDatabase();
-    }
 
-    private void LoadHRIRDatabase()
-    {
-        string path = Path.Combine(Application.streamingAssetsPath, hrtfName);
+        string path = Path.Combine(Application.streamingAssetsPath, scriptInstance.hrtfName);
         if (!File.Exists(path))
         {
             Debug.LogError($"HRIR file not found at: {path}");
@@ -68,40 +63,8 @@ public class BinauralAudioManager : MonoBehaviour
 
 
 
-
-    [BurstCompile]
-    public static void ApplyHRIRToAudio(in NativeArray<float> leftEarHRIR, in NativeArray<float> rightEarHRIR, in NativeArray<float> audioSignal, ref NativeArray<float> outputLeftEar, ref NativeArray<float> outputRightEar)
-    {
-        int sampleCount = leftEarHRIR.Length;
-
-        // Convolution: Apply the HRIR to the audio signal for both left and right ears
-        for (int i = 0; i < audioSignal.Length; i++)
-        {
-            // Apply left ear HRIR
-            for (int j = 0; j < sampleCount; j++)
-            {
-                if (i - j >= 0) // Make sure we don't go out of bounds
-                {
-                    outputLeftEar[i] += audioSignal[i - j] * leftEarHRIR[j];
-                }
-            }
-
-            // Apply right ear HRIR
-            for (int j = 0; j < sampleCount; j++)
-            {
-                if (i - j >= 0) // Make sure we don't go out of bounds
-                {
-                    outputRightEar[i] += audioSignal[i - j] * rightEarHRIR[j];
-                }
-            }
-        }
-    }
-
-
-
     // Sample function to get HRIR data for a given direction
-    [BurstCompile]
-    public static void GetHRIRDataForDirection(float azimuth, float elevation, in HRIRDatabase hrirDatabase, ref NativeArray<float> leftEarHRIR, ref NativeArray<float> rightEarHRIR)
+    public static void GetHRIRDataForDirection(float azimuth, float elevation, float[] leftEarHRIR, float[] rightEarHRIR)
     {
         // Convert the direction (azimuth, elevation) to indices
         int elevationIndex = 0;
@@ -120,7 +83,6 @@ public class BinauralAudioManager : MonoBehaviour
         }
     }
 
-    [BurstCompile]
     private static void DirectionToIndices(float azimuth, float elevation, int elevationCount, int azimuthCount, ref int elevationIndex, ref int azimuthIndex)
     {
         if(azimuth > 180f)
@@ -146,42 +108,52 @@ public class BinauralAudioManager : MonoBehaviour
 
 
 
-    [BurstCompile]
-    public static void ConvolveWithOverlap(
-    in NativeArray<float> input,
-    in NativeArray<float> hrir,
-    ref NativeArray<float> overlapBuffer,
-    ref NativeArray<float> output)
+    public static void ConvolveWithOverlap(float[] inputLeft, float[] inputRight, float[] hrirLeft, float[] hrirRight, float[] overlapLeft, float[] overlapRight, float[] outputLeft, float[] outputRight)
     {
-        int numFrames = input.Length;
-        int hrirLength = hrir.Length;
+        int numFrames = inputLeft.Length; // assuming both input arrays have the same length
+        int hrirLength = hrirLeft.Length;
 
-        // Convolve current buffer + overlap
+        int overlapLength = overlapLeft.Length;
+
+        // Convolve both left and right channels in the same loop
         for (int i = 0; i < numFrames; i++)
         {
-            float sample = 0f;
+            float leftSample = 0f;
+            float rightSample = 0f;
 
-            // Apply HRIR over current input
             for (int j = 0; j < hrirLength; j++)
             {
                 int inputIndex = i - j;
+
+                // Left channel
                 if (inputIndex >= 0)
-                    sample += input[inputIndex] * hrir[j];
+                    leftSample += inputLeft[inputIndex] * hrirLeft[j];
                 else
-                    sample += overlapBuffer[overlapBuffer.Length + inputIndex] * hrir[j];
+                    leftSample += overlapLeft[overlapLength + inputIndex] * hrirLeft[j];
+
+                // Right channel
+                if (inputIndex >= 0)
+                    rightSample += inputRight[inputIndex] * hrirRight[j];
+                else
+                    rightSample += overlapRight[overlapLength + inputIndex] * hrirRight[j];
             }
 
-            output[i] = sample;
+            // Store the processed samples in the output arrays
+            outputLeft[i] = leftSample;
+            outputRight[i] = rightSample;
         }
 
-        // Update overlap buffer for next frame
-        int overlapLength = overlapBuffer.Length;
+        // Update overlap buffer for next frame (for left and right channels)
         for (int i = 0; i < overlapLength; i++)
         {
-            int srcIndex = numFrames - overlapLength + i;
-            overlapBuffer[i] = (srcIndex >= 0) ? input[srcIndex] : 0f;
+            int leftSrcIndex = numFrames - overlapLength + i;
+            overlapLeft[i] = (leftSrcIndex >= 0) ? inputLeft[leftSrcIndex] : 0f;
+
+            int rightSrcIndex = numFrames - overlapLength + i;
+            overlapRight[i] = (rightSrcIndex >= 0) ? inputRight[rightSrcIndex] : 0f;
         }
     }
+
 
 
 
@@ -189,10 +161,7 @@ public class BinauralAudioManager : MonoBehaviour
     private void OnDestroy()
     {
         // Clean up using the extension method
-        hrirDatabase.hrir_l.DisposeIfCreated();
-        hrirDatabase.hrir_r.DisposeIfCreated();
-        hrirDatabase.elevations.DisposeIfCreated();
-        hrirDatabase.azimuths.DisposeIfCreated();
+        hrirDatabase.Dispose();
 
         // Nullify the database to avoid accidental access after disposal
         hrirDatabase = default;

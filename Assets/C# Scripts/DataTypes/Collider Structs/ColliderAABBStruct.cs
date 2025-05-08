@@ -10,8 +10,8 @@ public struct ColliderAABBStruct
     public float3 center;
     public float3 size;
 
-    [Range(-1, 1)]
-    public float absorption;
+    [Header("How thick is this wall for permeation calculations")]
+    public float thicknessMultiplier;
 
     [HideInInspector]
     public int audioTargetId;

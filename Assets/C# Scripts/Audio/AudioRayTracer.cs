@@ -167,7 +167,7 @@ public class AudioRayTracer : MonoBehaviour
     [SerializeField] private int batchSize = 4048;
     [SerializeField] private int maxBatchCount = 3;
 
-    private AudioRayTracerJobParallelBatched audioRayTraceJob;
+    private AudioRayTracerJobParallelBatchedOld audioRayTraceJob;
     private ProcessAudioDataJob calculateAudioTargetDataJob;
     private JobHandle mainJobHandle;
 
@@ -234,7 +234,7 @@ public class AudioRayTracer : MonoBehaviour
         #region Raycasting Job ParallelBatched
 
         //create raytrace job and fire it
-        audioRayTraceJob = new AudioRayTracerJobParallelBatched
+        audioRayTraceJob = new AudioRayTracerJobParallelBatchedOld
         {
             rayOrigin = (float3)transform.position + rayOrigin,
             rayDirections = rayDirections,
@@ -252,7 +252,7 @@ public class AudioRayTracer : MonoBehaviour
             results = rayResults,
             resultCounts = rayResultCounts,
 
-            returnRayDirections = returnRayDirections,
+            echoRayDirections = returnRayDirections,
             
             muffleRayHits = muffleRayHits,
         };

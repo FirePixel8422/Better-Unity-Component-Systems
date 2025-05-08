@@ -6,7 +6,7 @@ using Unity.Mathematics;
 
 
 [BurstCompile]
-public struct AudioRayTracerJobParallelBatched : IJobParallelForBatch
+public struct AudioRayTracerJobParallelBatchedOld : IJobParallelForBatch
 {
     [ReadOnly][NoAlias] public float3 rayOrigin;
     [ReadOnly][NoAlias] public NativeArray<float3> rayDirections;

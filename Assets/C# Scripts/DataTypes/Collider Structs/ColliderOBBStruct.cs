@@ -12,8 +12,8 @@ public struct ColliderOBBStruct
 
     public quaternion rotation;
 
-    [Range(-1, 1)]
-    public float absorption;
+    [Header("How thick is this wall for permeation calculations")]
+    public float thicknessMultiplier;
 
     [HideInInspector]
     public int audioTargetId;

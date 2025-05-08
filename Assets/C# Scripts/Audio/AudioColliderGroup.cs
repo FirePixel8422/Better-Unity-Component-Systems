@@ -8,14 +8,14 @@ using Unity.Burst;
 [BurstCompile]
 public class AudioColliderGroup : MonoBehaviour
 {
+    [Header("Sphere Collider: very fast > 10/10")]
+    [SerializeField] protected List<ColliderSphereStruct> spheres = new List<ColliderSphereStruct>();
+
     [Header("Box Colliders WITHOUT rotation: fast > 7/10")]
     [SerializeField] protected List<ColliderAABBStruct> axisAlignedBoxes = new List<ColliderAABBStruct>();
 
     [Header("Box Colliders with rotation: \nfast, but a little slower than an 'axisAlignedBox' > 6/10")]
     [SerializeField] protected List<ColliderOBBStruct> orientedBoxes = new List<ColliderOBBStruct>();
-
-    [Header("Sphere Collider: very fast > 10/10")]
-    [SerializeField] protected List<ColliderSphereStruct> spheres = new List<ColliderSphereStruct>();
 
     public int AABBCount => axisAlignedBoxes.Count;
     public int OBBCount => orientedBoxes.Count;
@@ -101,7 +101,6 @@ public class AudioColliderGroup : MonoBehaviour
 
             //give box collider default values if it is just created
             box.size = new float3(0.5f, 0.5f, 0.5f);
-            box.absorption = -1;
 
             //save copy back to list
             axisAlignedBoxes[i] = box;
@@ -124,7 +123,6 @@ public class AudioColliderGroup : MonoBehaviour
 
             //give box collider default values if it is just created
             box.size = new float3(0.5f, 0.5f, 0.5f);
-            box.absorption = -1;
 
             //save copy back to list
             orientedBoxes[i] = box;
@@ -142,7 +140,6 @@ public class AudioColliderGroup : MonoBehaviour
 
             //give sphere collider default values if it is just created
             sphere.radius = 0.5f;
-            sphere.absorption = -1;
 
             //save copy back to list
             spheres[i] = sphere;
