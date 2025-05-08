@@ -2070,9 +2070,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 6fb8b457ba5910b44ab30e4f2c89c702,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: f6a730af53cfb874ca653c2c96bc3dcd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8bb24c1766f979d4393689938f8283bd, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.35
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2303,9 +2303,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a20c09995e9a1784eaad3c4c24800f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundDirection:
-    x: 0
-    y: 0
   transformPos:
     x: 0
     y: 0
@@ -18186,18 +18183,18 @@ MonoBehaviour:
     x: 0
     y: 0
     z: 0
-  rayCount: 1250
+  rayCount: 314
   maxBounces: 12
   maxRayDist: 150
   waitForJobCompletion: 1
   batchSize: 4048
   maxBatchCount: 3
-  drawColliderGizmos: 1
-  drawRayHitsGizmos: 0
+  drawColliderGizmos: 0
+  drawRayHitsGizmos: 1
   drawRayTrailsGizmos: 0
   drawReturnRayDirectionGizmos: 0
-  drawReturnRayLastDirectionGizmos: 0
-  drawReturnRaysAvgDirectionGizmos: 0
+  drawReturnRayLastDirectionGizmos: 1
+  drawReturnRaysAvgDirectionGizmos: 1
   originColor: {r: 0, g: 1, b: 0, a: 1}
   rayHitColor: {r: 0, g: 1, b: 1, a: 1}
   rayTrailColor: {r: 0, g: 1, b: 0, a: 0.15}

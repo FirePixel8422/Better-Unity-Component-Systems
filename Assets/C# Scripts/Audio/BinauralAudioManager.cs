@@ -146,6 +146,42 @@ public class BinauralAudioManager : MonoBehaviour
 
 
 
+    [BurstCompile]
+    public static void ConvolveWithOverlap(
+    in NativeArray<float> input,
+    in NativeArray<float> hrir,
+    ref NativeArray<float> overlapBuffer,
+    ref NativeArray<float> output)
+    {
+        int numFrames = input.Length;
+        int hrirLength = hrir.Length;
+
+        // Convolve current buffer + overlap
+        for (int i = 0; i < numFrames; i++)
+        {
+            float sample = 0f;
+
+            // Apply HRIR over current input
+            for (int j = 0; j < hrirLength; j++)
+            {
+                int inputIndex = i - j;
+                if (inputIndex >= 0)
+                    sample += input[inputIndex] * hrir[j];
+                else
+                    sample += overlapBuffer[overlapBuffer.Length + inputIndex] * hrir[j];
+            }
+
+            output[i] = sample;
+        }
+
+        // Update overlap buffer for next frame
+        int overlapLength = overlapBuffer.Length;
+        for (int i = 0; i < overlapLength; i++)
+        {
+            int srcIndex = numFrames - overlapLength + i;
+            overlapBuffer[i] = (srcIndex >= 0) ? input[srcIndex] : 0f;
+        }
+    }
 
 
 

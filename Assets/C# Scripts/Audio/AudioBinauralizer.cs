@@ -6,7 +6,7 @@ using UnityEngine;
 [BurstCompile]
 public class AudioBinauralizer : MonoBehaviour
 {
-    [SerializeField] private float2 soundDirection;
+    [SerializeField] private float stereoSeparation = 1.0f; // 0 = mono, 1 = original, >1 = exaggerated
 
     [SerializeField] private float3 transformPos;
     [SerializeField] private float3 listenerPos;
@@ -14,7 +14,9 @@ public class AudioBinauralizer : MonoBehaviour
     [SerializeField] private float3 listenerRight;
     [SerializeField] private float3 listenerUp;
 
-    #region Event register and unregister with OnEnable and OnDisable
+    private NativeArray<float> overlapLeft;
+    private NativeArray<float> overlapRight;
+    private int hrirLength;
 
     private void OnEnable()
     {
@@ -24,9 +26,10 @@ public class AudioBinauralizer : MonoBehaviour
     private void OnDisable()
     {
         UpdateScheduler.Unregister(OnUpdate);
-    }
 
-    #endregion
+        if (overlapLeft.IsCreated) overlapLeft.Dispose();
+        if (overlapRight.IsCreated) overlapRight.Dispose();
+    }
 
     private void OnUpdate()
     {
@@ -48,64 +51,57 @@ public class AudioBinauralizer : MonoBehaviour
 
         int numFrames = data.Length / channels;
         int sampleCount = BinauralAudioManager.hrirDatabase.sampleCount;
+        hrirLength = sampleCount;
 
+        // Create overlap buffers on first call
+        if (!overlapLeft.IsCreated)
+        {
+            overlapLeft = new NativeArray<float>(hrirLength - 1, Allocator.Persistent);
+            overlapRight = new NativeArray<float>(hrirLength - 1, Allocator.Persistent);
+        }
+
+        // Load HRIR data
         var leftEarHRIR = new NativeArray<float>(sampleCount, Allocator.Temp);
         var rightEarHRIR = new NativeArray<float>(sampleCount, Allocator.Temp);
 
-
-
-        float3 toSource = transformPos - listenerPos;
-        toSource = math.normalize(toSource);
-
-        // Correct projection: remove vertical component relative to listener's up
-        float3 toSourceFlat = toSource - math.dot(toSource, listenerUp) * listenerUp;
-        toSourceFlat = math.normalize(toSourceFlat);
-
-        // Azimuth in horizontal plane
-        float azimuth = math.degrees(math.atan2(math.dot(toSourceFlat, listenerRight), math.dot(toSourceFlat, listenerForward)));
-
-        // Elevation: angle above/below horizontal plane
+        float3 toSource = math.normalize(transformPos - listenerPos);
+        float azimuth = math.degrees(math.atan2(math.dot(toSource, listenerRight), math.dot(toSource, listenerForward)));
         float elevation = math.degrees(math.asin(math.dot(toSource, listenerUp)));
 
-
-
         BinauralAudioManager.GetHRIRDataForDirection(azimuth, elevation, BinauralAudioManager.hrirDatabase, ref leftEarHRIR, ref rightEarHRIR);
+
+        // Prepare input and output buffers
+        var inputLeft = new NativeArray<float>(numFrames, Allocator.Temp);
+        var inputRight = new NativeArray<float>(numFrames, Allocator.Temp);
+        for (int i = 0; i < numFrames; i++)
+        {
+            inputLeft[i] = data[i * 2];
+            inputRight[i] = data[i * 2 + 1];
+        }
 
         var processedLeft = new NativeArray<float>(numFrames, Allocator.Temp);
         var processedRight = new NativeArray<float>(numFrames, Allocator.Temp);
 
-        // Convolution with overlap-add
+        // Apply convolution with overlap
+        BinauralAudioManager.ConvolveWithOverlap(inputLeft, leftEarHRIR, ref overlapLeft, ref processedLeft);
+        BinauralAudioManager.ConvolveWithOverlap(inputRight, rightEarHRIR, ref overlapRight, ref processedRight);
+
+        // write back
         for (int i = 0; i < numFrames; i++)
         {
-            float leftSample = 0f;
-            float rightSample = 0f;
+            float center = (processedLeft[i] + processedRight[i]) * 0.5f;
+            float left = center + (processedLeft[i] - center) * stereoSeparation;
+            float right = center + (processedRight[i] - center) * stereoSeparation;
 
-            for (int j = 0; j < sampleCount; j++)
-            {
-                int frameIndex = i - j;
-                if (frameIndex >= 0)
-                {
-                    leftSample += data[frameIndex * 2] * leftEarHRIR[j];
-                    rightSample += data[frameIndex * 2 + 1] * rightEarHRIR[j];
-                }
-            }
-
-            processedLeft[i] = leftSample;
-            processedRight[i] = rightSample;
+            data[i * 2] = left;
+            data[i * 2 + 1] = right;
         }
 
-        // Write back to audio buffer
-        for (int i = 0; i < numFrames; i++)
-        {
-            data[i * 2] = processedLeft[i];
-            data[i * 2 + 1] = processedRight[i];
-
-            data[i * 2] = math.clamp(processedLeft[i], -1f, 1f);
-            data[i * 2 + 1] = math.clamp(processedRight[i], -1f, 1f);
-        }
-
+        // Dispose temp arrays
         leftEarHRIR.Dispose();
         rightEarHRIR.Dispose();
+        inputLeft.Dispose();
+        inputRight.Dispose();
         processedLeft.Dispose();
         processedRight.Dispose();
     }
