@@ -131,11 +131,12 @@ public class AudioTargetRT : AudioColliderGroup
         //0 = 100% muffled audio
         settings.muffle = 10 + curve.Evaluate(newSettings.muffle) * 21750f;
 
-        source.panStereo = newSettings.panStereo;
 
-        source.SetSpatializerFloat(0, direction.x);
-        source.SetSpatializerFloat(1, direction.y);
-        source.SetSpatializerFloat(2, direction.z);
+
+
+
+        //DEBUG
+        //source.panStereo = newSettings.panStereo;
     }
 
     public float3 direction;

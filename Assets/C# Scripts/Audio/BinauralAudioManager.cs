@@ -40,6 +40,7 @@ public class BinauralAudioManager : MonoBehaviour
             Debug.LogError("Failed to parse HRIR JSON.");
             return;
         }
+
         hrirDatabase = ConvertToNative(weakData);
 
         //immediately discard weak data
@@ -100,12 +101,12 @@ public class BinauralAudioManager : MonoBehaviour
 
     // Sample function to get HRIR data for a given direction
     [BurstCompile]
-    public static void GetHRIRDataForDirection(in float2 direction, in HRIRDatabase hrirDatabase, ref NativeArray<float> leftEarHRIR, ref NativeArray<float> rightEarHRIR)
+    public static void GetHRIRDataForDirection(float azimuth, float elevation, in HRIRDatabase hrirDatabase, ref NativeArray<float> leftEarHRIR, ref NativeArray<float> rightEarHRIR)
     {
         // Convert the direction (azimuth, elevation) to indices
         int elevationIndex = 0;
         int azimuthIndex = 0;
-        DirectionToIndices(direction, hrirDatabase.elevationCount, hrirDatabase.azimuthCount, ref elevationIndex, ref azimuthIndex);
+        DirectionToIndices(azimuth, elevation, hrirDatabase.elevationCount, hrirDatabase.azimuthCount, ref elevationIndex, ref azimuthIndex);
 
         // Fetch the corresponding HRIR data
         int sampleCount = hrirDatabase.sampleCount;
@@ -120,12 +121,8 @@ public class BinauralAudioManager : MonoBehaviour
     }
 
     [BurstCompile]
-    private static void DirectionToIndices(in float2 direction, int elevationCount, int azimuthCount, ref int elevationIndex, ref int azimuthIndex)
+    private static void DirectionToIndices(float azimuth, float elevation, int elevationCount, int azimuthCount, ref int elevationIndex, ref int azimuthIndex)
     {
-        // Unpack direction into azimuth and elevation
-        float azimuth = direction.x;
-        float elevation = direction.y;
-
         if(azimuth > 180f)
         {
             azimuth -= 360f; // Normalize azimuth to the range [-180, 180]

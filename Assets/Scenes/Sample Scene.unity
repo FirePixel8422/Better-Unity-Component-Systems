@@ -2643,7 +2643,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 241768771}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f869e5abad9be74eb03b92dfe49c6e7, type: 3}
   m_Name: 
@@ -2686,17 +2686,26 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: 2
+      outSlope: 2
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
+      time: 0.002954688
+      value: 0.08024404
+      inSlope: 2.6163504
+      outSlope: 2.6163504
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.023282327
+    - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 2
-      outSlope: 2
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -7700,7 +7709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a736eaaedde41f344ad85595c3991cf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hrtfName: Better HRTF.json
+  hrtfName: Better HRTF 3.json
 --- !u!4 &805118487
 Transform:
   m_ObjectHideFlags: 0
@@ -20912,7 +20921,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2039623046}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d14e0eebbfc9f5b4685365d70167ab2b, type: 3}
   m_Name: 
@@ -20921,14 +20930,14 @@ MonoBehaviour:
     x: 0
     y: 0
     z: 0
-  rayCount: 1000
-  maxBounces: 3
-  maxRayDist: 10
+  rayCount: 500
+  maxBounces: 12
+  maxRayDist: 150
   waitForJobCompletion: 1
   batchSize: 4048
   maxBatchCount: 3
   drawColliderGizmos: 1
-  drawRayHitsGizmos: 1
+  drawRayHitsGizmos: 0
   drawRayTrailsGizmos: 0
   drawReturnRayDirectionGizmos: 0
   drawReturnRayLastDirectionGizmos: 0
