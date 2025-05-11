@@ -42,6 +42,7 @@ public class BinauralAudioManager : MonoBehaviour
         weakData = null;
 
         Debug.Log($"Loaded HRIR database: {hrirDatabase.elevationCount} elevations, {hrirDatabase.azimuthCount} azimuths, {hrirDatabase.sampleCount} samples per IR.");
+        Debug.Log($"Loaded HRIR database: {hrirDatabase.elevations.Length} elevations total, {hrirDatabase.azimuths.Length} azimuths total.");
     }
 
 
@@ -166,4 +167,37 @@ public class BinauralAudioManager : MonoBehaviour
         // Nullify the database to avoid accidental access after disposal
         hrirDatabase = default;
     }
+
+
+    private void OnDrawGizmosSelected()
+    {
+        if (hrirDatabase.hrir_l.IsCreated == false)
+            return;
+
+        Gizmos.color = Color.cyan;
+
+        int cGizmoCount = 0;
+
+        for (int i = 0; i < hrirDatabase.elevations.Length; i++)
+        {
+            for (int j = 0; j < hrirDatabase.azimuths.Length; j++)
+            {
+                cGizmoCount++;
+
+                if(cGizmoCount > 1000)
+                    return;
+
+                float azimuth = hrirDatabase.azimuths[j];
+                float elevation = hrirDatabase.elevations[i];
+                Vector3 direction = Quaternion.Euler(elevation, azimuth, 0) * Vector3.forward;
+
+                // Position at 10 units away from origin
+                Vector3 pointPosition = transform.position + direction * 10f;
+
+                // Draw a small sphere at the point
+                Gizmos.DrawSphere(pointPosition, 0.15f);
+            }
+        }
+    }
+
 }
