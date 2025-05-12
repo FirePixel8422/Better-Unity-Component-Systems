@@ -68,7 +68,7 @@ public class AudioBinauralizer : MonoBehaviour
         }
 
         int numFrames = data.Length / channels;
-        int sampleCount = NewBinauralAudioManager.hrirDatabase.sampleCount;
+        int sampleCount = BinauralAudioManager.hrirDatabase.sampleCount;
 
         // Load HRIR data
         float[] leftEarHRIR = new float[sampleCount];
@@ -78,7 +78,7 @@ public class AudioBinauralizer : MonoBehaviour
         float azimuth = math.degrees(math.atan2(math.dot(toSource, listenerRight), math.dot(toSource, listenerForward)));
         float elevation = math.degrees(math.asin(math.dot(toSource, listenerUp)));
 
-        NewBinauralAudioManager.GetHRIRData(azimuth, elevation, ref leftEarHRIR, ref rightEarHRIR);
+        BinauralAudioManager.GetHRIRDataForDirection(azimuth, elevation, leftEarHRIR, rightEarHRIR);
 
         // Prepare input and output buffers
         float[] inputLeft = new float[numFrames];

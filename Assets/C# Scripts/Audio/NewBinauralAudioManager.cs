@@ -45,96 +45,48 @@ public class NewBinauralAudioManager : MonoBehaviour
         Debug.Log($"Loaded HRIR database: {hrirDatabase.elevationCount} elevations, {hrirDatabase.azimuthCount} azimuths, {hrirDatabase.sampleCount} samples per IR.");
     }
 
-
-    // Round elevation to the nearest multiple of 10
-    public static int RoundToPowerOf10(float elevation)
+    public static void GetHRIRData(float azimuth, float elevation, out float leftEarHRIR, out float rightEarHRIR)
     {
-        return Mathf.RoundToInt(elevation / 10f) * 10;
-    }
-
-    // Round azimuth to the nearest multiple of 5
-    public static int RoundToPowerOf5(float azimuth)
-    {
-        return Mathf.RoundToInt(azimuth / 5f) * 5;
-    }
-
-
-    public static void GetHRIRData(float azimuth, float elevation, ref float[] leftEarHRIR, ref float[] rightEarHRIR)
-    {
-        // Round azimuth and elevation
-        int roundedAzimuth = RoundToPowerOf5(azimuth);
-        int roundedElevation = RoundToPowerOf10(elevation);
-
-        // Ensure the rounded values are within valid ranges
-        if (roundedAzimuth < 0 || roundedAzimuth >= hrirDatabase.azimuthCounts[roundedElevation])
-        {
-            Debug.LogError($"Azimuth {roundedAzimuth} out of range for elevation {roundedElevation}");
-            return;
-        }
-
-        if (roundedElevation < 0 || roundedElevation >= hrirDatabase.elevationCount)
-        {
-            Debug.LogError($"Elevation {roundedElevation} out of range.");
-            return;
-        }
-
-        // Get the index for the HRIR data based on rounded azimuth and elevation
-        int azimuthIndex = roundedAzimuth; // Use the rounded azimuth as the index for this elevation
-        int sampleCount = hrirDatabase.L[roundedElevation, azimuthIndex].Length; // Variable sample count for each azimuth/elevation
+        int closestHRIRIndex = GetClosestMatch(azimuth, hrirDatabase.IndexMap);
 
         // Copy the HRIR data for the left and right ears
-        Array.Copy(hrirDatabase.L[roundedElevation][azimuthIndex], leftEarHRIR, sampleCount);
-        Array.Copy(hrirDatabase.R[roundedElevation][azimuthIndex], rightEarHRIR, sampleCount);
+        leftEarHRIR = hrirDatabase.L[closestHRIRIndex];
+        rightEarHRIR = hrirDatabase.R[closestHRIRIndex];
     }
 
-
-
-
-
-
-    public static void ConvolveWithOverlap(float[] inputLeft, float[] inputRight, float[] hrirLeft, float[] hrirRight, float[] overlapLeft, float[] overlapRight, float[] outputLeft, float[] outputRight)
+    public static int GetClosestMatch(float target, int[] values)
     {
-        int numFrames = inputLeft.Length; // assuming both input arrays have the same length
-        int hrirLength = hrirLeft.Length;
+        int closest = values[0];
+        float smallestDifference = math.abs(target - closest);
 
-        int overlapLength = overlapLeft.Length;
+        int valueCount = values.Length;
 
-        // Convolve both left and right channels in the same loop
-        for (int i = 0; i < numFrames; i++)
+        for (int i = 1; i < valueCount; i++)
         {
-            float leftSample = 0f;
-            float rightSample = 0f;
+            float diff = math.abs(target - values[i]);
 
-            for (int j = 0; j < hrirLength; j++)
+            if (diff < smallestDifference)
             {
-                int inputIndex = i - j;
-
-                // Left channel
-                if (inputIndex >= 0)
-                    leftSample += inputLeft[inputIndex] * hrirLeft[j];
-                else
-                    leftSample += overlapLeft[overlapLength + inputIndex] * hrirLeft[j];
-
-                // Right channel
-                if (inputIndex >= 0)
-                    rightSample += inputRight[inputIndex] * hrirRight[j];
-                else
-                    rightSample += overlapRight[overlapLength + inputIndex] * hrirRight[j];
+                smallestDifference = diff;
+                closest = values[i];
             }
-
-            // Store the processed samples in the output arrays
-            outputLeft[i] = leftSample;
-            outputRight[i] = rightSample;
         }
 
-        // Update overlap buffer for next frame (for left and right channels)
-        for (int i = 0; i < overlapLength; i++)
-        {
-            int leftSrcIndex = numFrames - overlapLength + i;
-            overlapLeft[i] = (leftSrcIndex >= 0) ? inputLeft[leftSrcIndex] : 0f;
-
-            int rightSrcIndex = numFrames - overlapLength + i;
-            overlapRight[i] = (rightSrcIndex >= 0) ? inputRight[rightSrcIndex] : 0f;
-        }
+        return closest;
     }
+
+
+
+
+    public static void ConvolveWithOverlap(float inputLeftSample, float inputRightSample, float hrirLeft, float hrirRight, ref float overlapLeft, ref float overlapRight, out float outputLeft, out float outputRight)
+    {
+        // Multiply input with HRIR and add overlap
+        outputLeft = (inputLeftSample * hrirLeft) + overlapLeft;
+        outputRight = (inputRightSample * hrirRight) + overlapRight;
+
+        // Update overlap for next sample (if needed, here just store input for simplicity)
+        overlapLeft = inputLeftSample;
+        overlapRight = inputRightSample;
+    }
+
 }

@@ -2,11 +2,15 @@
 
 
 
+using System.Collections.Generic;
+
 [System.Serializable]
 public class Weak2DBasedHRIRDataBase
 {
-    public float[,][] L;
-    public float[,][] R;
+    public Dictionary<int, float> L;
+    public Dictionary<int, float> R;
+
+    public int[] IndexMap;
 
     public int elevationCount;
     public int azimuthCount;
