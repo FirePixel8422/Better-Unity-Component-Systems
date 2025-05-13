@@ -10,9 +10,11 @@ public static class UpdateScheduler
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     private static void Initialize()
     {
-        GameManager gameManager = new GameObject("GameManager").AddComponent<GameManager>();
+        GameManager gameManager = new GameObject("GameManager (Incl. Update Scheduler)").AddComponent<GameManager>();
 
         gameManager.StartCoroutine(UpdateLoop());
+
+        GameObject.DontDestroyOnLoad(gameManager);
     }
 
 

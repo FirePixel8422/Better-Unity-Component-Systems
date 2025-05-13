@@ -5,8 +5,7 @@ using Unity.Mathematics;
 public class AudioSpatializer : MonoBehaviour
 {
     [Header("References")]
-    public Transform listenerTransform;
-    public Vector3 soundWorldPosition;
+    [SerializeField] private Transform listenerTransform, soundPosTransform;
 
     [Header("Panning Settings")]
     [Range(0f, 1f)]
@@ -16,58 +15,64 @@ public class AudioSpatializer : MonoBehaviour
     [Range(0f, 1f)]
     [SerializeField] private float rearAttenuationStrength = 0.5f;
 
-    [Header("Elevation Filtering")]
-    [Range(0.5f, 1.5f)]
-    [SerializeField] private float minHighFreqGain = 0.85f;
-
-    [Range(0.5f, 1.5f)]
-    [SerializeField] private float maxHighFreqGain = 1.15f;
-
-    [Range(0.5f, 1.5f)]
+    [Range(0.25f, 10f)]
     [SerializeField] private float overallGain = 1.0f;
 
-    [Header("Filter Strength")]
-    [Range(0f, 1f)]
-    [SerializeField] private float highFreqDampStrength = 0.3f;
+    [Header("Distance Based Panning")]
+    [SerializeField] private bool distanceBasedPanning = false;
+    [SerializeField] private float maxPanDistance = 5f;
 
-    // Optional live object movement
-    [Header("Optional")]
-    public Transform soundPosTransform;
+    [Header("Elevation Influence Falloff")]
+    [Range(1f, 50f)]
+    [SerializeField] private float maxElevationEffectDistance = 15f;
 
-    // Cached values for thread-safe audio processing
+    [Header("Rear Attenuation Distance")]
+    [SerializeField] private bool distanceBasedRearAttenuation = false;
+    [SerializeField] private float maxRearAttenuationDistance = 10f;
+
+    [Header("Dynamic Cutoffs")]
+    [SerializeField] private float maxLowPassCutoff = 22000f;
+    [SerializeField] private float minLowPassCutoff = 5000f;
+    [SerializeField] private float minHighPassCutoff = 20f;
+    [SerializeField] private float maxHighPassCutoff = 500f;
+
+    [Header("Volume Falloff Settings")]
+    [SerializeField] private float lowPassVolume = 0.85f; // Volume reduction when applying lowpass (below horizon)
+    [SerializeField] private float highPassVolume = 0.85f; // Volume reduction when applying highpass (above horizon)
+
     private float3 cachedLocalDir;
+    private float3 listenerPosition;
+    private float3 soundPosition;
 
-    // Sampling rate (this would be 44100 or 48000 for most systems)
-    private int sampleRate = 44100;
+    // Filter state
+    private float previousLeftLP;
+    private float previousRightLP;
+    private float previousLeftHP;
+    private float previousRightHP;
+    private float previousLeftInput;
+    private float previousRightInput;
 
-    #region OnEnable/OnDisable
+    private int sampleRate;
 
-    private void OnEnable()
-    {
-        UpdateScheduler.Register(OnUpdate);
-    }
-
-    private void OnDisable()
-    {
-        UpdateScheduler.Unregister(OnUpdate);
-    }
-
-    #endregion
+    private void OnEnable() => UpdateScheduler.Register(OnUpdate);
+    private void OnDisable() => UpdateScheduler.Unregister(OnUpdate);
 
     private void Start()
     {
-        // Fetching the sample rate dynamically from Unity settings
         sampleRate = UnityEngine.AudioSettings.outputSampleRate;
     }
 
     private void OnUpdate()
     {
         if (soundPosTransform != null)
-            soundWorldPosition = soundPosTransform.position;
+            soundPosition = soundPosTransform.position;
+
+        if (listenerTransform != null)
+            listenerPosition = listenerTransform.position;
 
         if (listenerTransform != null)
         {
-            float3 worldDir = soundWorldPosition - listenerTransform.position;
+            float3 worldDir = soundPosition - (float3)listenerTransform.position;
             cachedLocalDir = math.normalize(listenerTransform.InverseTransformDirection(worldDir));
         }
     }
@@ -77,68 +82,91 @@ public class AudioSpatializer : MonoBehaviour
         if (channels != 2 || listenerTransform == null)
             return;
 
-        // Use cached localDir from Update()
         float3 localDir = cachedLocalDir;
+        float distanceToListener = math.length(listenerPosition - soundPosition);
+        float azimuth = math.degrees(math.atan2(localDir.x, localDir.z));
+        float elevation = math.degrees(math.asin(math.clamp(localDir.y, -1f, 1f)));
 
-        float azimuth = math.degrees(math.atan2(localDir.x, localDir.z)); // -180 to 180
-        float elevation = math.degrees(math.asin(math.clamp(localDir.y, -1f, 1f))); // -90 to 90
+        float effectivePanStrength = panStrength;
+        if (distanceBasedPanning)
+        {
+            float distanceFactor = math.saturate(distanceToListener / maxPanDistance);
+            effectivePanStrength *= distanceFactor;
+        }
 
-        // Calculate panning (left and right gain)
-        float pan = math.sin(math.radians(azimuth)) * panStrength;
+        float pan = math.sin(math.radians(azimuth)) * effectivePanStrength;
         float leftGain = math.sqrt(0.5f * (1f - pan));
         float rightGain = math.sqrt(0.5f * (1f + pan));
 
-        // Front/Back Attenuation based on azimuth
         float frontFactor = math.max(0f, math.cos(math.radians(azimuth)));
         float rearAtten = math.lerp(1f - rearAttenuationStrength, 1f, frontFactor);
 
-        // Elevation-based high-frequency gain
-        float elevationFactor = math.saturate((elevation + 90f) / 180f);
-        float highFreqGain = math.lerp(minHighFreqGain, maxHighFreqGain, elevationFactor);
+        if (distanceBasedRearAttenuation)
+        {
+            rearAtten = math.clamp(rearAtten * math.saturate(1f - (distanceToListener / maxRearAttenuationDistance)), 1f - rearAttenuationStrength, 1f);
+        }
 
-        // Calculate Interaural Time Difference (ITD) based on azimuth
-        float earDistanceDifference = math.abs(localDir.x) * 2.0f; // Approximate the ear distance difference from azimuth
-        float timeDelay = earDistanceDifference / 343.0f;  // 343 m/s is the speed of sound
-        int delaySamples = Mathf.RoundToInt(timeDelay * sampleRate); // Convert to samples
+        // Create a falloff factor based on elevation (localDir.y)
+        float volumeFalloff = 1f;
+        if (localDir.y <= 0f)
+        {
+            // Lowpass: as the sound goes below the horizon, reduce volume more
+            volumeFalloff = math.lerp(1f, lowPassVolume, math.saturate(-localDir.y)); // More lowpass = less volume
+        }
+        else
+        {
+            // Highpass: as the sound goes above the horizon, reduce volume more
+            volumeFalloff = math.lerp(1f, highPassVolume, math.saturate(localDir.y)); // More highpass = less volume
+        }
 
-        // Make delay more gradual when azimuth is near -90 or 90
-        delaySamples = Mathf.Clamp(delaySamples, 0, Mathf.RoundToInt(sampleRate * 0.005f)); // Max 5ms delay to prevent extreme drops
-
-        // Apply delay for the appropriate ear (left or right)
         for (int i = 0; i < data.Length; i += 2)
         {
             float leftSample = data[i];
             float rightSample = data[i + 1];
 
-            // Simulate delay based on the azimuth (left/right)
-            if (azimuth < 0) // Sound from the left
+            // Apply the volume falloff based on elevation
+            float processedLeft = leftSample * leftGain * rearAtten * overallGain * volumeFalloff;
+            float processedRight = rightSample * rightGain * rearAtten * overallGain * volumeFalloff;
+
+            // Apply Lowpass if elevation is below horizon
+            if (localDir.y <= 0f)
             {
-                // Right ear hears the sound later
-                if (delaySamples > 0)
-                {
-                    rightSample = leftSample; // Delay is simulated by taking the left sample for the right ear
-                }
+                float lowPassCutoff = math.lerp(maxLowPassCutoff, minLowPassCutoff, math.saturate(-localDir.y)) * (1f - 0.5f * math.saturate(distanceToListener / maxElevationEffectDistance));
+
+                processedLeft = LowPass(processedLeft, ref previousLeftLP, lowPassCutoff, sampleRate);
+                processedRight = LowPass(processedRight, ref previousRightLP, lowPassCutoff, sampleRate);
             }
-            else // Sound from the right
+            // Apply Highpass if elevation is above horizon
+            else
             {
-                // Left ear hears the sound later
-                if (delaySamples > 0)
-                {
-                    leftSample = rightSample; // Delay is simulated by taking the right sample for the left ear
-                }
+                float highPassCutoff = math.lerp(minHighPassCutoff, maxHighPassCutoff, math.saturate(localDir.y)) * (1f + 0.5f * math.saturate(distanceToListener / maxElevationEffectDistance));
+
+                processedLeft = HighPass(processedLeft, ref previousLeftInput, ref previousLeftHP, highPassCutoff, sampleRate);
+                processedRight = HighPass(processedRight, ref previousRightInput, ref previousRightHP, highPassCutoff, sampleRate);
             }
 
-            // Apply high-frequency filtering based on elevation
-            float processedLeft = (leftSample * (1f - highFreqDampStrength)) + (leftSample * highFreqGain * highFreqDampStrength);
-            float processedRight = (rightSample * (1f - highFreqDampStrength)) + (rightSample * highFreqGain * highFreqDampStrength);
-
-            // Apply panning, rear attenuation, and overall gain
-            processedLeft *= leftGain * rearAtten * overallGain;
-            processedRight *= rightGain * rearAtten * overallGain;
-
-            // Write back to audio data
             data[i] = processedLeft;
             data[i + 1] = processedRight;
         }
+    }
+
+    private float LowPass(float input, ref float previousOutput, float cutoff, float sampleRate)
+    {
+        float RC = 1.0f / (cutoff * 2f * math.PI);
+        float dt = 1.0f / sampleRate;
+        float alpha = dt / (RC + dt);
+        previousOutput = previousOutput + alpha * (input - previousOutput);
+        return previousOutput;
+    }
+
+    private float HighPass(float input, ref float previousInput, ref float previousOutput, float cutoff, float sampleRate)
+    {
+        float RC = 1.0f / (cutoff * 2f * math.PI);
+        float dt = 1.0f / sampleRate;
+        float alpha = RC / (RC + dt);
+        float output = alpha * (previousOutput + input - previousInput);
+        previousInput = input;
+        previousOutput = output;
+        return output;
     }
 }
