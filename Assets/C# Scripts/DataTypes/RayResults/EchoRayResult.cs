@@ -1,11 +1,10 @@
 using Unity.Burst;
-using Unity.Mathematics;
+using UnityEngine;
 
 
 
-[BurstCompile]
+[Tooltip("LOS checks to the player")]
 public struct EchoRayResult
 {
-    public float3 directionToOrigin;
     public float distanceTraveled;
 }

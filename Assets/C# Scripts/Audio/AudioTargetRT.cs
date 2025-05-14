@@ -4,9 +4,7 @@ using Unity.Mathematics;
 using UnityEngine;
 
 
-[RequireComponent(typeof(AudioSource))]
-[RequireComponent(typeof(AudioLowPassFilter), typeof(AudioHighPassFilter), typeof(AudioReverbFilter))]
-[BurstCompile]
+[RequireComponent(typeof(AudioSource), typeof(AudioSpatializer), typeof(AudioReverbFilter))]
 public class AudioTargetRT : AudioColliderGroup
 {
     [Header("Audio Settings:")]
@@ -25,7 +23,6 @@ public class AudioTargetRT : AudioColliderGroup
 
 
 
-    [BurstCompile]
     private void Start()
     {
         source = GetComponent<AudioSource>();
@@ -106,7 +103,6 @@ public class AudioTargetRT : AudioColliderGroup
     #endregion
 
 
-    [BurstCompile]
     /// <summary>
     /// Update AudioTarget at realtime based on the AudioRaytracer's data
     /// </summary>
@@ -117,31 +113,14 @@ public class AudioTargetRT : AudioColliderGroup
     {
         newSettings.volume = baseVolume;
 
-        //DEBUG
-
-
-
-
-
-
         settings = newSettings;
 
         //0 = 100% muffled audio
         spatializer.muffleStrength = 1 - newSettings.muffle;
-
-
-
-
-
-        //DEBUG
-        //source.panStereo = newSettings.panStereo;
     }
 
-    public float3 direction;
 
 
-
-    [BurstCompile]
     private void OnUpdate()
     {
         float deltaTime = Time.deltaTime;
@@ -152,7 +131,6 @@ public class AudioTargetRT : AudioColliderGroup
     }
 
 
-    [BurstCompile]
     private void OnDestroy()
     {
         UpdateScheduler.Unregister(OnUpdate);
