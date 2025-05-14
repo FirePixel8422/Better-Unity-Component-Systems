@@ -20,8 +20,7 @@ public class AudioTargetRT : AudioColliderGroup
     public int id;
 
     private AudioSource source;
-    private AudioLowPassFilter lowPass;
-    private AudioHighPassFilter highPass;
+    private AudioSpatializer spatializer;
     private AudioReverbFilter reverb;
 
 
@@ -30,14 +29,13 @@ public class AudioTargetRT : AudioColliderGroup
     private void Start()
     {
         source = GetComponent<AudioSource>();
-        lowPass = GetComponent<AudioLowPassFilter>();
-        highPass = GetComponent<AudioHighPassFilter>();
+        spatializer = GetComponent<AudioSpatializer>();
         reverb = GetComponent<AudioReverbFilter>();
 
         baseVolume = source.volume;
         settings.volume = baseVolume;
 
-        lowPass.cutoffFrequency = 0;
+        spatializer.muffleStrength = 0f;
 
         UpdateScheduler.Register(OnUpdate);
     }
@@ -129,7 +127,7 @@ public class AudioTargetRT : AudioColliderGroup
         settings = newSettings;
 
         //0 = 100% muffled audio
-        settings.muffle = 10 + curve.Evaluate(newSettings.muffle) * 21750f;
+        spatializer.muffleStrength = 1 - newSettings.muffle;
 
 
 
@@ -141,15 +139,6 @@ public class AudioTargetRT : AudioColliderGroup
 
     public float3 direction;
 
-    //BAD
-    //BAD
-    //BAD
-    //BAD
-    //BAD
-    //BAD
-
-    public AnimationCurve curve;
-
 
 
     [BurstCompile]
@@ -160,7 +149,6 @@ public class AudioTargetRT : AudioColliderGroup
         //maybe make this method smarter, make it so it takes MAX volumeUpdatepeed to change from a to b
 
         source.volume = MathLogic.MoveTowards(source.volume, settings.volume, volumeUpdateSpeed * deltaTime);
-        lowPass.cutoffFrequency = MathLogic.MoveTowards(lowPass.cutoffFrequency, settings.muffle, math.max(lowPassUpdateSpeed, settings.muffle - lowPass.cutoffFrequency) * deltaTime);
     }
 
 
