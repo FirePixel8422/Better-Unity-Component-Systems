@@ -29,7 +29,7 @@ public struct MuffleRayResultBatch
     /// <summary>
     /// Get MuffleStrength based on the rayDistances and hit percentage.
     /// </summary>
-    public float GetMuffleStrength(float fullClarityDist, float fullClarityHitPercentage)
+    public readonly float GetMuffleStrength(float fullClarityDist, float fullClarityHitPercentage)
     {
         if (totalRayCount == 0 || hitCount == 0)
         {

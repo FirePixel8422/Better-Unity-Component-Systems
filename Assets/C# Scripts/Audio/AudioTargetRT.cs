@@ -9,7 +9,7 @@ public class AudioTargetRT : AudioColliderGroup
 {
     [Header("Audio Settings:")]
     [Space(6)]
-    [SerializeField] private AudioSettings settings;
+    [SerializeField] private AudioTargetData settings;
     [SerializeField] private float baseVolume;
 
     [SerializeField] private float volumeUpdateSpeed = 0.5f;
@@ -109,7 +109,7 @@ public class AudioTargetRT : AudioColliderGroup
     /// <param name="audioStrength">float between 0 and 1 equal to percent of rays that hit this audiotarget</param>
     /// <param name="panStereo">what pan stereo value (-1, 1) direction the audio came from</param>
     /// <param name="mufflePercentage">float between 0 and 1 equal to how muffled the sound should be, 0 is 100% muffled</param>
-    public void UpdateAudioSource(AudioSettings newSettings)
+    public void UpdateAudioSource(AudioTargetData newSettings)
     {
         newSettings.volume = baseVolume;
 

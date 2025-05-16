@@ -6087,54 +6087,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 760490451}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &768564310
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 768564311}
-  - component: {fileID: 768564312}
-  m_Layer: 0
-  m_Name: Rotator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &768564311
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 768564310}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.23887235, z: -0, w: 0.971051}
-  m_LocalPosition: {x: 22.21, y: 0.95379996, z: -0.78}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2039623052}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &768564312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 768564310}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3f7e14be78e9ef4e910934482ee8aa0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotSpeedMin: 20
-  rotspeedMax: 50
-  interval: 3
 --- !u!1 &774323084
 GameObject:
   m_ObjectHideFlags: 0
@@ -18441,13 +18393,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2039623046}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.2, y: 0.039999723, z: -5.7}
+  m_LocalRotation: {x: -0, y: 0.23887235, z: -0, w: 0.971051}
+  m_LocalPosition: {x: 15.844991, y: 0.9937997, z: -3.8810751}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 878239824}
-  m_Father: {fileID: 768564311}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2039623053
 MonoBehaviour:
@@ -18476,13 +18428,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d14e0eebbfc9f5b4685365d70167ab2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rayOrigin:
+  raytracerOrigin:
     x: 0
     y: 0
     z: 0
   rayCount: 314
   maxBounces: 12
   maxRayDist: 150
+  fullClarityDist: 0
+  fullClarityHitPercentage: 0
+  fullMuffleReductionStrength: 0
+  muffleReductionPercent: 0
   waitForJobCompletion: 1
   batchSize: 4048
   maxBatchCount: 3
@@ -18499,8 +18455,6 @@ MonoBehaviour:
   rayReturnLastDirectionColor: {r: 1, g: 0.5, b: 0, a: 1}
   rayReturnAvgDirectionColor: {r: 1, g: 0.5, b: 0, a: 1}
   colliderColor: {r: 1, g: 0.75, b: 0.25, a: 1}
-  DEBUG_muffleRayHits: 
-  hashes: 
   ms: 0
 --- !u!1 &2090723947
 GameObject:
@@ -19226,4 +19180,4 @@ SceneRoots:
   - {fileID: 561182754}
   - {fileID: 429698494}
   - {fileID: 241768773}
-  - {fileID: 768564311}
+  - {fileID: 2039623052}

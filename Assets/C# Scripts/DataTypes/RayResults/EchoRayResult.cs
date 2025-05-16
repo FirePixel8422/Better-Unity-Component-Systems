@@ -7,4 +7,9 @@ using UnityEngine;
 public struct EchoRayResult
 {
     public float distanceTraveled;
+
+    public void Reset()
+    {
+        distanceTraveled = 0f;
+    }
 }
