@@ -306,21 +306,7 @@ public class AudioRayTracer : MonoBehaviour
         //update audio targets
         for (int audioTargetId = 0; audioTargetId < totalAudioTargets; audioTargetId++)
         {
-            AudioTargetData settings = audioTargetSettings[audioTargetId];
-
-            if (settings.panStereo == -2)
-            {
-                // Calculate direction from listener to sound source (target direction)
-                float3 targetDir = math.normalize((float3)transform.position + raytracerOrigin - audioTargetPositions[audioTargetId]); // Direction from listener to sound source
-
-                // Project the target direction onto the horizontal plane (ignore y-axis)
-                targetDir.y = 0f;
-
-                // Calculate pan as a value between -1 (left) and 1 (right)
-                settings.panStereo = math.clamp(math.dot(targetDir, transform.right), -1, 1);
-            }
-
-            audioTargets[audioTargetId].UpdateAudioSource(settings);
+            audioTargets[audioTargetId].UpdateAudioSource(audioTargetSettings[audioTargetId]);
         }
     }
 
@@ -335,6 +321,7 @@ public class AudioRayTracer : MonoBehaviour
         // Ray arrays
         rayDirections.DisposeIfCreated();
 
+        // Ray Result arrays
         muffleResultBatches.DisposeIfCreated();
         directionResultBatches.DisposeIfCreated();
         permeationResultBatches.DisposeIfCreated();
@@ -345,7 +332,7 @@ public class AudioRayTracer : MonoBehaviour
         OBBColliders.DisposeIfCreated();
         sphereColliders.DisposeIfCreated();
 
-        // Audio arrays
+        // Audio Target arrays
         audioTargetPositions.DisposeIfCreated();
         audioTargetSettings.DisposeIfCreated();
     }
