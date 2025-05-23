@@ -28,6 +28,9 @@ public struct AudioRayTracerJobParallelBatched : IJobParallelForBatch
     [WriteOnly][NoAlias] public NativeArray<DirectionRayResultBatch> directionResultBatches;
 
     [NativeDisableParallelForRestriction]
+    [WriteOnly][NoAlias] public NativeArray<DirectionRayResult> directionResultBatches;
+
+    [NativeDisableParallelForRestriction]
     [WriteOnly][NoAlias] public NativeArray<PermeationRayResultBatch> permeationResultBatches;
 
     [ReadOnly][NoAlias] public float distanceFalloffPerUnit;
@@ -158,9 +161,10 @@ public struct AudioRayTracerJobParallelBatched : IJobParallelForBatch
                     // if nothing was hit, aka the ray go to the player succesfully store the return ray direction
                     if (CanRaySeeRayTracerOrigin(offsettedRayHitWorldPoint, returnRayDir, distToRaytracerOrigin))
                     {
-                        //echoRayResults[rayIndex * maxRayHits + cRayHits - 1].add;
+                        //  echoRayResults[rayIndex * maxRayHits + cRayHits - 1].add;
 
-                        directionRayHitPosRelativeToPlayer = offsettedRayHitWorldPoint 
+                        directionRayHitPosRelativeToPlayer = offsettedRayHitWorldPoint - raytracerOrigin;
+                        directionRayTotalDistance = totalDist;
                     }
                 
                     #endregion
