@@ -8,11 +8,14 @@ public struct MuffleRayResultBatch
     private int hitCount;
     private int totalRayCount;
 
-    public void Reset()
+    public static MuffleRayResultBatch Default()
     {
-        totalDistance = 0f;
-        hitCount = 0;
-        totalRayCount = 0;
+        return new MuffleRayResultBatch
+        {
+            totalDistance = 0f,
+            hitCount = 0,
+            totalRayCount = 0
+        };
     }
 
     public void AddEntry(bool hit, float totalDistanceForRay)

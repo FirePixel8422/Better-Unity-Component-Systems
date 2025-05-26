@@ -14,17 +14,18 @@ public struct ProcessAudioDataJob : IJob
     [ReadOnly][NoAlias] public float fullClarityHitPercentage;
 
     [NativeDisableParallelForRestriction]
-    [ReadOnly][NoAlias] public NativeArray<DirectionRayResultBatch> directionResultBatches;
+    [ReadOnly][NoAlias] public NativeArray<DirectionRayResult> directionResults;
 
     [NativeDisableParallelForRestriction]
-    [ReadOnly][NoAlias] public NativeArray<PermeationRayResultBatch> permeationResultBatches;
+    [ReadOnly][NoAlias] public NativeArray<float> permeationResultBatches;
     [ReadOnly][NoAlias] public float fullMuffleReductionStrength;
     [ReadOnly][NoAlias] public float muffleReductionPercent;
 
     [NativeDisableParallelForRestriction]
-    [ReadOnly][NoAlias] public NativeArray<EchoRayResult> echoRayResults;
+    [ReadOnly][NoAlias] public NativeArray<float> echoRayResults;
 
     [ReadOnly][NoAlias] public int batchCount;
+    [ReadOnly][NoAlias] public int rayCount;
     [ReadOnly][NoAlias] public float3 raytracerOrigin;
 
     [ReadOnly][NoAlias] public NativeArray<float3> audioTargetPositions;
@@ -54,11 +55,11 @@ public struct ProcessAudioDataJob : IJob
                 muffleStrength += muffleResultBatches[cAudioTargetBatchId].GetMuffleStrength(fullClarityDist, fullClarityHitPercentage);
 
 
-                audioPosition += directionResultBatches[cAudioTargetBatchId].GetAvgAudioPosition();
+                //audioPosition += directionResults[cAudioTargetBatchId].WeightedPoint;
 
 
                 // Get permeation rays data
-                float muffleReduction = permeationResultBatches[cAudioTargetBatchId].GetMuffleReduction(fullMuffleReductionStrength, muffleReductionPercent);
+                float muffleReduction = math.saturate(permeationResultBatches[cAudioTargetBatchId] / (fullMuffleReductionStrength * rayCount)) * muffleReductionPercent;
 
                 //subtract muffleStrength by permeation muffleReduction
                 muffleStrength -= muffleReduction;
@@ -67,7 +68,7 @@ public struct ProcessAudioDataJob : IJob
                 audioPosition += audioTargetPosRelativeToPlayer * muffleReduction;
             }
 
-            audioTargetSettings[audioTargetId] = new AudioTargetData(muffleStrength, audioPosition);
+            audioTargetSettings[audioTargetId] = new AudioTargetData(muffleStrength, 0, 0, audioPosition);
         }
     }
 }

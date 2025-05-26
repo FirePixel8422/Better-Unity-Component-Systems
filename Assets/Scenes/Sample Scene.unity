@@ -1920,7 +1920,7 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    thicknessMultiplier: 0
+    thicknessMultiplier: 1
     audioTargetId: 0
   groupId: 0
 --- !u!23 &222297320
@@ -2286,14 +2286,15 @@ MonoBehaviour:
     thicknessMultiplier: 0
     audioTargetId: 0
   groupId: 0
-  settings:
-    volume: 0
-    muffle: 0
-    panStereo: 0
-  baseVolume: 0
-  volumeUpdateSpeed: 0.5
-  lowPassUpdateSpeed: 8500
   id: 0
+  DEBUG_audioTargetData:
+    muffle: 0
+    echoStrength: 0
+    echoTime: 0
+    position:
+      x: 0
+      y: 0
+      z: 0
 --- !u!114 &241768783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2307,7 +2308,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listenerTransform: {fileID: 2039623052}
-  soundPosTransform: {fileID: 241768773}
   panStrength: 0.8
   rearAttenuationStrength: 0.25
   overallGain: 2
@@ -2325,6 +2325,8 @@ MonoBehaviour:
   muffleStrength: 0
   maxMuffleCutoff: 8000
   minMuffleCutoff: 0
+  reverbTime: 0.325
+  reverbDecay: 0.325
 --- !u!1 &250552647
 GameObject:
   m_ObjectHideFlags: 0
@@ -2485,7 +2487,7 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    thicknessMultiplier: 0
+    thicknessMultiplier: 1
     audioTargetId: 0
   groupId: 0
 --- !u!23 &259388600
@@ -3074,7 +3076,7 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    thicknessMultiplier: 0
+    thicknessMultiplier: 1
     audioTargetId: 0
   groupId: 0
 --- !u!23 &327348726
@@ -4412,7 +4414,7 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    thicknessMultiplier: 0
+    thicknessMultiplier: 1
     audioTargetId: 0
   groupId: 0
 --- !u!23 &516096229
@@ -9459,7 +9461,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 13.9848, y: 5, z: 9.999998}
-  m_LocalScale: {x: 34.030075, y: 9.999599, z: 0.1}
+  m_LocalScale: {x: 34.030075, y: 9.999599, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 429698494}
@@ -9493,7 +9495,7 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    thicknessMultiplier: 0
+    thicknessMultiplier: 10
     audioTargetId: 0
   groupId: 0
 --- !u!23 &1062018013
@@ -10652,7 +10654,7 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    thicknessMultiplier: 0
+    thicknessMultiplier: 5
     audioTargetId: 0
   groupId: 0
 --- !u!23 &1166970480
@@ -10908,7 +10910,7 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    thicknessMultiplier: 0
+    thicknessMultiplier: 5
     audioTargetId: 0
   groupId: 0
 --- !u!23 &1173208420
@@ -12530,7 +12532,7 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    thicknessMultiplier: 0
+    thicknessMultiplier: 1
     audioTargetId: 0
   groupId: 0
 --- !u!23 &1375711495
@@ -13093,7 +13095,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10, y: 5, z: 14.999994}
-  m_LocalScale: {x: 0.1, y: 9.99985, z: 9.999374}
+  m_LocalScale: {x: 0.5, y: 9.99985, z: 9.999374}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 429698494}
@@ -13148,7 +13150,7 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    thicknessMultiplier: 0
+    thicknessMultiplier: 10
     audioTargetId: 0
   groupId: 0
 --- !u!23 &1458046732
@@ -13457,7 +13459,7 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    thicknessMultiplier: 0
+    thicknessMultiplier: 1
     audioTargetId: 0
   groupId: 0
 --- !u!23 &1488041909
@@ -14638,7 +14640,7 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    thicknessMultiplier: 0
+    thicknessMultiplier: 5
     audioTargetId: 0
   groupId: 0
 --- !u!23 &1648640016
@@ -15009,7 +15011,7 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    thicknessMultiplier: 0
+    thicknessMultiplier: 5
     audioTargetId: 0
   groupId: 0
 --- !u!23 &1729863506
@@ -16838,7 +16840,7 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    thicknessMultiplier: 0
+    thicknessMultiplier: 1
     audioTargetId: 0
   groupId: 0
 --- !u!23 &1907513789
@@ -17115,7 +17117,7 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    thicknessMultiplier: 0
+    thicknessMultiplier: 1
     audioTargetId: 0
   groupId: 0
 --- !u!23 &1920798012
@@ -18074,7 +18076,7 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    thicknessMultiplier: 0
+    thicknessMultiplier: 1
     audioTargetId: 0
   groupId: 0
 --- !u!23 &2037342797
@@ -18435,10 +18437,12 @@ MonoBehaviour:
   rayCount: 314
   maxBounces: 12
   maxRayDist: 150
-  fullClarityDist: 0
-  fullClarityHitPercentage: 0
-  fullMuffleReductionStrength: 0
-  muffleReductionPercent: 0
+  fullClarityDist: 75
+  fullClarityHitPercentage: 0.25
+  fullMuffleReductionStrength: 0.1
+  muffleReductionPercent: 0.75
+  distanceFalloffPerMeter: 0.1
+  permeationFalloffPerMeter: 1
   waitForJobCompletion: 1
   batchSize: 4048
   maxBatchCount: 3
@@ -18808,7 +18812,7 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 1
-    thicknessMultiplier: 0
+    thicknessMultiplier: 1
     audioTargetId: 0
   groupId: 0
 --- !u!23 &2111826285

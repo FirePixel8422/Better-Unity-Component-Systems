@@ -1,12 +1,13 @@
 using UnityEngine;
 using Unity.Mathematics;
 using System;
+using System.Runtime.CompilerServices;
 
 [RequireComponent(typeof(AudioSource))]
 public class AudioSpatializer : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private Transform listenerTransform, soundPosTransform;
+    [SerializeField] private Transform listenerTransform;
 
     [Header("Panning Settings")]
     [Range(0f, 1f)]
@@ -26,7 +27,6 @@ public class AudioSpatializer : MonoBehaviour
     [Header("Rear Attenuation Distance")]
     [SerializeField] private bool distanceBasedRearAttenuation = false;
     [SerializeField] private float maxRearAttenuationDistance = 10f;
-
 
     [Header("Elevation Influence Falloff And Freq Effect")]
     [Range(1f, 50f)]
@@ -48,13 +48,25 @@ public class AudioSpatializer : MonoBehaviour
 
     [Header("Muffle Effect")]
     [Range(0f, 1f)]
-    public float muffleStrength = 0f;
+    [SerializeField] private float muffleStrength = 0f;
     [SerializeField] private float maxMuffleCutoff = 22000f;
     [SerializeField] private float minMuffleCutoff = 1000f;
 
+    [Header("Reverb Effect")]
+    [SerializeField] private float reverbTime = 0.3f;   // seconds
+    [Range(0, 1)]
+    [SerializeField] private float reverbDecay = 0.5f; // 0 = no reverb, 1 = infinite sustain
+
+    private const int ReverbTapCount = 4;
+    private float[][] reverbBufferLeft;
+    private float[][] reverbBufferRight;
+    private int[] reverbBufferIndices;
+    private int[] reverbBufferSizes;
+
     private float3 cachedLocalDir;
     private float3 listenerPosition;
-    private float3 soundPosition;
+
+    private float3 soundOffsetToPlayer;
 
     // Filter state
     private float previousLeftLP;
@@ -71,30 +83,52 @@ public class AudioSpatializer : MonoBehaviour
     private int sampleRate;
 
 
+
     private void OnEnable() => UpdateScheduler.Register(OnUpdate);
     private void OnDisable() => UpdateScheduler.Unregister(OnUpdate);
 
 
     private void Start()
     {
-        sampleRate = UnityEngine.AudioSettings.outputSampleRate;
-    }
+        sampleRate = AudioSettings.outputSampleRate;
 
+        // Initialize reverb buffers
+        reverbBufferLeft = new float[ReverbTapCount][];
+        reverbBufferRight = new float[ReverbTapCount][];
+        reverbBufferIndices = new int[ReverbTapCount];
+        reverbBufferSizes = new int[ReverbTapCount];
+
+        Unity.Mathematics.Random rand = new Unity.Mathematics.Random(1234);
+
+        for (int i = 0; i < ReverbTapCount; i++)
+        {
+            float tapDelaySec = reverbTime * (0.3f + 0.7f * rand.NextFloat());
+            int bufferSize = Mathf.CeilToInt(sampleRate * tapDelaySec);
+
+            reverbBufferSizes[i] = bufferSize;
+            reverbBufferLeft[i] = new float[bufferSize];
+            reverbBufferRight[i] = new float[bufferSize];
+            reverbBufferIndices[i] = 0;
+        }
+    }
 
     private void OnUpdate()
     {
-        if (soundPosTransform != null)
-            soundPosition = soundPosTransform.position;
-
-        if (listenerTransform != null)
-            listenerPosition = listenerTransform.position;
-
         if (listenerTransform != null)
         {
-            float3 worldDir = soundPosition - (float3)listenerTransform.position;
+            listenerPosition = listenerTransform.position;
+
+            float3 worldDir = soundOffsetToPlayer + listenerPosition;
             cachedLocalDir = math.normalize(listenerTransform.InverseTransformDirection(worldDir));
         }
     }
+
+    public void UpdateSettings(AudioTargetData settings)
+    {
+        muffleStrength = settings.muffle;
+        soundOffsetToPlayer = settings.position;
+    }
+
 
     private void OnAudioFilterRead(float[] data, int channels)
     {
@@ -102,7 +136,7 @@ public class AudioSpatializer : MonoBehaviour
             return;
 
         float3 localDir = cachedLocalDir;
-        float distanceToListener = math.length(listenerPosition - soundPosition);
+        float distanceToListener = math.length(soundOffsetToPlayer);
         float azimuth = math.degrees(math.atan2(localDir.x, localDir.z));
 
         float effectivePanStrength = panStrength;
@@ -124,17 +158,14 @@ public class AudioSpatializer : MonoBehaviour
             rearAtten = math.clamp(rearAtten * math.saturate(1f - (distanceToListener / maxRearAttenuationDistance)), 1f - rearAttenuationStrength, 1f);
         }
 
-        // Create a falloff factor based on elevation (localDir.y)
-        float volumeFalloff = 1f;
+        float volumeFalloff;
         if (localDir.y <= 0f)
         {
-            // Lowpass: as the sound goes below the horizon, reduce volume more
-            volumeFalloff = math.lerp(1f, lowPassVolume, math.saturate(-localDir.y)); // More lowpass = less volume
+            volumeFalloff = math.lerp(1f, lowPassVolume, math.saturate(-localDir.y));
         }
         else
         {
-            // Highpass: as the sound goes above the horizon, reduce volume more
-            volumeFalloff = math.lerp(1f, highPassVolume, math.saturate(localDir.y)); // More highpass = less volume
+            volumeFalloff = math.lerp(1f, highPassVolume, math.saturate(localDir.y));
         }
 
         for (int i = 0; i < data.Length; i += 2)
@@ -142,11 +173,10 @@ public class AudioSpatializer : MonoBehaviour
             float leftSample = data[i];
             float rightSample = data[i + 1];
 
-            // Apply the volume falloff based on elevation
             float processedLeft = leftSample * leftGain * rearAtten * overallGain * volumeFalloff;
             float processedRight = rightSample * rightGain * rearAtten * overallGain * volumeFalloff;
 
-            // Apply Lowpass if elevation is below horizon
+            // Apply elevation effects
             if (localDir.y <= 0f)
             {
                 float lowPassCutoff = math.lerp(maxLowPassCutoff, minLowPassCutoff, math.saturate(-localDir.y)) * (1f - 0.5f * math.saturate(distanceToListener / maxElevationEffectDistance));
@@ -154,7 +184,6 @@ public class AudioSpatializer : MonoBehaviour
                 processedLeft = LowPass(processedLeft, ref previousLeftLP, lowPassCutoff, sampleRate);
                 processedRight = LowPass(processedRight, ref previousRightLP, lowPassCutoff, sampleRate);
             }
-            // Apply Highpass if elevation is above horizon
             else
             {
                 float highPassCutoff = math.lerp(minHighPassCutoff, maxHighPassCutoff, math.saturate(localDir.y)) * (1f + 0.5f * math.saturate(distanceToListener / maxElevationEffectDistance));
@@ -163,12 +192,29 @@ public class AudioSpatializer : MonoBehaviour
                 processedRight = HighPass(processedRight, ref previousRightInput, ref previousRightHP, highPassCutoff, sampleRate);
             }
 
-            // Apply additional muffle lowpass based on muffleStrength
+            // Apply muffle effect
             if (muffleStrength > 0f)
             {
                 float muffleCutoff = math.lerp(maxMuffleCutoff, minMuffleCutoff, muffleStrength);
                 processedLeft = LowPass(processedLeft, ref previousLeftMuffle, muffleCutoff, sampleRate);
                 processedRight = LowPass(processedRight, ref previousRightMuffle, muffleCutoff, sampleRate);
+            }
+
+            // Apply reverb effect
+            for (int tap = 0; tap < ReverbTapCount; tap++)
+            {
+                int idx = reverbBufferIndices[tap];
+
+                float delayedLeft = reverbBufferLeft[tap][idx];
+                float delayedRight = reverbBufferRight[tap][idx];
+
+                processedLeft += delayedLeft * reverbDecay;
+                processedRight += delayedRight * reverbDecay;
+
+                reverbBufferLeft[tap][idx] = processedLeft;
+                reverbBufferRight[tap][idx] = processedRight;
+
+                reverbBufferIndices[tap] = (idx + 1) % reverbBufferSizes[tap];
             }
 
             data[i] = processedLeft;
@@ -179,7 +225,7 @@ public class AudioSpatializer : MonoBehaviour
 
     private const float DoublePI = 2f * math.PI;
 
-
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private float LowPass(float input, ref float previousOutput, float cutoff, float sampleRate)
     {
         float RC = 1.0f / (cutoff * DoublePI);
@@ -189,6 +235,7 @@ public class AudioSpatializer : MonoBehaviour
         return previousOutput;
     }
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private float HighPass(float input, ref float previousInput, ref float previousOutput, float cutoff, float sampleRate)
     {
         float RC = 1.0f / (cutoff * DoublePI);
@@ -198,5 +245,11 @@ public class AudioSpatializer : MonoBehaviour
         previousInput = input;
         previousOutput = output;
         return output;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(listenerPosition + soundOffsetToPlayer, 0.5f);
     }
 }

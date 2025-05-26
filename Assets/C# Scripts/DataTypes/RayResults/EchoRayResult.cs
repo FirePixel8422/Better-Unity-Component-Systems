@@ -1,4 +1,3 @@
-using Unity.Burst;
 using UnityEngine;
 
 
@@ -8,8 +7,12 @@ public struct EchoRayResult
 {
     public float distanceTraveled;
 
-    public void Reset()
+
+    public static EchoRayResult Default()
     {
-        distanceTraveled = 0f;
+        return new EchoRayResult
+        {
+            distanceTraveled = 0
+        };
     }
 }

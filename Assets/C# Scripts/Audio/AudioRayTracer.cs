@@ -22,6 +22,9 @@ public class AudioRayTracer : MonoBehaviour
 
     [SerializeField] public float fullMuffleReductionStrength;
     [SerializeField] public float muffleReductionPercent;
+
+    [SerializeField] public float distanceFalloffPerMeter;
+    [SerializeField] public float permeationFalloffPerMeter;
     
 
 
@@ -42,11 +45,11 @@ public class AudioRayTracer : MonoBehaviour
 
     private NativeArray<MuffleRayResultBatch> muffleResultBatches;
 
-    private NativeArray<DirectionRayResultBatch> directionResultBatches;
+    private NativeArray<DirectionRayResult> directionResults;
 
-    private NativeArray<PermeationRayResultBatch> permeationResultBatches;
+    private NativeArray<float> permeationResultBatches;
 
-    private NativeArray<EchoRayResult> echoRayResults;
+    private NativeArray<float> echoRayResults;
 
 
     private List<AudioTargetRT> audioTargets;
@@ -90,11 +93,13 @@ public class AudioRayTracer : MonoBehaviour
 
         int maxRayResultsArrayLength = rayCount * (maxBounces + 1);
 
-        echoRayResults = new NativeArray<EchoRayResult>(maxRayResultsArrayLength, Allocator.Persistent);
+        directionResults = new NativeArray<DirectionRayResult>(maxRayResultsArrayLength, Allocator.Persistent);
+        echoRayResults = new NativeArray<float>(maxRayResultsArrayLength, Allocator.Persistent);
 
         SetupColliderData();
         SetupAudioTargetData();
 
+        //force complete direction generator job
         mainJobHandle.Complete();
     }
 
@@ -155,8 +160,7 @@ public class AudioRayTracer : MonoBehaviour
         audioTargetSettings = new NativeArray<AudioTargetData>(audioTargetCount, Allocator.Persistent);
 
         muffleResultBatches = new NativeArray<MuffleRayResultBatch>(audioTargetCount * maxBatchCount, Allocator.Persistent);
-        directionResultBatches = new NativeArray<DirectionRayResultBatch>(audioTargetCount * maxBatchCount, Allocator.Persistent);
-        permeationResultBatches = new NativeArray<PermeationRayResultBatch>(audioTargetCount * maxBatchCount, Allocator.Persistent);
+        permeationResultBatches = new NativeArray<float>(audioTargetCount * maxBatchCount, Allocator.Persistent);
     }
 
     #endregion
@@ -191,7 +195,8 @@ public class AudioRayTracer : MonoBehaviour
         //failsafe to prevent crash when updating maxBounces in editor
         if (audioRayTraceJob.rayDirections.Length != 0 && (audioRayTraceJob.maxRayHits != (maxBounces + 1) || rayDirections.Length != rayCount))
         {
-            echoRayResults = new NativeArray<EchoRayResult>(rayCount * (maxBounces + 1), Allocator.Persistent);
+            echoRayResults = new NativeArray<float>(rayCount * (maxBounces + 1), Allocator.Persistent);
+            directionResults = new NativeArray<DirectionRayResult>(rayCount * (maxBounces + 1), Allocator.Persistent);
 
             if (rayDirections.Length != rayCount)
             {
@@ -244,8 +249,11 @@ public class AudioRayTracer : MonoBehaviour
             totalAudioTargets = audioTargets.Count,
 
             muffleResultBatches = muffleResultBatches,
-            directionResultBatches = directionResultBatches,
+            directionResults = directionResults,
+            
             permeationResultBatches = permeationResultBatches,
+            distanceFalloffPerMeter = distanceFalloffPerMeter,
+            permeationFalloffPerMeter = permeationFalloffPerMeter,
 
             echoRayResults = echoRayResults,
         };
@@ -272,7 +280,7 @@ public class AudioRayTracer : MonoBehaviour
             fullClarityDist = fullClarityDist,
             fullClarityHitPercentage = fullClarityHitPercentage,
 
-            directionResultBatches = directionResultBatches,
+            directionResults = directionResults,
 
             permeationResultBatches = permeationResultBatches,
             fullMuffleReductionStrength = fullMuffleReductionStrength,
@@ -281,6 +289,7 @@ public class AudioRayTracer : MonoBehaviour
             echoRayResults = echoRayResults,
 
             batchCount = batchCount,
+            rayCount = rayCount,
             raytracerOrigin = (float3)transform.position + raytracerOrigin,
 
             audioTargetPositions = audioTargetPositions,
@@ -322,7 +331,7 @@ public class AudioRayTracer : MonoBehaviour
 
         // Ray Result arrays
         muffleResultBatches.DisposeIfCreated();
-        directionResultBatches.DisposeIfCreated();
+        directionResults.DisposeIfCreated();
         permeationResultBatches.DisposeIfCreated();
         echoRayResults.DisposeIfCreated();
 
