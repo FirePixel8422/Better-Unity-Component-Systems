@@ -11,8 +11,8 @@ public class PlatformMover : MonoBehaviour
     private int posId;
 
 
-    private void OnEnable() => UpdateScheduler.RegisterFixedUpdate(OnFixedUpdate);
-    private void OnDestroy() => UpdateScheduler.UnRegisterFixedUpdate(OnFixedUpdate);
+    private void OnEnable() => CallbackScheduler.RegisterCallback(CallbackType.FixedUpdate, OnFixedUpdate);
+    private void OnDestroy() => CallbackScheduler.UnRegisterCallback(CallbackType.FixedUpdate, OnFixedUpdate);
 
     private void OnFixedUpdate()
     {
@@ -27,8 +27,8 @@ public class PlatformMover : MonoBehaviour
 
     private void PauseDelay()
     {
-        UpdateScheduler.UnRegisterFixedUpdate(OnFixedUpdate);
+        CallbackScheduler.RegisterCallback(CallbackType.FixedUpdate, OnFixedUpdate);
         Invoke(nameof(Play), delay);
     }
-    private void Play() => UpdateScheduler.RegisterFixedUpdate(OnFixedUpdate);
+    private void Play() => CallbackScheduler.RegisterCallback(CallbackType.FixedUpdate, OnFixedUpdate);
 }

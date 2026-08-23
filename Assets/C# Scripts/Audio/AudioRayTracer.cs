@@ -9,29 +9,29 @@ public class AudioRayTracer : UpdateMonoBehaviour
     [SerializeField] private float3 rayOrigin;
 
     [Range(1, 5000)]
-    [SerializeField] private short rayCount = 1000;
+    [SerializeField] private int rayCount = 1000;
 
     [Range(0, 25)]
-    [SerializeField] private byte maxBounces = 3;
-    public byte MaxHitsPerRay => (byte)(maxBounces + 1);
+    [SerializeField] private int maxBounces = 3;
+    public int MaxHitsPerRay => (maxBounces + 1);
 
     [Range(0, 500)]
-    [Header("Max distance a ray can travel")]
+    [Tooltip("Max distance a ray can travel")]
     [SerializeField] private float maxRayLife = 10;
 
-    [Header("Max distance a muffle hit is registered")]
+    [Tooltip("Max distance a muffle hit is registered")]
     [SerializeField] private float maxMuffleHitDistance = 10;
 
-    [Header("Muffle/Permeation Effectiveness Multipliers")]
+    [Tooltip("Muffle/Permeation Effectiveness Multipliers")]
     [Range(0, 1)]
     [SerializeField] private float muffleEffectiveness = 1;
     [Range(0, 1)]
     [SerializeField] private float mufflePermeationEffectiveness = 0.5f;
 
-    [Header("Start strength per permeation ray")]
+    [Tooltip("Start strength per permeation ray")]
     [SerializeField] private float permeationStrengthPerRay = 1;
 
-    [Header("Max distance at which reverb will max out")]
+    [Tooltip("Max distance at which reverb will max out")]
     [SerializeField] private float maxReverbDistance = 20;
 
 

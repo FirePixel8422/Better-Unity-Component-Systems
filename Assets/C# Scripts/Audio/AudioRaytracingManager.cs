@@ -9,7 +9,7 @@ public class AudioRaytracingManager : MonoBehaviour
 
     [Header("Run Raytracing async on background threads in parallel")]
     [Space(-8)]
-    [Header("WARNING: If false will block the main thread every frame until finished")]
+    [Tooltip("WARNING: If false will block the main thread every frame until finished")]
     [SerializeField] private bool computeAsync = true;
 
     [Tooltip("Max threads to use for raytrace jobs")]

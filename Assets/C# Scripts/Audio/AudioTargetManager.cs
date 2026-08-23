@@ -134,7 +134,7 @@ public class AudioTargetManager
 
     public static void Dispose()
     {
-        UpdateScheduler.CreateLateOnApplicationQuitCallback(() =>
+        CallbackScheduler.RegisterCallback(CallbackType.LateApplicationQuit, () =>
         {
             OnAudioTargetUpdate = null;
 

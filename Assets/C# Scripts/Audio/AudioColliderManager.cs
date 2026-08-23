@@ -123,7 +123,7 @@ public class AudioColliderManager
 
     public void Dispose()
     {
-        UpdateScheduler.CreateLateOnApplicationQuitCallback(() =>
+        CallbackScheduler.RegisterCallback(CallbackType.LateApplicationQuit, () =>
         {
             OnColliderUpdate = null;
 

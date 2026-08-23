@@ -7,8 +7,7 @@ using Unity.Mathematics;
 [BurstCompile]
 public struct AudioRaytracerJobBatched : IJobParallelForBatch
 {
-    #region Core Raytracer Job Data
-
+    // Core Raytracer Job Data
     [ReadOnly, NoAlias] public float3 RayOrigin;
     [ReadOnly, NoAlias] public NativeArray<half3> RayDirections;
 
@@ -23,13 +22,10 @@ public struct AudioRaytracerJobBatched : IJobParallelForBatch
     [ReadOnly, NoAlias] public int TotalAudioTargets;
 
     [ReadOnly, NoAlias] public float MaxRayLife;
-    [ReadOnly, NoAlias] public byte MaxHitsPerRay;
-
-    #endregion
+    [ReadOnly, NoAlias] public int MaxHitsPerRay;
 
 
-    #region Global Raycast data (single return arrays)
-
+    // Global Raycast data (single return arrays)
 #if UNITY_EDITOR
     [NativeDisableParallelForRestriction]
     [WriteOnly, NoAlias] public NativeArray<AudioRayHitResult> RayHitResults;
@@ -41,17 +37,12 @@ public struct AudioRaytracerJobBatched : IJobParallelForBatch
     [NativeDisableParallelForRestriction]
     [WriteOnly, NoAlias] public NativeArray<half> EchoRayDistances;
 
-    #endregion
 
-
-    #region Per AudioTarget Data (flattened 2D arrays based on TotalAudioTargets and thread usage)
-
+    // Per AudioTarget Data (flattened 2D arrays based on TotalAudioTargets and thread usage)
     [NativeDisableParallelForRestriction]
     [NoAlias] public NativeArray<ushort> MuffleRayHits;
 
     [NoAlias, ReadOnly] public float MaxMuffleHitDistance;
-
-    #endregion
 
 
     private const float EPSILON = 0.0001f;
@@ -63,7 +54,7 @@ public struct AudioRaytracerJobBatched : IJobParallelForBatch
         int batchCount = MuffleRayHits.Length / TotalAudioTargets;
         int batchId = rayStartIndex * batchCount / RayDirections.Length;
 
-        //save local copy of RayOrigin
+        // Save local copy of RayOrigin
         float3 cRayOrigin;
 
         #region Reset Array Data
@@ -118,7 +109,7 @@ public struct AudioRaytracerJobBatched : IJobParallelForBatch
                     rayResult.HitPoint = (half3)cRayOrigin;
 #endif
 
-                    #region Check if hit ray point can return to original origin point (Echo rays to player)
+                    #region Echo rays to player (check if hit ray point can return to original origin point)
 
                     // Offset the hit point a bit so it doesnt intersect with same collider again
                     float3 offsettedRayHitWorldPoint = cRayOrigin - cRayDir * EPSILON;
@@ -143,11 +134,11 @@ public struct AudioRaytracerJobBatched : IJobParallelForBatch
 
                         EchoRayDistances[rayResultId] = echoRayPower;
                     }
-                
+
                     #endregion
 
 
-                    #region Check if ray can get to audiotarget (Muffle rays to all audio targets)
+                    #region Muffle rays to all audio targets (check if ray can get to audiotarget)
 
                     // Raycast to each AudioTarget position
                     for (short AudioTargetId = 0; AudioTargetId < TotalAudioTargets; AudioTargetId++)
