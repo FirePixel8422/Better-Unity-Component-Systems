@@ -1,11 +1,10 @@
-using System;
 using Unity.Mathematics;
 using UnityEngine;
 
 
 public class AudioTargetRT : MonoBehaviour
 {
-    [Header("Set this to true if audioTarget never moves at runtime")]
+    [Tooltip("Set this to true if audioTarget never moves at runtime")]
     [SerializeField] private bool isStatic = true;
     public bool IsStatic => isStatic;
 
@@ -44,6 +43,7 @@ public class AudioTargetRT : MonoBehaviour
     }
     public void UpdateToAudioSystem(NativeJobBatch<float3> audioTargetPositions)
     {
+        DebugLogger.Log(Id.Value);
         audioTargetPositions[Id.Value] = transform.position;
     }
 

@@ -172,10 +172,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -248,6 +247,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &2305066
 MeshFilter:
@@ -309,10 +309,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -385,6 +384,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &8522049
 MeshFilter:
@@ -446,10 +446,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -520,6 +519,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &43325689
 MeshFilter:
@@ -582,10 +582,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -677,6 +676,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &49560626
 MeshFilter:
@@ -778,10 +778,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -854,6 +853,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &73095048
 MeshFilter:
@@ -915,10 +915,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -989,6 +988,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &77056784
 MeshFilter:
@@ -1050,10 +1050,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -1124,6 +1123,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &120906099
 MeshFilter:
@@ -1185,10 +1185,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -1259,6 +1258,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &120931856
 MeshFilter:
@@ -1320,10 +1320,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -1389,6 +1388,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &122325305
 MeshFilter:
@@ -1450,10 +1450,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -1524,6 +1523,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &133238653
 MeshFilter:
@@ -1585,10 +1585,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -1661,6 +1660,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &146710066
 MeshFilter:
@@ -1724,10 +1724,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -1821,6 +1820,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &146765641
 MeshFilter:
@@ -1910,10 +1910,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -2005,6 +2004,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &158516857
 MeshFilter:
@@ -2066,10 +2066,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -2140,6 +2139,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &176565374
 MeshFilter:
@@ -2268,6 +2268,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &222297321
 MeshFilter:
@@ -2316,10 +2317,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -2396,10 +2396,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -2491,6 +2490,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &223890887
 MeshFilter:
@@ -2552,10 +2552,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -2626,6 +2625,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &239611386
 MeshFilter:
@@ -2811,6 +2811,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &241768779
 MeshFilter:
@@ -2950,10 +2951,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -3083,10 +3083,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -3180,6 +3179,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &245504483
 MeshFilter:
@@ -3298,6 +3298,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &259388601
 MeshFilter:
@@ -3325,10 +3326,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -3555,6 +3555,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &327348727
 MeshFilter:
@@ -3582,10 +3583,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -3661,10 +3661,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -3737,6 +3736,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &328095854
 MeshFilter:
@@ -3799,10 +3799,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -3895,6 +3894,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &357030090
 MeshFilter:
@@ -3996,10 +3996,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -4070,6 +4069,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &419194981
 MeshFilter:
@@ -4186,10 +4186,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -4260,6 +4259,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &433413359
 MeshFilter:
@@ -4321,10 +4321,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -4397,6 +4396,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &440391000
 MeshFilter:
@@ -4458,10 +4458,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -4527,6 +4526,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &450729913
 MeshFilter:
@@ -4658,6 +4658,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &516096230
 MeshFilter:
@@ -4706,10 +4707,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -4786,10 +4786,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -4881,6 +4880,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &539639585
 MeshFilter:
@@ -4942,10 +4942,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -5016,6 +5015,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &569009412
 MeshFilter:
@@ -5079,10 +5079,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -5176,6 +5175,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &569555419
 MeshFilter:
@@ -5304,10 +5304,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -5380,6 +5379,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &622996818
 MeshFilter:
@@ -5441,10 +5441,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -5517,6 +5516,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &645838349
 MeshFilter:
@@ -5597,10 +5597,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -5692,6 +5691,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &675734751
 MeshFilter:
@@ -5793,10 +5793,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -5862,6 +5861,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &734906219
 MeshFilter:
@@ -5923,10 +5923,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -5997,6 +5996,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &766073542
 MeshFilter:
@@ -6059,10 +6059,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -6154,6 +6153,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &778732182
 MeshFilter:
@@ -6215,10 +6215,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -6289,6 +6288,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &804470060
 MeshFilter:
@@ -6351,10 +6351,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -6446,6 +6445,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &828541736
 MeshFilter:
@@ -6507,10 +6507,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -6581,6 +6580,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &837190019
 MeshFilter:
@@ -6642,10 +6642,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -6718,6 +6717,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &843413163
 MeshFilter:
@@ -6819,10 +6819,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -6895,6 +6894,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &852839084
 MeshFilter:
@@ -6956,10 +6956,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -7030,6 +7029,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &927513934
 MeshFilter:
@@ -7130,10 +7130,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -7204,6 +7203,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &978148324
 MeshFilter:
@@ -7265,10 +7265,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -7341,6 +7340,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1009373545
 MeshFilter:
@@ -7401,8 +7401,8 @@ MonoBehaviour:
   colliderManager:
     startCapacity: 5
     drawColliderGizmos: 0
-    ColliderGizmosColor: {r: 0.9245283, g: 0.5729768, b: 0.20758267, a: 1}
-    AudioTargetGizmosColor: {r: 0.20784311, g: 0.30807474, b: 0.9254902, a: 1}
+    <ColliderGizmosColor>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
+    <AudioTargetGizmosColor>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1054174521
 GameObject:
   m_ObjectHideFlags: 0
@@ -7455,10 +7455,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -7531,6 +7530,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1054174525
 MeshFilter:
@@ -7594,10 +7594,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -7691,6 +7690,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1056975622
 MeshFilter:
@@ -7809,6 +7809,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1062018014
 MeshFilter:
@@ -7857,10 +7858,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -7936,10 +7936,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -8012,6 +8011,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1095846432
 MeshFilter:
@@ -8073,10 +8073,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -8149,6 +8148,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1106927719
 MeshFilter:
@@ -8366,10 +8366,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -8505,6 +8504,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1116814346
 MeshFilter:
@@ -8604,10 +8604,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -8673,6 +8672,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1130241397
 MeshFilter:
@@ -8734,10 +8734,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -8810,6 +8809,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1152929540
 MeshFilter:
@@ -8922,6 +8922,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1166970481
 MeshFilter:
@@ -8949,10 +8950,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -9081,6 +9081,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1173208421
 MeshFilter:
@@ -9108,10 +9109,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -9189,10 +9189,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -9263,6 +9262,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1175773112
 MeshFilter:
@@ -9324,10 +9324,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -9398,6 +9397,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1217067797
 MeshFilter:
@@ -9459,10 +9459,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -9535,6 +9534,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1268935504
 MeshFilter:
@@ -9597,10 +9597,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -9692,6 +9691,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1277114087
 MeshFilter:
@@ -9755,10 +9755,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -9852,6 +9851,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1282826401
 MeshFilter:
@@ -9940,10 +9940,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -10016,6 +10015,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1283343194
 MeshFilter:
@@ -10077,10 +10077,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -10151,6 +10150,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1297430151
 MeshFilter:
@@ -10212,10 +10212,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -10288,6 +10287,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1324975905
 MeshFilter:
@@ -10400,6 +10400,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1375711496
 MeshFilter:
@@ -10427,10 +10428,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -10506,10 +10506,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -10580,6 +10579,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1402880971
 MeshFilter:
@@ -10641,10 +10641,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -10717,6 +10716,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1429552777
 MeshFilter:
@@ -10829,6 +10829,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1458046733
 MeshFilter:
@@ -10856,10 +10857,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -10965,6 +10965,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1488041910
 MeshFilter:
@@ -11013,10 +11014,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -11092,10 +11092,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -11166,6 +11165,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1490143456
 MeshFilter:
@@ -11227,10 +11227,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -11303,6 +11302,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1523628498
 MeshFilter:
@@ -11365,10 +11365,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -11460,6 +11459,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1536627930
 MeshFilter:
@@ -11521,10 +11521,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -11595,6 +11594,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1577868760
 MeshFilter:
@@ -11696,10 +11696,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -11770,6 +11769,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1614154680
 MeshFilter:
@@ -11831,10 +11831,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -11905,6 +11904,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1620887205
 MeshFilter:
@@ -11966,10 +11966,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -12042,6 +12041,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1626384782
 MeshFilter:
@@ -12103,10 +12103,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -12172,6 +12171,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1631511340
 MeshFilter:
@@ -12284,6 +12284,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1648640017
 MeshFilter:
@@ -12311,10 +12312,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -12392,10 +12392,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -12466,6 +12465,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1651633859
 MeshFilter:
@@ -12527,10 +12527,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -12596,6 +12595,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1651931113
 MeshFilter:
@@ -12605,6 +12605,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651931109}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1653622158 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8106511372705048587, guid: 606d99e5956647f4bbf55f6a1d3d2bc1,
+    type: 3}
+  m_PrefabInstance: {fileID: 291087522009231680}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1658346139
 GameObject:
   m_ObjectHideFlags: 0
@@ -12658,10 +12664,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -12753,6 +12758,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1658346144
 MeshFilter:
@@ -12814,10 +12820,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -12888,6 +12893,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1659741438
 MeshFilter:
@@ -12949,10 +12955,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -13025,6 +13030,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1666046540
 MeshFilter:
@@ -13086,10 +13092,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -13162,6 +13167,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1674427234
 MeshFilter:
@@ -13223,10 +13229,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -13292,6 +13297,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1674688593
 MeshFilter:
@@ -13354,10 +13360,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -13449,6 +13454,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1691937635
 MeshFilter:
@@ -13510,10 +13516,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -13584,6 +13589,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1727043841
 MeshFilter:
@@ -13696,6 +13702,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1729863507
 MeshFilter:
@@ -13723,10 +13730,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -13804,10 +13810,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -13878,6 +13883,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1744947566
 MeshFilter:
@@ -13939,10 +13945,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -14013,6 +14018,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1789665510
 MeshFilter:
@@ -14074,10 +14080,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -14148,6 +14153,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1790565410
 MeshFilter:
@@ -14211,10 +14217,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -14308,6 +14313,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1810182913
 MeshFilter:
@@ -14396,10 +14402,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -14472,6 +14477,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1833578127
 MeshFilter:
@@ -14533,10 +14539,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -14609,6 +14614,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1850253256
 MeshFilter:
@@ -14670,10 +14676,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -14744,6 +14749,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1859639169
 MeshFilter:
@@ -14805,10 +14811,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -14881,6 +14886,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1900560661
 MeshFilter:
@@ -14972,6 +14978,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1907513790
 MeshFilter:
@@ -15020,10 +15027,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -15100,10 +15106,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -15195,6 +15200,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1917172000
 MeshFilter:
@@ -15308,6 +15314,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1920798013
 MeshFilter:
@@ -15335,10 +15342,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -15431,10 +15437,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -15505,6 +15510,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1928809389
 MeshFilter:
@@ -15540,14 +15546,14 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941546987}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 12
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
+  m_CookieSize2D: {x: 10, y: 10}
   m_Shadows:
     m_Type: 2
     m_Resolution: -1
@@ -15693,10 +15699,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -15769,6 +15774,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1950484549
 MeshFilter:
@@ -15830,10 +15836,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -15904,6 +15909,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1975569094
 MeshFilter:
@@ -15965,10 +15971,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -16041,6 +16046,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &2000582519
 MeshFilter:
@@ -16102,10 +16108,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -16178,6 +16183,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &2021201546
 MeshFilter:
@@ -16239,10 +16245,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -16315,6 +16320,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &2027865665
 MeshFilter:
@@ -16427,6 +16433,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &2037342798
 MeshFilter:
@@ -16454,10 +16461,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -16487,6 +16493,39 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 291087522009231680}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2039623059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653622158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74d6bcd0eace6a7448155c81f442f159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioRayDebugger
+  originColor: {r: 1, g: 0.4509804, b: 0, a: 1}
+  RayOrigin:
+    x: 0
+    y: 0
+    z: 0
+  <EnableDebugging>k__BackingField: 0
+  gizmoLimit: 12500
+  DebugData:
+    DrawRayHitsGizmos: 1
+    RayHitColor: {r: 0.2901961, g: 0.67058825, b: 0.9411765, a: 0.8}
+    DrawEchoRayGizmos: 0
+    EchoRayColor: {r: 0.75686276, g: 0.7411765, b: 0.42352942, a: 0.1254902}
+    DrawRayTrailsGizmos: 0
+    RayTrailColor: {r: 0.13333334, g: 0.6509804, b: 0, a: 0.1254902}
+    AudioTargetPositions: []
+    MaxMuffleHits: 0
+    MuffleRayHits: 
+    MufflePercent01: []
+    RayResults: []
+    RayResultCounts: 
+    EchoRayDistances: []
 --- !u!1 &2056685595
 GameObject:
   m_ObjectHideFlags: 0
@@ -16539,10 +16578,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -16613,6 +16651,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &2056685599
 MeshFilter:
@@ -16674,10 +16713,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -16750,6 +16788,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &2064583593
 MeshFilter:
@@ -16811,10 +16850,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -16880,6 +16918,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &2098158232
 MeshFilter:
@@ -16971,6 +17010,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &2111826286
 MeshFilter:
@@ -17019,10 +17059,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   colliderStruct:
     Center:
       x:
@@ -17213,10 +17252,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -17289,6 +17327,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &2115961664
 MeshFilter:
@@ -17468,10 +17507,9 @@ MonoBehaviour:
   ignoreScale: 1
   AudioColliderId: 0
   AudioTargetId: 0
+  cachedTransform: {fileID: 0}
   lastWorldPosition: {x: 0, y: 0, z: 0}
   lastGlobalScale: {x: 0, y: 0, z: 0}
-  DEBUG_AudioColliderId: 0
-  DEBUG_AudioTargetId: 0
   includeGameObjectRotation: 1
   rotationEulerOffset: {x: 0, y: 0, z: 0}
   colliderStruct:
@@ -17544,6 +17582,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &2124988599
 MeshFilter:
@@ -17561,6 +17600,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5607343880359880082, guid: 606d99e5956647f4bbf55f6a1d3d2bc1,
+        type: 3}
+      propertyPath: Debugger
+      value: 
+      objectReference: {fileID: 2039623059}
     - target: {fileID: 5607343880359880082, guid: 606d99e5956647f4bbf55f6a1d3d2bc1,
         type: 3}
       propertyPath: rayCount
@@ -17595,6 +17639,11 @@ PrefabInstance:
         type: 3}
       propertyPath: echoRayColor.g
       value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607343880359880082, guid: 606d99e5956647f4bbf55f6a1d3d2bc1,
+        type: 3}
+      propertyPath: rayOriginOffset.y
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 5607343880359880082, guid: 606d99e5956647f4bbf55f6a1d3d2bc1,
         type: 3}
@@ -17659,7 +17708,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8106511372705048587, guid: 606d99e5956647f4bbf55f6a1d3d2bc1,
+        type: 3}
+      insertIndex: 6
+      addedObject: {fileID: 2039623059}
   m_SourcePrefab: {fileID: 100100000, guid: 606d99e5956647f4bbf55f6a1d3d2bc1, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

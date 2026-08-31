@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-[AttributeUsage(AttributeTargets.Field, AllowMultiple = false)]
+[AttributeUsage(AttributeTargets.Field, AllowMultiple = true)]
 public sealed class ShowIfAttribute : PropertyAttribute
 {
     public readonly string condition;

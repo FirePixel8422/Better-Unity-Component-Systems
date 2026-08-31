@@ -1,3 +1,4 @@
+using Fire_Pixel.Utility;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,8 +9,6 @@ using UnityEngine;
 
 namespace Fire_Pixel.Utility
 {
-#pragma warning disable UDR0002
-#pragma warning disable UDR0004
     /// <summary>
     /// Uitlity class to have an optimized easy access to varying callbacks by using an Action based callback system
     /// Handles callbacks and batch them for every script by an event based register system
@@ -35,7 +34,7 @@ namespace Fire_Pixel.Utility
         {
             Reset();
 
-            CallbackRunnerInstance gameManager = new GameObject(">>UpdateScheduler<<").AddComponent<CallbackRunnerInstance>();
+            CallbackRunnerInstance gameManager = new GameObject(">>CalbackScheduler<<").AddComponent<CallbackRunnerInstance>();
             gameManager.Init();
 
             GameObject.DontDestroyOnLoad(gameManager.gameObject);
@@ -47,6 +46,7 @@ namespace Fire_Pixel.Utility
             FixedUpdate = null;
 
             LateDestroy = null;
+            ApplicationQuit = null;
             LateApplicationQuit = null;
 
             delayedCallbacks?.Clear();
@@ -74,6 +74,10 @@ namespace Fire_Pixel.Utility
 
                 case CallbackType.FixedUpdate:
                     FixedUpdate += action;
+                    return;
+
+                case CallbackType.Destroy:
+                    LateDestroy += action;
                     return;
 
                 case CallbackType.LateDestroy:
@@ -113,6 +117,10 @@ namespace Fire_Pixel.Utility
                     FixedUpdate -= action;
                     return;
 
+                case CallbackType.Destroy:
+                    LateDestroy -= action;
+                    return;
+
                 case CallbackType.LateDestroy:
                     LateDestroy -= action;
                     return;
@@ -149,9 +157,9 @@ namespace Fire_Pixel.Utility
         #endregion
 
 
-        #region Delayed Invoke Callbacks
+        #region Delayed Callback System
 
-        public static InvokeCallbackReference Invoke(float delay, Action callback, int groupId = 0)
+        public static InvokeCallbackReference InvokeDelayed(float delay, Action callback, int groupId = 0)
         {
             delayedCallbacks.Add(new DelayedCallback(callback, Time.time + delay, groupId));
 
@@ -200,22 +208,6 @@ namespace Fire_Pixel.Utility
             // Remove the callback and its reference
             callbackReferences.RemoveAtSwapBack(toRemoveId);
             delayedCallbacks.RemoveAtSwapBack(toRemoveId);
-        }
-
-
-        [System.Serializable]
-        public struct DelayedCallback
-        {
-            public Action Callback;
-            public float InvokeGlobalTime;
-            public int GroupId;
-
-            public DelayedCallback(Action callback, float invokeGlobalTime, int groupId)
-            {
-                Callback = callback;
-                InvokeGlobalTime = invokeGlobalTime;
-                GroupId = groupId;
-            }
         }
 
         #endregion
@@ -281,7 +273,7 @@ namespace Fire_Pixel.Utility
 
             private void OnApplicationQuit()
             {
-                ApplicationQuit.Invoke();
+                ApplicationQuit?.Invoke();
                 quitting = true;
             }
             private void OnDestroy()
@@ -295,29 +287,70 @@ namespace Fire_Pixel.Utility
             }
         }
     }
-#pragma warning restore UDR0002
-#pragma warning restore UDR0004
-}
 
-[System.Serializable]
-public class InvokeCallbackReference
-{
-    public int Id { get; private set; }
-    public void SetId(int id) => Id = id;
-
-    public InvokeCallbackReference(int id)
+    public static class CallbackSchedulerExtensionMethods
     {
-        Id = id;
+        /// <summary>
+        /// Invoke function <paramref name="f"/> after <paramref name="delay"/> seconds. Schedules a coroutine on the target <see cref="MonoBehaviour"/>
+        /// </summary>
+        /// <returns>The scheduled coroutine ref</returns>
+        public static InvokeCallbackReference Invoke(this MonoBehaviour mb, float delay, Action f)
+        {
+            return CallbackScheduler.InvokeDelayed(delay, f, mb.GetInstanceID());
+        }
+        /// <summary>
+        /// Stops a previously scheduled Invoke Callback on target (<see cref="MonoBehaviour"/>) and clears its reference.
+        /// Must be called on the same owner (<see cref="MonoBehaviour"/>) that started the coroutine.
+        /// </summary>
+        public static void CancelInvoke(this MonoBehaviour _, InvokeCallbackReference callbackRef)
+        {
+            if (callbackRef == null) return;
+
+            CallbackScheduler.CancelInvoke(ref callbackRef);
+        }
+        /// <summary>
+        /// Stops a previously scheduled Invoke Callback on <see cref="CallbackScheduler"/> and clears its reference.
+        /// </summary>
+        public static void CancelAllInvokes(this MonoBehaviour mb)
+        {
+            CallbackScheduler.CancelAllInvokesInGroup(mb.GetInstanceID());
+        }
     }
-}
 
-public enum CallbackType : byte
-{
-    Update,
-    LateUpdate,
-    FixedUpdate,
+    [System.Serializable]
+    public struct DelayedCallback
+    {
+        public Action Callback;
+        public float InvokeGlobalTime;
+        public int GroupId;
 
-    LateDestroy,
-    ApplicationQuit,
-    LateApplicationQuit,
+        public DelayedCallback(Action callback, float invokeGlobalTime, int groupId)
+        {
+            Callback = callback;
+            InvokeGlobalTime = invokeGlobalTime;
+            GroupId = groupId;
+        }
+    }
+    [System.Serializable]
+    public class InvokeCallbackReference
+    {
+        public int Id { get; private set; }
+        public void SetId(int id) => Id = id;
+
+        public InvokeCallbackReference(int id)
+        {
+            Id = id;
+        }
+    }
+
+    public enum CallbackType : byte
+    {
+        Update,
+        LateUpdate,
+        FixedUpdate,
+        Destroy,
+        LateDestroy,
+        ApplicationQuit,
+        LateApplicationQuit,
+    }
 }

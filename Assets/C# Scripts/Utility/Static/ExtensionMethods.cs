@@ -9,37 +9,6 @@ using UnityEngine.InputSystem;
 
 public static class ExtensionMethods
 {
-    #region Invoke
-
-    /// <summary>
-    /// Invoke function <paramref name="f"/> after <paramref name="delay"/> seconds. Schedules a coroutine on the target <see cref="MonoBehaviour"/>
-    /// </summary>
-    /// <returns>The scheduled coroutine ref</returns>
-    public static InvokeCallbackReference Invoke(this MonoBehaviour mb, float delay, Action f)
-    {
-        return CallbackScheduler.Invoke(delay, f, mb.GetInstanceID());
-    }
-    /// <summary>
-    /// Stops a previously scheduled Invoke Callback on target (<see cref="MonoBehaviour"/>) and clears its reference.
-    /// Must be called on the same owner (<see cref="MonoBehaviour"/>) that started the coroutine.
-    /// </summary>
-    public static void CancelInvoke(this MonoBehaviour _, InvokeCallbackReference callbackRef)
-    {
-        if (callbackRef == null) return;
-
-        CallbackScheduler.CancelInvoke(ref callbackRef);
-    }
-    /// <summary>
-    /// Stops a previously scheduled Invoke Callback on <see cref="CallbackScheduler"/> and clears its reference.
-    /// </summary>
-    public static void CancelAllInvokes(this MonoBehaviour mb)
-    {
-        CallbackScheduler.CancelAllInvokesInGroup(mb.GetInstanceID());
-    }
-
-    #endregion
-
-
     #region Transform Logic
 
     public static void SetParent(this Transform trans, Transform parent, bool keepLocalPos, bool keepLocalRot)

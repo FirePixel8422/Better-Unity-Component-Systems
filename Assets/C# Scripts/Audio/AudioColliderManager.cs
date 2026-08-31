@@ -35,6 +35,14 @@ public class AudioColliderManager
         OBBColliders = new NativeJobBatch<ColliderOBBStruct>(startCapacity, Allocator.Persistent);
         SphereColliders = new NativeJobBatch<ColliderSphereStruct>(startCapacity, Allocator.Persistent);
     }
+    public void Dispose()
+    {
+        OnColliderUpdate = null;
+
+        AABBColliders.Dispose();
+        OBBColliders.Dispose();
+        SphereColliders.Dispose();
+    }
 
 
     #region Add/Remove/Update Collider in system
@@ -121,25 +129,13 @@ public class AudioColliderManager
         SphereColliders.UpdateJobBatch();
     }
 
-    public void Dispose()
-    {
-        CallbackScheduler.RegisterCallback(CallbackType.LateApplicationQuit, () =>
-        {
-            OnColliderUpdate = null;
-
-            AABBColliders.Dispose();
-            OBBColliders.Dispose();
-            SphereColliders.Dispose();
-        });
-    }
-
 
 #if UNITY_EDITOR
     [Header("DEBUG")]
     [SerializeField] private bool drawColliderGizmos = true;
 
-    public Color ColliderGizmosColor;
-    public Color AudioTargetGizmosColor;
+    [field: SerializeField] public Color ColliderGizmosColor { get; private set; }
+    [field: SerializeField] public Color AudioTargetGizmosColor { get; private set; }
 
     public void DrawGizmos()
     {

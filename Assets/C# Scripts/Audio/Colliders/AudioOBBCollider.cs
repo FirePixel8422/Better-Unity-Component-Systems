@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AudioOBBCollider : AudioCollider
 {
+    [Tooltip("Set to true to use the gameObjects rotation for the collider")]
     [SerializeField] private bool includeGameObjectRotation = true;
     [SerializeField] private Vector3 rotationEulerOffset;
 
@@ -17,7 +18,7 @@ public class AudioOBBCollider : AudioCollider
 
     public override void AddToAudioSystem(NativeJobBatch<ColliderAABBStruct> aabbStructs, NativeJobBatch<ColliderOBBStruct> obbStructs, NativeJobBatch<ColliderSphereStruct> sphereStructs)
     {
-        AudioColliderId = (short)obbStructs.NextBatch.Length;
+        AudioColliderId = (short)obbStructs.NextBatchCount;
         obbStructs.Add(GetBakedColliderStruct());
     }
     public override void UpdateToAudioSystem(NativeJobBatch<ColliderAABBStruct> aabbStructs, NativeJobBatch<ColliderOBBStruct> obbStructs, NativeJobBatch<ColliderSphereStruct> sphereStructs)

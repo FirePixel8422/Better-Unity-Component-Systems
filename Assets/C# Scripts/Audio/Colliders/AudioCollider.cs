@@ -15,12 +15,12 @@ public abstract class AudioCollider : MonoBehaviour
     public bool IsStatic => isStatic;
     public bool IgnoreScale => ignoreScale;
 
-    [HideInInspector] public short AudioColliderId;
-    [HideInInspector] public short AudioTargetId;
+    [EditorReadOnly] public short AudioColliderId;
+    [EditorReadOnly] public short AudioTargetId;
 
-    protected Transform cachedTransform;
-    [SerializeField] protected Vector3 lastWorldPosition;
-    [SerializeField] protected Vector3 lastGlobalScale;
+    [SerializeField, EditorReadOnly] protected Transform cachedTransform;
+    [SerializeField, EditorReadOnly] protected Vector3 lastWorldPosition;
+    [SerializeField, EditorReadOnly] protected Vector3 lastGlobalScale;
 
 
     private void Awake()
@@ -95,32 +95,26 @@ public abstract class AudioCollider : MonoBehaviour
     // Enforce equal staticness on all attached colliders and AudioTargetRT on the same gameobject
     private void OnValidate()
     {
-        if (prevIsStatic != IsStatic)
-        {
-            if (Application.isPlaying) return;
+        if (Application.isPlaying || prevIsStatic == IsStatic) return;
 
-            if (TryGetComponent(out AudioTargetRT audiotarget))
-            {
-                audiotarget.SetIsStaticValue(IsStatic);
-            }
-
-            AudioCollider[] audioColliders = GetComponents<AudioCollider>();
-            for (int i = 0; i < audioColliders.Length; i++)
-            {
-                if (audioColliders[i] == this) return;
-
-                audioColliders[i].SetIsStaticValue(IsStatic);
-            }
-
-            DebugLogger.Log($"Possible AudioTarget and all attached AudioColliders set to the same static value", audioColliders.Length != 1 || audiotarget != null);
-        }
         prevIsStatic = IsStatic;
+
+        if (TryGetComponent(out AudioTargetRT audiotarget))
+        {
+            audiotarget.SetIsStaticValue(IsStatic);
+        }
+
+        AudioCollider[] audioColliders = GetComponents<AudioCollider>();
+        for (int i = 0; i < audioColliders.Length; i++)
+        {
+            if (audioColliders[i] == this) return;
+
+            audioColliders[i].SetIsStaticValue(IsStatic);
+        }
+
+        DebugLogger.Log($"Possible AudioTarget and all attached AudioColliders set to the same static value", audioColliders.Length != 1 || audiotarget != null);
     }
 
-
-    [Header("DEBUG")]
-    [SerializeField] private short DEBUG_AudioColliderId;
-    [SerializeField] private short DEBUG_AudioTargetId;
 
     private void OnDrawGizmosSelected()
     {
@@ -130,9 +124,6 @@ public abstract class AudioCollider : MonoBehaviour
             AudioRaytracingManager.ColliderManager.ColliderGizmosColor;
 
         DrawColliderGizmo();
-
-        DEBUG_AudioColliderId = AudioColliderId;
-        DEBUG_AudioTargetId = AudioTargetId;
     }
     public virtual void DrawColliderGizmo() { }
 #endif

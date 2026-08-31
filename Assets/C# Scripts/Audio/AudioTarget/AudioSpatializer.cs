@@ -30,8 +30,8 @@ public class AudioSpatializer : MonoBehaviour
 
 
 
-    private void OnEnable() => CallbackScheduler.RegisterCallback(CallbackType.FixedUpdate, OnLateUpdate);
-    private void OnDisable() => CallbackScheduler.RegisterCallback(CallbackType.FixedUpdate, OnLateUpdate);
+    private void OnEnable() => CallbackScheduler.RegisterCallback(CallbackType.LateUpdate, OnLateUpdate);
+    private void OnDisable() => CallbackScheduler.RegisterCallback(CallbackType.LateUpdate, OnLateUpdate);
 
     private void Awake()
     {

@@ -22,7 +22,7 @@ public struct ProcessAudioDataJob : IJob
              
     [ReadOnly, NoAlias] public int MaxHitsPerRay;
     [ReadOnly, NoAlias] public int RayCount;
-    [ReadOnly, NoAlias] public float3 RayOriginWorld;
+    [ReadOnly, NoAlias] public float3 RayOrigin;
 
     // Return array with audio settings per audio target
     [WriteOnly, NoAlias] public NativeArray<AudioTargetRTSettings> AudioTargetSettings;

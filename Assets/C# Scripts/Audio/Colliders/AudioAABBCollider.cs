@@ -13,7 +13,7 @@ public class AudioAABBCollider : AudioCollider
 
     public override void AddToAudioSystem(NativeJobBatch<ColliderAABBStruct> aabbStructs, NativeJobBatch<ColliderOBBStruct> obbStructs, NativeJobBatch<ColliderSphereStruct> sphereStructs)
     {
-        AudioColliderId = (short)aabbStructs.NextBatch.Length;
+        AudioColliderId = (short)aabbStructs.NextBatchCount;
         aabbStructs.Add(GetBakedColliderStruct());
     }
     public override void UpdateToAudioSystem(NativeJobBatch<ColliderAABBStruct> aabbStructs, NativeJobBatch<ColliderOBBStruct> obbStructs, NativeJobBatch<ColliderSphereStruct> sphereStructs)

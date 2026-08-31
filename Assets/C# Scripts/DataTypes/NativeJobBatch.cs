@@ -1,15 +1,21 @@
 ﻿using Unity.Collections;
 using Unity.Collections.LowLevel.Unsafe;
+using Unity.Mathematics;
 
 
 /// <summary>
 /// Batch container type that allows live read writes to a NativeArray of type <typeparamref name="T"/> and syncs it to a Job only copy every <see cref="UpdateJobBatch"/> call
 /// </summary>
-public unsafe class NativeJobBatch<T> where T : unmanaged
+public class NativeJobBatch<T> where T : unmanaged
 {
-    public NativeList<T> NextBatch;
-    public NativeList<T> JobBatch;
-    public NativeArray<T> JobBatchAsArray() => JobBatch.AsArray();
+    public NativeArray<T> NextBatch;
+    public int NextBatchCount;
+
+    public NativeArray<T> JobBatch;
+    public int JobBatchCount;
+
+    private readonly Allocator allocator;
+
 
     public T this[int index]
     {
@@ -17,36 +23,63 @@ public unsafe class NativeJobBatch<T> where T : unmanaged
         set => NextBatch[index] = value;
     }
 
-
     public NativeJobBatch(int startBatchSize, Allocator allocator = Allocator.Persistent)
     {
-        JobBatch = new NativeList<T>(startBatchSize, allocator);
-        NextBatch = new NativeList<T>(startBatchSize, allocator);
+        JobBatch = new NativeArray<T>(startBatchSize, allocator);
+        NextBatch = new NativeArray<T>(startBatchSize, allocator);
+
+        this.allocator = allocator;
     }
 
-    public void Add(T toAdd)
+    public unsafe void Add(T toAdd)
     {
-        NextBatch.Add(toAdd);
+        if (NextBatchCount >= NextBatch.Length)
+        {
+            int newLength = math.max(NextBatch.Length * 2, 1);
+
+            NativeArray<T> newArray = new NativeArray<T>(newLength, allocator, NativeArrayOptions.UninitializedMemory);
+
+            UnsafeUtility.MemCpy(
+                newArray.GetUnsafePtr(),
+                NextBatch.GetUnsafeReadOnlyPtr(),
+                NextBatchCount * UnsafeUtility.SizeOf<T>());
+
+            NextBatch.Dispose();
+            NextBatch = newArray;
+        }
+        NextBatch[NextBatchCount++] = toAdd;
     }
     public void RemoveAtSwapBack(int id)
     {
-        NextBatch.RemoveAtSwapBack(id);
+        NextBatchCount--;
+
+        if (id == NextBatchCount) return;
+
+        // Intentional non clear of last entry, it doesnt matter.
+        NextBatch[id] = NextBatch[NextBatchCount];
+    }
+    public void RemoveLastEntry()
+    {
+        // Intentional non clear of last entry, it doesnt matter.
+        NextBatchCount--;
     }
 
     public unsafe void UpdateJobBatch()
     {
         // Ensure CurrentBatch can hold NextBatch
-        if (JobBatch.Capacity < NextBatch.Length)
+        if (JobBatch.Length < NextBatchCount)
         {
-            JobBatch.Capacity = NextBatch.Length;
+            NativeArray<T> newArray = new NativeArray<T>(NextBatchCount, allocator, NativeArrayOptions.UninitializedMemory);
+
+            JobBatch.Dispose();
+            JobBatch = newArray;
         }
 
-        JobBatch.Length = NextBatch.Length;
-
+        JobBatchCount = NextBatchCount;
         UnsafeUtility.MemCpy(
             JobBatch.GetUnsafePtr(),
-            NextBatch.GetUnsafePtr(),
-            NextBatch.Length * UnsafeUtility.SizeOf<T>());
+            NextBatch.GetUnsafeReadOnlyPtr(),
+            NextBatchCount * UnsafeUtility.SizeOf<T>());
     }
 
     public void Dispose()

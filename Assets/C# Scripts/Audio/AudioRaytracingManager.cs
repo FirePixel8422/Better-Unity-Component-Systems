@@ -1,3 +1,4 @@
+using Fire_Pixel.Utility;
 using Unity.Jobs.LowLevel.Unsafe;
 using Unity.Mathematics;
 using UnityEngine;
@@ -34,6 +35,15 @@ public class AudioRaytracingManager : MonoBehaviour
         colliderManager.Init();
         audioTargetManager.Init();
     }
+    private void OnDestroy()
+    {
+        CallbackScheduler.RegisterCallback(CallbackType.LateApplicationQuit, () =>
+        {
+            colliderManager.Dispose();
+            audioTargetManager.Dispose();
+        });
+    }
+
     private void OnValidate()
     {
         Instance = this;

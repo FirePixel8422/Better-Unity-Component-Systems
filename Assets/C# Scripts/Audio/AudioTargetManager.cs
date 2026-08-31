@@ -3,7 +3,6 @@ using Unity.Collections;
 using UnityEngine;
 using System;
 using Unity.Mathematics;
-using Fire_Pixel.Utility;
 
 
 [Serializable]
@@ -42,7 +41,16 @@ public class AudioTargetManager
         MuffleRayHits = new NativeArray<ushort>(startCapacity * AudioRaytracingManager.ToUseThreadCount, Allocator.Persistent);
         PermeationPowerRemains = new NativeArray<float>(startCapacity * AudioRaytracingManager.ToUseThreadCount, Allocator.Persistent);
     }
+    public void Dispose()
+    {
+        OnAudioTargetUpdate = null;
 
+        idPool.Dispose();
+        AudioTargetPositions.Dispose();
+        AudioTargetSettings.Dispose();
+        PermeationPowerRemains.Dispose();
+        MuffleRayHits.Dispose();
+    }
 
     #region Add/Remove/Update AudioTargetRT in system
 
@@ -91,8 +99,8 @@ public class AudioTargetManager
         }
 
         audioTargets.RemoveAt(lastIndex);
-        AudioTargetSettings.NextBatch.RemoveAt(lastIndex);
-        AudioTargetPositions.NextBatch.RemoveAt(lastIndex);
+        AudioTargetSettings.RemoveLastEntry();
+        AudioTargetPositions.RemoveLastEntry();
     }
     public static void UpdateColiderInSystem(AudioTargetRT target)
     {
@@ -130,19 +138,5 @@ public class AudioTargetManager
 
             audioTargets[audioTargetId].UpdateAudioSource(settings);
         }
-    }
-
-    public static void Dispose()
-    {
-        CallbackScheduler.RegisterCallback(CallbackType.LateApplicationQuit, () =>
-        {
-            OnAudioTargetUpdate = null;
-
-            idPool.Dispose();
-            AudioTargetPositions.Dispose();
-            AudioTargetSettings.Dispose();
-            PermeationPowerRemains.Dispose();
-            MuffleRayHits.Dispose();
-        });
     }
 }

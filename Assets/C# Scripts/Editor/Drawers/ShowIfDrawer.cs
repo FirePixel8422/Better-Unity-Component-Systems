@@ -8,113 +8,101 @@ public sealed class ShowIfDrawer : PropertyDrawer
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
     {
         if (!ShouldShow(property))
-        {
             return 0f;
-        }
 
         return EditorGUI.GetPropertyHeight(property, label, true);
     }
 
-    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+    public override void OnGUI(
+        Rect position,
+        SerializedProperty property,
+        GUIContent label)
     {
         if (!ShouldShow(property))
-        {
             return;
-        }
 
         EditorGUI.PropertyField(position, property, label, true);
     }
 
     private bool ShouldShow(SerializedProperty property)
     {
-        ShowIfAttribute attr = (ShowIfAttribute)attribute;
+        ShowIfAttribute attribute = (ShowIfAttribute)this.attribute;
 
-        SerializedProperty condition = FindCondition(property, attr.condition);
+        SerializedProperty condition = FindCondition(property, attribute.condition);
 
         if (condition == null)
-        {
             return true;
-        }
 
         return Evaluate(condition);
     }
 
-    private static SerializedProperty FindCondition(SerializedProperty property, string condition)
+    private static SerializedProperty FindCondition(
+        SerializedProperty property,
+        string conditionName)
     {
-        SerializedObject obj = property.serializedObject;
+        // Try the same parent first.
+        SerializedProperty parent = GetParentProperty(property);
 
-        // 1. direct field
-        SerializedProperty direct = obj.FindProperty(condition);
-        if (direct != null)
+        if (parent != null)
         {
-            return direct;
+            SerializedProperty relative =
+                parent.FindPropertyRelative(conditionName);
+
+            if (relative != null)
+                return relative;
+
+            relative = parent.FindPropertyRelative(
+                $"<{conditionName}>k__BackingField");
+
+            if (relative != null)
+                return relative;
         }
 
-        // 2. IMPORTANT FIX: scan all properties (handles backing fields correctly)
-        SerializedProperty iterator = obj.GetIterator();
+        // Root-level fallback.
+        SerializedProperty root =
+            property.serializedObject.FindProperty(conditionName);
 
-        while (iterator.NextVisible(true))
-        {
-            if (IsMatch(iterator.name, condition))
-            {
-                return iterator.Copy();
-            }
-        }
+        if (root != null)
+            return root;
 
-        // 3. fallback: relative path resolution
+        return property.serializedObject.FindProperty(
+            $"<{conditionName}>k__BackingField");
+    }
+
+    private static SerializedProperty GetParentProperty(
+        SerializedProperty property)
+    {
         string path = property.propertyPath;
+
         int lastDot = path.LastIndexOf('.');
 
-        while (lastDot >= 0)
-        {
-            string prefix = path.Substring(0, lastDot + 1);
-            SerializedProperty candidate = obj.FindProperty(prefix + condition);
+        if (lastDot < 0)
+            return null;
 
-            if (candidate != null)
-            {
-                return candidate;
-            }
+        string parentPath = path.Substring(0, lastDot);
 
-            path = path.Substring(0, lastDot);
-            lastDot = path.LastIndexOf('.');
-        }
-
-        return null;
+        return property.serializedObject.FindProperty(parentPath);
     }
 
-    private static bool IsMatch(string serializedName, string condition)
+    private static bool Evaluate(SerializedProperty property)
     {
-        // handles:
-        // <X>k__BackingField
-        // X
-        // _x
-        if (serializedName == condition)
+        return property.propertyType switch
         {
-            return true;
-        }
+            SerializedPropertyType.Boolean =>
+                property.boolValue,
 
-        if (serializedName == $"<{condition}>k__BackingField")
-        {
-            return true;
-        }
+            SerializedPropertyType.Integer =>
+                property.intValue != 0,
 
-        if (serializedName.EndsWith(condition))
-        {
-            return true;
-        }
+            SerializedPropertyType.Float =>
+                property.floatValue != 0f,
 
-        return false;
-    }
+            SerializedPropertyType.ObjectReference =>
+                property.objectReferenceValue != null,
 
-    private static bool Evaluate(SerializedProperty prop)
-    {
-        return prop.propertyType switch
-        {
-            SerializedPropertyType.Boolean => prop.boolValue,
-            SerializedPropertyType.ObjectReference => prop.objectReferenceValue != null,
-            SerializedPropertyType.Integer => prop.intValue != 0,
-            SerializedPropertyType.Float => prop.floatValue != 0f,
-            SerializedPropertyType.Enum => prop.enumValueIndex != 0,
+            SerializedPropertyType.Enum =>
+                property.enumValueIndex != 0,
+
             _ => true
         };
     }

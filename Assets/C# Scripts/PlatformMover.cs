@@ -27,7 +27,7 @@ public class PlatformMover : MonoBehaviour
 
     private void PauseDelay()
     {
-        CallbackScheduler.RegisterCallback(CallbackType.FixedUpdate, OnFixedUpdate);
+        CallbackScheduler.UnRegisterCallback(CallbackType.FixedUpdate, OnFixedUpdate);
         Invoke(nameof(Play), delay);
     }
     private void Play() => CallbackScheduler.RegisterCallback(CallbackType.FixedUpdate, OnFixedUpdate);
