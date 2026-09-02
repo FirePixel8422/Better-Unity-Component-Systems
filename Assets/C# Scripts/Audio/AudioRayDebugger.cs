@@ -11,8 +11,6 @@ public class AudioRayDebugger : MonoBehaviour
     [field: WarningIf(ComparisonType.True, "Debugging enabled, may affect performance")]
     [field: SerializeField] public bool EnableDebugging { get; private set; }
 
-    [Range(0, 50000)]
-    [SerializeField] private int gizmoLimit;
 
     [ShowIf(nameof(EnableDebugging))]
     public Wrapper DebugData;
@@ -20,6 +18,9 @@ public class AudioRayDebugger : MonoBehaviour
     [System.Serializable]
     public struct Wrapper
     {
+        [Range(0, 50000)]
+        public int GizmoLimit;
+        
         public bool DrawRayHitsGizmos;
         [ShowIf(nameof(DrawRayHitsGizmos))]
         public Color RayHitColor;
@@ -44,72 +45,70 @@ public class AudioRayDebugger : MonoBehaviour
 
 
 
-    private void Reset()
+    private void Awake()
     {
         GetComponent<AudioRayTracer>().Debugger = this;
     }
 
     private void OnDrawGizmos()
     {
+        if (!Application.isPlaying || !EnableDebugging || !DebugData.RayResults.HasData()) return;
+
         float3 rayOrigin = RayOrigin;
 
         Gizmos.color = originColor;
         Gizmos.DrawWireCube(rayOrigin, Vector3.one * 0.25f);
         Gizmos.DrawWireCube(rayOrigin, Vector3.one * 0.2f);
 
-        if (Application.isPlaying == false) return;
+        float3 prevRayHitPoint;
 
-        if (DebugData.RayResults.HasData() && EnableDebugging)
+        int maxRayHits = DebugData.RayResults.Length / DebugData.RayResultCounts.Length;
+        int setResultAmountsCount = DebugData.RayResultCounts.Length;
+        int cSetResultCount;
+
+        if (setResultAmountsCount * maxRayHits > DebugData.GizmoLimit)
         {
-            float3 prevRayHitPoint;
+            DebugLogger.LogWarning($"Max Gizmos Reached: '{DebugData.GizmoLimit}', please turn of gizmos to not fry CPU");
 
-            int maxRayHits = DebugData.RayResults.Length / DebugData.RayResultCounts.Length;
-            int setResultAmountsCount = DebugData.RayResultCounts.Length;
-            int cSetResultCount;
+            setResultAmountsCount = DebugData.GizmoLimit/ maxRayHits;
+        }
 
-            if (setResultAmountsCount * maxRayHits > gizmoLimit)
+        for (int i = 0; i < setResultAmountsCount; i++)
+        {
+            cSetResultCount = DebugData.RayResultCounts[i];
+            prevRayHitPoint = rayOrigin;
+
+            // Ray hit markers and trails
+            for (int i2 = 0; i2 < cSetResultCount; i2++)
             {
-                DebugLogger.LogWarning($"Max Gizmos Reached: '{gizmoLimit}', please turn of gizmos to not fry CPU");
+                int cRayHitId = i * maxRayHits + i2;
+                float3 cRayHitPoint = DebugData.RayResults[cRayHitId].HitPoint;
 
-                setResultAmountsCount = gizmoLimit / maxRayHits;
-            }
-
-            for (int i = 0; i < setResultAmountsCount; i++)
-            {
-                cSetResultCount = DebugData.RayResultCounts[i];
-                prevRayHitPoint = rayOrigin;
-
-                // Ray hit markers and trails
-                for (int i2 = 0; i2 < cSetResultCount; i2++)
+                if (DebugData.DrawRayHitsGizmos)
                 {
-                    int cRayHitId = i * maxRayHits + i2;
-                    float3 cRayHitPoint = DebugData.RayResults[cRayHitId].HitPoint;
-
-                    if (DebugData.DrawRayHitsGizmos)
-                    {
-                        Gizmos.color = DebugData.RayHitColor;
-                        Gizmos.DrawWireCube(cRayHitPoint, Vector3.one * 0.1f);
-                    }
-                    if (DebugData.DrawRayTrailsGizmos)
-                    {
-                        Gizmos.color = DebugData.RayTrailColor;
-                        Gizmos.DrawLine(prevRayHitPoint, cRayHitPoint);
-                        prevRayHitPoint = cRayHitPoint;
-                    }
+                    Gizmos.color = DebugData.RayHitColor;
+                    Gizmos.DrawWireCube(cRayHitPoint, Vector3.one * 0.1f);
                 }
-            }
-
-            for (int i = 0; i < DebugData.RayResults.Length; i++)
-            {
-                if (DebugData.DrawEchoRayGizmos)
+                if (DebugData.DrawRayTrailsGizmos)
                 {
-                    if (DebugData.EchoRayDistances[i] != 0)
-                    {
-                        Gizmos.color = DebugData.EchoRayColor;
-                        Gizmos.DrawLine(rayOrigin, (float3)DebugData.RayResults[i].HitPoint);
-                    }
+                    Gizmos.color = DebugData.RayTrailColor;
+                    Gizmos.DrawLine(prevRayHitPoint, cRayHitPoint);
+                    prevRayHitPoint = cRayHitPoint;
                 }
             }
         }
+
+        for (int i = 0; i < DebugData.RayResults.Length; i++)
+        {
+            if (DebugData.DrawEchoRayGizmos)
+            {
+                if (DebugData.EchoRayDistances[i] != 0)
+                {
+                    Gizmos.color = DebugData.EchoRayColor;
+                    Gizmos.DrawLine(rayOrigin, (float3)DebugData.RayResults[i].HitPoint);
+                }
+            }
+        }
+
     }
 }

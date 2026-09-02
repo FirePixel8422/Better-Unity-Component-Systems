@@ -1,5 +1,4 @@
-﻿using Fire_Pixel.Utility;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Unity.Collections;
 using UnityEngine;
@@ -131,29 +130,29 @@ public class AudioColliderManager
 
 
 #if UNITY_EDITOR
-    [Header("DEBUG")]
     [SerializeField] private bool drawColliderGizmos = true;
 
+    [field: ShowIf(nameof(drawColliderGizmos))]
     [field: SerializeField] public Color ColliderGizmosColor { get; private set; }
+
+    [field: ShowIf(nameof(drawColliderGizmos))]
     [field: SerializeField] public Color AudioTargetGizmosColor { get; private set; }
 
     public void DrawGizmos()
     {
+        if (!drawColliderGizmos) return;
+
         AudioCollider[] colliders = GameObject.FindObjectsByType<AudioCollider>(FindObjectsSortMode.None);
 
-        if (drawColliderGizmos)
+        for (int i = 0; i < colliders.Length; i++)
         {
-            for (int i = 0; i < colliders.Length; i++)
-            {
-                bool isAudioTarget = colliders[i].transform.HasComponent<AudioTargetRT>();
-                Gizmos.color = isAudioTarget ?
-                    AudioTargetGizmosColor :
-                    ColliderGizmosColor;
+            bool isAudioTarget = colliders[i].transform.HasComponent<AudioTargetRT>();
+            Gizmos.color = isAudioTarget ?
+                AudioTargetGizmosColor :
+                ColliderGizmosColor;
 
-                colliders[i].DrawColliderGizmo();
-            }
+            colliders[i].DrawColliderGizmo();
         }
     }
 #endif
-
 }

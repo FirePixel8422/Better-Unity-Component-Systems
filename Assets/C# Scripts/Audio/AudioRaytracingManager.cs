@@ -3,14 +3,14 @@ using Unity.Jobs.LowLevel.Unsafe;
 using Unity.Mathematics;
 using UnityEngine;
 
+
 public class AudioRaytracingManager : MonoBehaviour
 {
     private static AudioRaytracingManager Instance;
     
 
     [Header("Run Raytracing async on background threads in parallel")]
-    [Space(-8)]
-    [Tooltip("WARNING: If false will block the main thread every frame until finished")]
+    [Tooltip("WARNING: If false will block the main thread until finished")]
     [SerializeField] private bool computeAsync = true;
 
     [Tooltip("Max threads to use for raytrace jobs")]
@@ -19,7 +19,6 @@ public class AudioRaytracingManager : MonoBehaviour
     public static bool ComputeAsync => Instance.computeAsync;
     public static int ToUseThreadCount => math.min(Instance.maxThreadCount, JobsUtility.JobWorkerCount);
 
-    [Header(">>System Management<<")]
     [SerializeField] private AudioTargetManager audioTargetManager;
     public static AudioTargetManager AudioTargetManager => Instance.audioTargetManager;
 

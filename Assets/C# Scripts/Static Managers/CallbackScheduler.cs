@@ -3,7 +3,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -159,7 +158,7 @@ namespace Fire_Pixel.Utility
 
         #region Delayed Callback System
 
-        public static InvokeCallbackReference InvokeDelayed(float delay, Action callback, int groupId = 0)
+        public static InvokeCallbackReference Invoke(float delay, Action callback, int groupId = 0)
         {
             delayedCallbacks.Add(new DelayedCallback(callback, Time.time + delay, groupId));
 
@@ -168,17 +167,19 @@ namespace Fire_Pixel.Utility
 
             return callbackRef;
         }
+        public static void InvokeAndForget(float delay, Action callback, int groupId = 0)
+        {
+            delayedCallbacks.Add(new DelayedCallback(callback, Time.time + delay, groupId));
+            callbackReferences.Add(null);
+        }
         /// <summary>
         /// Stops a previously scheduled Invoke Callback by ref and clears its reference.
         /// </summary>
-        public static void CancelInvoke(ref InvokeCallbackReference callbackRef)
+        public static void CancelInvoke(this InvokeCallbackReference callbackRef)
         {
             if (callbackRef == null) return;
 
             RemoveDelayedCallback(callbackRef.Id);
-
-            // Destroy callback reference
-            callbackRef = null;
         }
         /// <summary>
         /// Cancel all invokes with the same group id, useful to cancel all callbacks of a script for example when it gets destroyed without having to save every callback reference
@@ -203,7 +204,7 @@ namespace Fire_Pixel.Utility
             if (toRemoveId != delayedCallbacks.Count - 1)
             {
                 // Update the reference of the moved callback
-                callbackReferences[^1].SetId(toRemoveId);
+                callbackReferences[^1]?.SetId(toRemoveId);
             }
             // Remove the callback and its reference
             callbackReferences.RemoveAtSwapBack(toRemoveId);
@@ -296,7 +297,15 @@ namespace Fire_Pixel.Utility
         /// <returns>The scheduled coroutine ref</returns>
         public static InvokeCallbackReference Invoke(this MonoBehaviour mb, float delay, Action f)
         {
-            return CallbackScheduler.InvokeDelayed(delay, f, mb.GetInstanceID());
+            return CallbackScheduler.Invoke(delay, f, mb.GetInstanceID());
+        }
+        /// <summary>
+        /// Invoke function <paramref name="f"/> after <paramref name="delay"/> seconds. Schedules a coroutine on the target <see cref="MonoBehaviour"/>
+        /// No callback reference is created. The invoke is only cancelable with the groupId.
+        /// </summary>
+        public static void InvokeAndForget(this MonoBehaviour mb, float delay, Action f)
+        {
+            CallbackScheduler.InvokeAndForget(delay, f, mb.GetInstanceID());
         }
         /// <summary>
         /// Stops a previously scheduled Invoke Callback on target (<see cref="MonoBehaviour"/>) and clears its reference.
@@ -306,7 +315,7 @@ namespace Fire_Pixel.Utility
         {
             if (callbackRef == null) return;
 
-            CallbackScheduler.CancelInvoke(ref callbackRef);
+            CallbackScheduler.CancelInvoke(callbackRef);
         }
         /// <summary>
         /// Stops a previously scheduled Invoke Callback on <see cref="CallbackScheduler"/> and clears its reference.

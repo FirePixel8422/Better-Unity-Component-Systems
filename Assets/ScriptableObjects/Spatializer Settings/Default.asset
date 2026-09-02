@@ -18,16 +18,16 @@ MonoBehaviour:
     DistanceBasedPanning: 1
     MaxPanDistance: 5
     DistanceBasedRearAttenuation: 1
-    MaxRearAttenuationDistance: 15
-    MaxElevationEffectDistance: 12
+    MaxRearAttenuationDistance: 12
+    MaxElevationEffectDistance: 20
     LowPassCutoff:
       min: 22000
-      max: 2000
+      max: 2250
     LowPassVolume: 0.85
     HighPassCutoff:
       min: 25
-      max: 150
-    HighPassVolume: 1.15
+      max: 400
+    HighPassVolume: 1.3
     MuffleCurve:
       curve:
         serializedVersion: 2
